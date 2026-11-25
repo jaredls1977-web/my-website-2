@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Horseless Carriage Problem | Jared Scott</title>
+<meta name="description" content="Every tool that changed the world was mocked in its clumsy first years. A leadership reflection on AI, adoption, and choosing the road over the porch.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+  <article class="wrap">
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+  <p class="kicker">On Change</p>
+  <h1>The Horseless Carriage Problem</h1>
+  <p class="dek">Every tool that ever changed the world was mocked, in its clumsy first years, by people who were technically right and completely wrong.</p>
+  <p class="byline">By Jared Scott</p>
+  <p class="lead">In the spring of 1903, a Vermont doctor named Horatio Nelson Jackson made a fifty-dollar bet in a San Francisco bar. He wagered a stranger that he could drive an automobile clear across the country to New York. Ninety days, he was given. He had never driven farther than the streets of Burlington. He did not own a car. He bought a used Winton, hired a mechanic named Sewall Crocker who could actually fix the thing when it broke, picked up a bulldog named Bud along the way, and set out from the Palace Hotel.</p>
+  <p>It took him sixty-three and a half days. He covered roughly five thousand miles of a country that had exactly one hundred and fifty miles of paved road in it, all inside city limits. He blew tires, broke axles, ran out of gas in the middle of Nevada, and spent eight thousand dollars to win a fifty-dollar bet.</p>
+  <p>A stagecoach on the Butterfield line could already make that same crossing in twenty-four days. A well-run stagecoach beat Jackson's automobile by nearly forty days. If you had stood in that San Francisco bar and told him his horseless carriage was a slow, unreliable, expensive toy for rich men with too much time on their hands, you would have had the numbers on your side. You would have been right, and you would have missed the point entirely.</p>
+  <h2>What the naysayer never sees</h2>
+  <p>Six years after Jackson's trip, the transcontinental railroad cut that same New York to San Francisco crossing to seven days. By 1876 an express train made it in eighty-three hours, a little over three and a half days. Today a nonstop flight does it in about six hours. A person can drive it themselves in forty-one hours of road time if they choose to. None of that came from the automobile staying the clumsy, slower than a stagecoach thing it was in 1903. It came from the world reorganizing itself around what the automobile made possible once enough people started using it, improving it, and building roads for it to run on.</p>
+  <h2>Historical New York to San Francisco Travel Times</h2>
+  <ul><li>Covered wagon, 1840s: 4 to 5 months</li><li>Butterfield stagecoach, 1858: 24 days</li><li>First automobile crossing, 1903: 63.5 days</li><li>Transcontinental railroad, 1869: 7 days</li><li>Express train, 1876: 83 hours</li><li>Driving today: 41 hours</li><li>Flying today: 6 hours</li></ul>
+  <p>Nobody who bought a Model T ten years later understood a combustion engine or could have explained a camshaft if their life depended on it. They did not need to. They turned a key and drove to see a sister in Ohio they had not visited in a decade, or to a job forty miles away that used to cost a horse two days, or simply somewhere new, because for the first time in their life they could get there. What mattered was where the car took them, not what was happening under the hood.</p>
+  <p>Somewhere in that same era, plenty of good men sat on porches and said they would never trade their horse for a gas burning contraption. Their horse ate oats and hay they grew themselves. Their horse did not break down in the desert. Their horse had never needed a spare part shipped in from a factory back east. Every word of that was true. Horses never disappeared, and they should not have. There are still ranches, still therapy programs, still working horses earning their keep every day. But the dynamic of the whole country shifted underneath those porch conversations whether the men on them agreed to it or not.</p>
+  <h2>Slop is not new. It is just more accessible now.</h2>
+  <p>I hear the same complaint about artificial intelligence today that I imagine got said about the automobile, and it usually comes down to one word. Slop. Somebody runs a prompt, gets back three paragraphs of oatmeal, posts it, and the internet rolls its eyes at the whole technology on the strength of that one bowl of oatmeal. There is a mountain of it out there. I read some myself and wince.</p>
+  <p>But writing slop did not arrive with AI. Vanity presses have printed forgettable novels for a hundred years. Corporate mission statements have generated meaningless jargon since somebody invented the word synergy. Greeting cards have rhymed love with above longer than any of us have been alive, and church bulletins and yearbook quote pages and LinkedIn thought leadership posts written by people with zero training and a strong opinion about themselves have been quietly filling the world with slop since long before a machine ever wrote a sentence. Humans managed that on our own, in bulk, for centuries, with nothing but a pen and an inflated sense of our own insight.</p>
+  <p>Bad output was never the real argument against a tool. Careless use of a tool is the real problem, and that one belongs to us, not the machine.</p>
+  <h2>Who this actually opens the door for</h2>
+  <p>When this conversation turns into a fight about slop, I think about the woman who has carried a children's book in her head for fifteen years. She can tell you every character and every page turn from memory. She never learned how to structure a manuscript or format one for a publisher, so it stayed exactly where it started, in her head. Or the tradesman who built something genuinely clever in his own shop, solved a real problem with his own two hands, and could not write an instruction manual that made sense to anyone but himself. Or the person who has run a training program in their head for years and knows precisely what people need to learn and in what order but never had the bandwidth to sit down and script sixty pages of it while also doing the job that pays the bills.</p>
+  <p>None of them needed to become a novelist or a technical writer or an instructional designer. They needed a tool that would meet the idea where it already was and help carry it into a form other people could use. For a long time, the gap between having a good idea and being able to execute it was where most good ideas quietly died, alone, in someone's head, without ever getting the chance to help anybody.</p>
+  <blockquote>The car did not ask the driver to understand it. It only asked the driver to know where they wanted to go.</blockquote>
+  <p>That is what AI is doing right now for a whole population of people who had the ideas but never had the craft, or the time, or the technical runway to bring them into the world. It is a horseless carriage. You do not need to understand what is happening under the hood. You need to know where you are trying to go, and you need to be willing to sit in the driver's seat and steer.</p>
+  <h2>The part I will not ignore</h2>
+  <p>Pretending a powerful tool has no downside would be its own kind of dishonesty, so I won't pretend. Cars kill people every single day, mostly because somebody was reckless, distracted, or drunk behind the wheel. Nobody sane looks at that and concludes we should have stayed on horseback. We built seatbelts, speed limits, driver's education, and a century of traffic engineering aimed at making a dangerous machine safer without giving up what it made possible.</p>
+  <p>AI deserves that same seriousness. Used lazily, it will flatten your voice, dull your thinking, and hand you back something that sounds like everyone else, because you let it do the thinking you should have done yourself. Guarding against that is a matter of judgment and craft and keeping your own hands on the wheel. It has never been a reason to stay on the porch.</p>
+  <h2>The porch or the road</h2>
+  <p>Every generation gets a version of this same conversation, and every generation has its group standing on the porch pointing out, correctly, that the new thing is clumsy and slower than what they already know. They are usually right about the numbers in the moment. Jackson's car really was slower than the stagecoach in 1903. What they miss, standing on that porch, is where the road is actually headed.</p>
+  <p>I know which side of that conversation I want to be on. I have watched too many good ideas die in someone's head for lack of a way to get them out. I would rather help build the road than stand on the porch explaining, correctly and uselessly, why the old way still works fine for me.</p>
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+  </article>
+</body>
+</html>

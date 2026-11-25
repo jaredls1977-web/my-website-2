@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond the Basics: Developing a Growth Mindset as Leaders | Jared Scott</title>
+<meta name="description" content="Moving past the slogan version of growth mindset into what it actually requires of a leader day to day.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Growth Mindset</p>
+  <h1>Beyond the Basics: Developing a Growth Mindset as Leaders</h1>
+  <p class="dek">Moving past the slogan version of growth mindset into what it actually requires of a leader day to day.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">A friend recently shared the picture you see at the start of this article. It's from their child's elementary school and promotes a growth mindset for students. The picture listed phrases and ideas meant to help kids think in new ways when they face challenges. But as I read through the phrases, I realized: these aren't just for kids. Many of the things on that list are concepts that adults—especially leaders—struggle with too. We often get caught in fixed thinking patterns, even though we encourage our teams to be adaptable and resilient.</p>
+  <p>In the picture above, you'll see the ideas shared with elementary students. Seeing it reminded me that having a growth mindset isn't something you outgrow; it's something we, as leaders, need to cultivate if we're going to model and inspire a growth mindset in our teams.</p>
+  <p>Developing a growth mindset involves shifting our internal language from limitation to opportunity. Here are some examples of how rephrasing our thoughts can help us lead with openness and adaptability:</p>
+  <h2>Instead of</h2>
+  <p>"I'm not good at this."\ <strong>Try thinking:</strong> "What am I missing?"\ When we face a new challenge, it's tempting to doubt ourselves. But by asking, "What am I missing?" we open ourselves to curiosity rather than discouragement. As leaders, we can encourage our teams to ask questions, seek out new angles, and approach problems as puzzles to solve.</p>
+  <h2>Instead of</h2>
+  <p>"I give up."\ <strong>Try thinking:</strong> "I'll use a different strategy."\ Sometimes, our first approach doesn't work, and that's okay. Rather than feeling defeated, we can pivot, testing different strategies until we find what works. This attitude promotes resilience—a crucial quality for both leaders and teams.</p>
+  <h2>Instead of</h2>
+  <p>"It's good enough."\ <strong>Try thinking:</strong> "Is this really my best work?"\ The pursuit of excellence doesn't mean perfectionism. By asking ourselves if we're giving our best, we ensure we're not settling, and we inspire our team to push the limits of what they can achieve.</p>
+  <h2>Instead of</h2>
+  <p>"I can't make this any better."\ <strong>Try thinking:</strong> "I can always improve."\ This shift keeps us focused on continuous learning and growth. Just as we encourage our teams to seek improvement, we must model that same drive to grow and adapt.</p>
+  <h2>Instead of</h2>
+  <p>"This is too hard."\ <strong>Try thinking:</strong> "This may take some time."\ Challenges often feel daunting at first, but by allowing ourselves time, we can build the persistence we need to overcome them. Teaching our teams to recognize that some tasks require time and effort creates an environment where endurance is valued.</p>
+  <h2>Instead of</h2>
+  <p>"I made a mistake."\ <strong>Try thinking:</strong> "Mistakes help me to learn."\ As leaders, we know that mistakes are often our best teachers. Embracing mistakes as learning opportunities models humility and adaptability, encouraging our teams to do the same.</p>
+  <h2>Instead of</h2>
+  <p>"I just can't do this."\ <strong>Try thinking:</strong> "I'm going to train my brain."\ When something feels overwhelming, it's easy to think we're simply not cut out for it. But our brains are like muscles; the more we work on difficult tasks, the stronger we get. By committing to ongoing learning, we model for our teams that skills can be developed over time.</p>
+  <h2>Instead of</h2>
+  <p>"I'll never be that smart."\ <strong>Try thinking:</strong> "I will learn how to do this."\ It's easy to look at others' skills and assume they're just naturally better. But adopting a growth mindset means acknowledging that with effort and practice, we too can learn and grow.</p>
+  <h2>Instead of</h2>
+  <p>"Plan A didn't work."\ <strong>Try thinking:</strong> "There's always Plan B."\ Leadership often means adapting on the fly. Demonstrating a flexible mindset helps our teams stay motivated and creative, even when things don't go according to plan.</p>
+  <h2>Instead of</h2>
+  <p>"My friend can do it."\ <strong>Try thinking:</strong> "I will learn from them."\ Rather than comparing ourselves to others, we can use their strengths as learning opportunities. As leaders, encouraging our teams to learn from one another fosters a culture of mutual respect and shared growth.</p>
+  <p>Leaders with a growth mindset set the tone for their teams. Carol Dweck, a pioneering psychologist and author of <em>Mindset: The New Psychology of Success</em>, says, "The passion for stretching yourself and sticking to it, even (or especially) when it's not going well, is the hallmark of the growth mindset." This approach doesn't just apply to personal achievements; it's critical for creating thriving, innovative teams.</p>
+  <p>Similarly, John Maxwell, a leadership expert, said, "Growth is the great separator between those who succeed and those who do not. When I see a person beginning to separate themselves from the pack, it's almost always due to personal growth." A growth mindset is foundational to sustained success, and as leaders, embracing it ourselves makes us better mentors, guides, and role models.</p>
+  <p>By taking a cue from that elementary classroom wall, we can begin to reshape our own thinking patterns and encourage our teams to do the same. Developing a growth mindset isn't just for students—it's essential for leaders looking to inspire and drive continuous improvement in those around them.</p>
+  <h2>If you're interested in learning more about fostering a growth mindset, here are two valuable resources</h2>
+  <ol>
+    <li><em>Mindset: The New Psychology of Success</em> by Carol S. Dweck</li>
+    <li><em>Atomic Habits: An Easy &amp; Proven Way to Build Good Habits &amp; Break Bad Ones</em> by James Clear</li>
+  </ol>
+  <p>By embracing a growth mindset, leaders can cultivate an environment where challenges are opportunities, and growth is a continuous journey for both themselves and their teams.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

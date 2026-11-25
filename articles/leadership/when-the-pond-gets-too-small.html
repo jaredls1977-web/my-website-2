@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A personal leadership reflection on growth, loyalty, opportunity, and what happens when the pond gets too small." />
+  <title>When the Pond Gets Too Small</title>
+  <style>
+    :root{
+      --ink:#171717;
+      --muted:#6b6b6b;
+      --paper:#f6f4ef;
+      --card:#ffffff;
+      --accent:#c81422;
+      --accent-dark:#8e0f19;
+      --line:#ddd7cc;
+      --soft:#eee9df;
+      --shadow:0 18px 50px rgba(0,0,0,.08);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top right, rgba(200,20,34,.05), transparent 28rem),
+        var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.72;
+    }
+
+    .progress{
+      position:fixed;
+      top:0;
+      left:0;
+      width:0;
+      height:4px;
+      background:var(--accent);
+      z-index:1000;
+    }
+
+    header{
+      max-width:1180px;
+      margin:0 auto;
+      padding:72px 28px 20px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent-dark);
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:44px;
+      height:2px;
+      background:var(--accent);
+    }
+
+    h1{
+      max-width:900px;
+      margin:20px 0 18px;
+      font-family:var(--serif);
+      font-size:clamp(3.1rem, 7vw, 6.8rem);
+      line-height:.93;
+      letter-spacing:-.055em;
+      font-weight:700;
+    }
+
+    .dek{
+      max-width:760px;
+      margin:0;
+      color:#3f3f3f;
+      font-family:var(--serif);
+      font-size:clamp(1.25rem, 2vw, 1.7rem);
+      line-height:1.45;
+    }
+
+    .byline{
+      margin-top:24px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .hero-rule{
+      max-width:1180px;
+      margin:36px auto 0;
+      height:1px;
+      background:linear-gradient(90deg,var(--accent),var(--line) 20%,var(--line));
+    }
+
+    main{
+      max-width:1180px;
+      margin:0 auto;
+      padding:42px 28px 84px;
+      display:grid;
+      grid-template-columns:minmax(0, 760px) 280px;
+      gap:74px;
+      align-items:start;
+    }
+
+    article{
+      font-family:var(--serif);
+      font-size:1.14rem;
+    }
+
+    article p{
+      margin:0 0 1.52em;
+    }
+
+    article p:first-child::first-letter{
+      float:left;
+      font-size:4.9rem;
+      line-height:.78;
+      padding-right:10px;
+      padding-top:9px;
+      font-weight:700;
+      color:var(--accent);
+    }
+
+    .section-break{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin:48px 0 36px;
+      color:var(--accent-dark);
+      font-family:var(--sans);
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .section-break::after{
+      content:"";
+      height:1px;
+      flex:1;
+      background:var(--line);
+    }
+
+    .pullquote{
+      margin:48px 0;
+      padding:28px 32px 26px;
+      border-left:6px solid var(--accent);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      font-family:var(--serif);
+      font-size:clamp(1.45rem, 2.3vw, 2.05rem);
+      line-height:1.35;
+    }
+
+    .pullquote strong{
+      color:var(--accent-dark);
+    }
+
+    .ending{
+      margin-top:48px;
+      padding:38px 38px 34px;
+      background:var(--ink);
+      color:#fff;
+      border-radius:2px;
+      box-shadow:var(--shadow);
+    }
+
+    .ending p{
+      margin:0;
+      font-size:1.28rem;
+      line-height:1.58;
+    }
+
+    aside{
+      position:sticky;
+      top:34px;
+      font-family:var(--sans);
+    }
+
+    .side-card{
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(0,0,0,.06);
+      padding:24px 22px;
+      box-shadow:0 12px 35px rgba(0,0,0,.05);
+    }
+
+    .side-card h2{
+      margin:0 0 12px;
+      font-size:.76rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent-dark);
+    }
+
+    .side-card p{
+      margin:0;
+      font-family:var(--serif);
+      font-size:1.06rem;
+      line-height:1.52;
+      color:#333;
+    }
+
+    .side-card .quote{
+      margin-top:22px;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      max-width:1180px;
+      margin:0 auto;
+      padding:26px 28px 44px;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+
+    @media (max-width: 900px){
+      main{grid-template-columns:1fr; gap:34px}
+      aside{position:static; order:-1}
+      .side-card{max-width:760px}
+      header{padding-top:56px}
+    }
+
+    @media (max-width: 600px){
+      h1{font-size:3.25rem}
+      header,main,footer{padding-left:20px; padding-right:20px}
+      .pullquote{padding:24px 22px}
+      .ending{padding:28px 24px}
+      article{font-size:1.06rem}
+    }
+
+    @media print{
+      .progress{display:none}
+      body{background:#fff}
+      header,main,footer{max-width:none}
+      main{display:block}
+      aside{display:none}
+      .pullquote,.ending{box-shadow:none}
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="progress" id="progress"></div>
+
+  <header>
+    <div class="eyebrow">Leadership Reflection</div>
+    <h1>When the Pond Gets Too Small</h1>
+    <p class="dek">Sometimes people aren’t looking for greener grass. They’ve simply grown beyond the boundaries they were given.</p>
+    <div class="byline">By Jared Scott</div>
+  </header>
+
+  <div class="hero-rule"></div>
+
+  <main>
+    <article>
+      <p>A good friend of mine was telling me an interesting story one day.</p>
+
+      <p>He has spent almost his entire adult life with the same company.</p>
+
+      <p>He started there when he was young, working in assembly. He didn’t have a college degree. He didn’t have some carefully planned career in front of him. He went to work.</p>
+
+      <p>Over the years, he learned. He took on more responsibility. He moved into training and eventually into leadership. A lot of people invested in him along the way, and he was given opportunities that he is genuinely grateful for. Nearly thirty years later, he can look back at a career he never could have mapped out when he started.</p>
+
+      <p>But there has always been one thing missing.</p>
+
+      <p>He never went to college.</p>
+
+      <p>For most of his career, that didn’t bother him very much. Experience kept opening doors. He learned by doing, by reading, by listening to people who knew things he didn’t know, and sometimes by getting things wrong and having to figure out why. Eventually, he reached a point where he had enough experience that the lack of a degree didn’t seem to matter much inside the company.</p>
+
+      <p>But as he got older, he started wanting something different.</p>
+
+      <p>He wanted to go to school.</p>
+
+      <p>Not because he thought a degree would suddenly make him smarter. He has worked with people who have impressive degrees and people who never went to college, and he learned a long time ago that education and ability are not the same thing.</p>
+
+      <p>He wanted it because he wanted to keep growing.</p>
+
+      <p>After almost thirty years, he wanted to expand his horizons. He wanted to study things he had never formally studied. He wanted to add something to himself that he had missed earlier in life. And yes, he wanted the credential too. He had spent decades building experience, and he wanted his education to finally catch up with it.</p>
+
+      <div class="section-break">The conversation</div>
+
+      <p>So he brought it up.</p>
+
+      <p>The response was essentially, “Getting a degree isn’t going to change how we value you. We already value you highly.”</p>
+
+      <p>It sounds good.</p>
+
+      <p>It probably was meant to sound good.</p>
+
+      <div class="pullquote">But his <strong>BS meter went off.</strong></div>
+
+      <p>Because he knew there was another side to that statement.</p>
+
+      <p>Inside his company, people know him. They know what he has done. They know what he can do. Nearly thirty years of work has become his résumé there.</p>
+
+      <p>Outside the company, none of that history walks into the room with him.</p>
+
+      <p>Another company sees an application. And for a lot of leadership positions, before anyone ever gets around to asking what he has actually done for the last thirty years, there is a box sitting there that says: bachelor’s degree required.</p>
+
+      <p>That was the part he couldn’t ignore.</p>
+
+      <p>Telling him that a degree wouldn’t change how his company values him sounded like reassurance. But earning one could absolutely change the opportunities available to him outside the company.</p>
+
+      <div class="pullquote"><strong>It would make his value more portable.</strong></div>
+
+      <div class="section-break">The phrase companies use</div>
+
+      <p>And as he told me this story, I started thinking about something I have heard companies say for years whenever good people leave.</p>
+
+      <p>“The grass isn’t always greener on the other side.”</p>
+
+      <p>Usually it comes after someone resigns. There is disappointment, sometimes frustration, and then an assumption that the person leaving believes something better is waiting somewhere else.</p>
+
+      <p>I’m not sure that is always what is happening.</p>
+
+      <div class="pullquote">Sometimes people aren’t looking for greener grass.<br><strong>Sometimes the pond has simply become too small.</strong></div>
+
+      <div class="section-break">The koi pond</div>
+
+      <p>I think about koi.</p>
+
+      <p>A koi can live for years in the same pond. Feed it. Take care of the water. Protect it. Give it everything it needs to survive. But if that fish continues to grow, eventually the size of the pond matters.</p>
+
+      <p>The problem isn’t that the koi suddenly became ungrateful for the pond.</p>
+
+      <p>It grew.</p>
+
+      <p>I think companies sometimes miss that distinction with people.</p>
+
+      <p>An employee becomes very good at a particular job, and that creates an interesting problem. Moving that person means somebody else has to learn what they know. Promoting them creates a hole. Giving them broader responsibility changes something that has been working.</p>
+
+      <p>From the company’s perspective, keeping them where they are can make perfect sense.</p>
+
+      <p>From the employee’s perspective, the edges of the pond keep getting closer.</p>
+
+      <p>That doesn’t necessarily show up as dissatisfaction. The person may still like the company. They may like the people they work with. They may be paid well. They may even be grateful for everything the organization has given them.</p>
+
+      <p>They just want to keep growing.</p>
+
+      <p>And growth creates movement.</p>
+
+      <div class="section-break">What loyalty cannot mean</div>
+
+      <p>That is the part I understand differently now after listening to my friend describe it.</p>
+
+      <p>He doesn’t want an education because he is planning an escape. He doesn’t want to spend the next several years earning a degree because he suddenly believes everything he has accomplished without one is inadequate. If anything, nearly thirty years of building a career without that credential has taught him how little a piece of paper can tell you about someone’s actual ability.</p>
+
+      <p>But he also doesn’t want the absence of that piece of paper deciding where the boundaries of his life are.</p>
+
+      <p>There is another side to this that companies should probably think about when good employees begin looking elsewhere.</p>
+
+      <p>Instead of asking why somebody thinks the grass will be greener somewhere else, it might be worth looking at the pond they are standing in.</p>
+
+      <p>Have they been allowed to grow?</p>
+
+      <p>When they expressed interest in something beyond their current role, what happened?</p>
+
+      <p>Were they encouraged, or were they reminded how valuable they already were right where they were?</p>
+
+      <p>Those can sound remarkably similar in conversation.</p>
+
+      <p>They are not the same thing.</p>
+
+      <div class="pullquote">There is a difference between <strong>valuing someone</strong> and preserving the value you receive from keeping them exactly where they are.</div>
+
+      <p>My friend has spent almost thirty years in one company. I think that says something about loyalty. But loyalty cannot mean that a person stops becoming something more because what they already are happens to be useful.</p>
+
+      <div class="ending">
+        <p>A healthy organization shouldn’t be afraid of making its people more capable of leaving. It should want to become the kind of place they continue choosing to stay. And if the koi keeps growing, the answer cannot always be to remind it how good the water is. Sometimes you have to make the pond bigger.</p>
+      </div>
+    </article>
+
+    <aside>
+      <div class="side-card">
+        <h2>Leadership thought</h2>
+        <p>Good people do not always leave because they are unhappy. Sometimes they leave because they can no longer see where they are allowed to grow.</p>
+        <p class="quote">The question is not only, “How do we keep them?” It is also, “What are we doing with the person they are becoming?”</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    Leadership reflection by Jared Scott
+  </footer>
+
+  <script>
+    const progress = document.getElementById('progress');
+    function updateProgress(){
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+    }
+    document.addEventListener('scroll', updateProgress, {passive:true});
+    updateProgress();
+  </script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaders, Beware the Shock: Why Gradual Change is the Key to Sustainable Growth | Jared Scott</title>
+<meta name="description" content="Why change that arrives all at once breaks teams that could have handled it in smaller doses.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Change</p>
+  <h1>Leaders, Beware the Shock: Why Gradual Change is the Key to Sustainable Growth</h1>
+  <p class="dek">Why change that arrives all at once breaks teams that could have handled it in smaller doses.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">As a young boy, I spent many weekends at my aunt and uncle's house, where my aunt's passion for gardening was evident in every corner of their yard. She didn't just grow flowers and vegetables—she planted trees, too, with dreams of a backyard orchard full of fruit. One summer, I remember helping her plant a row of young fruit trees. The soil was hard and unyielding, packed with stubborn clay that made every shovel full feel like a small victory. But eventually, the trees were in the ground, supported by ropes and stakes to guide their growth.</p>
+  <p>Weeks passed, and during one visit, we noticed a couple of the trees had started to grow in strange, undesirable directions. Their ropes had loosened, and they were leaning awkwardly. I expected my aunt, ever the problem-solver, to immediately fix the issue, but instead, she paused and shared something I never forgot.</p>
+  <p>"You have to be careful," she said. "If you try to force the tree to grow straight all at once, you could tear its roots. You could even kill it." Instead, she showed me how we would tighten the ropes just a little, adding only enough tension to gently nudge the trees in the right direction. Every few days, we'd add a little more. Slowly, over weeks, the trees began to stand tall, positioned exactly as they were meant to grow.</p>
+  <p>That lesson stuck with me—not just about trees, but about life and leadership. Sometimes, the systems we're working with, whether they're rooted in soil or people, need time and careful adjustments to thrive. Rushing to force change can cause more harm than good. It's a principle I've carried into leadership, where organizations, like trees, require thoughtful guidance rather than abrupt upheaval.</p>
+  <h2>The Complexity of Organizational Roots</h2>
+  <p>Every organization has a unique ecosystem—its "root system." This includes established processes, unspoken habits, and a culture shaped by years of history. Sometimes, these roots have grown in the wrong direction due to poor leadership, outdated practices, or external pressures. When new leaders step in, they may recognize these misalignments and feel a strong urge to make immediate changes. However, attempting to correct course too quickly can have unintended consequences, from resistance among employees to the outright collapse of trust.</p>
+  <h2>When Sudden Change Fails: A Real-World Example</h2>
+  <p>One notable example of sudden change gone wrong is the merger of AOL and Time Warner in the early 2000s. The companies had distinct cultures, and leadership attempted to rapidly integrate them under a unified vision. However, the pace of change was too abrupt. Employees felt disoriented, cultural clashes went unaddressed, and the root systems of both organizations were left damaged. The result? One of the most infamous failed mergers in corporate history.</p>
+  <h2>When Gradual Change Succeeds</h2>
+  <p>On the other hand, consider Microsoft's cultural transformation under Satya Nadella. When Nadella became CEO in 2014, he inherited a company struggling with stagnation and internal silos. Rather than forcing immediate change, Nadella focused on understanding the "why" behind Microsoft's challenges. He introduced a culture of empathy and collaboration, slowly realigning the organization's focus from internal competition to external customer value. This deliberate, gradual approach resulted in a remarkable turnaround, positioning Microsoft as one of the world's most valuable companies.</p>
+  <h2>The Leader's Role in Guiding Change</h2>
+  <p>As leaders, especially when tasked with turning around a struggling team or organization, it's essential to approach change like a skilled gardener:</p>
+  <ol>
+    <li><strong>Understand the "Why":</strong> Before making any adjustments, dig deep to understand the reasons behind existing practices. Why do people do things the way they do? Is it habit, fear of past failures, or something else entirely? Without this understanding, your changes may solve the wrong problem.</li>
+    <li><strong>Recognize and Leverage Strengths:</strong> Identify the inherent strengths within your team or organization. By acknowledging and building upon these assets, you can foster a sense of value and confidence among employees, making them more receptive to change.</li>
+    <li><strong>Make a Plan:</strong> Once you've identified the root causes, create a strategic plan for gradual adjustments. Break changes into smaller, manageable steps that minimize disruption while allowing employees to adapt over time.</li>
+    <li><strong>Communicate and Involve Your Team:</strong> Change cannot be imposed; it must be guided. Bring your team into the process by explaining the reasoning behind the changes and how they align with shared goals. Listening to their feedback is critical to gaining their buy-in.</li>
+    <li><strong>Monitor and Adjust:</strong> Change is not a one-time event. Continuously evaluate the impact of your adjustments and be prepared to pivot if something isn't working. Flexibility is key.</li>
+  </ol>
+  <h2>Recommended Reading for Leaders Navigating Change</h2>
+  <ul>
+    <li><em>Switch: How to Change Things When Change Is Hard</em> by Chip and Dan Heath</li>
+    <li><em>Leading Change</em> by John P. Kotter</li>
+    <li><em>Dare to Lead</em> by Brené Brown</li>
+  </ul>
+  <p>These books provide practical strategies and insights into implementing change in complex environments.</p>
+  <h2>A Final Thought</h2>
+  <p>Change is inevitable in leadership, but the way we approach it can determine whether it becomes an opportunity for growth or a recipe for disaster. By focusing on gradual adjustments, understanding the "why," and respecting the deep-rooted nature of organizational culture, leaders can make a lasting, positive impact.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

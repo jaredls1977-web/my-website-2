@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Steak's No Good—and People Are Done Pretending It Is | Jared Scott Leadership</title>
+  <meta name="description" content="A blunt leadership article about why companies tolerate dysfunction, protect toxic people, and keep choosing chronic cultural pain over short-term corrective action." />
+  <meta property="og:title" content="The Steak's No Good—and People Are Done Pretending It Is" />
+  <meta property="og:description" content="Culture is not what the company claims. Culture is what employees experience." />
+  <meta property="og:type" content="article" />
+  <style>
+    :root {
+      --bg: #101214;
+      --paper: #f7f3ea;
+      --ink: #171717;
+      --muted: #5b5b5b;
+      --red: #b11226;
+      --gold: #b98537;
+      --charcoal: #24272b;
+      --line: rgba(23, 23, 23, 0.14);
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(177, 18, 38, 0.25), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(185, 133, 55, 0.22), transparent 30%),
+        var(--bg);
+      font-family: Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.58;
+    }
+
+    .page-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 22px 70px;
+    }
+
+    .article-card {
+      background: var(--paper);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero {
+      position: relative;
+      padding: 68px 64px 58px;
+      background:
+        linear-gradient(135deg, rgba(16, 18, 20, 0.96), rgba(36, 39, 43, 0.92)),
+        repeating-linear-gradient(45deg, transparent 0, transparent 12px, rgba(255,255,255,0.04) 13px, rgba(255,255,255,0.04) 14px);
+      color: var(--white);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 6vw, 5.2rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      margin: 0 0 24px;
+      max-width: 900px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(1.08rem, 2vw, 1.45rem);
+      color: rgba(255, 255, 255, 0.82);
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 46px;
+      padding: 58px 64px 70px;
+    }
+
+    main.article-body {
+      min-width: 0;
+    }
+
+    .article-body p {
+      font-size: 1.13rem;
+      margin: 0 0 20px;
+    }
+
+    .article-body .short {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--red);
+      margin-top: 28px;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin: 54px 0 18px;
+      color: var(--charcoal);
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    .lead-block {
+      border-left: 8px solid var(--red);
+      background: #fffaf0;
+      padding: 26px 28px;
+      margin: 30px 0 36px;
+      font-size: 1.4rem;
+      line-height: 1.32;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .punchline {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 32px;
+      border-radius: 22px;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .punchline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 100%;
+      background: var(--red);
+    }
+
+    .punchline p {
+      font-size: 1.55rem;
+      line-height: 1.25;
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: -0.04em;
+    }
+
+    .tight-list {
+      margin: 20px 0 28px;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .tight-list li {
+      padding: 14px 0 14px 34px;
+      border-bottom: 1px solid var(--line);
+      font-size: 1.08rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .tight-list li::before {
+      content: "•";
+      color: var(--red);
+      font-size: 2rem;
+      line-height: 1;
+      position: absolute;
+      left: 6px;
+      top: 9px;
+    }
+
+    .restaurant-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      margin: 32px 0;
+      overflow: hidden;
+      box-shadow: 0 16px 35px rgba(16, 18, 20, 0.08);
+    }
+
+    .restaurant-top {
+      background: linear-gradient(135deg, #3a1c1c, #131313);
+      color: var(--white);
+      padding: 26px 30px;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .restaurant-top h3 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .restaurant-body {
+      padding: 28px 30px 30px;
+    }
+
+    .restaurant-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    aside {
+      position: sticky;
+      top: 22px;
+      align-self: start;
+    }
+
+    .side-box {
+      background: var(--charcoal);
+      color: var(--white);
+      border-radius: 22px;
+      padding: 26px 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 16px 34px rgba(16, 18, 20, 0.16);
+    }
+
+    .side-box.light {
+      background: #ffffff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .side-label {
+      color: var(--gold);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .side-box p {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .side-box.light p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .finale {
+      margin-top: 48px;
+      padding: 38px 34px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--red), #5f0712);
+      color: var(--white);
+    }
+
+    .finale p {
+      font-size: 1.55rem;
+      line-height: 1.24;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .finale p:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer-note {
+      padding: 22px 64px 36px;
+      color: rgba(23,23,23,0.56);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,0.42);
+    }
+
+    @media (max-width: 880px) {
+      .hero, .content, .footer-note {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      aside {
+        position: static;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page-shell {
+        padding: 0;
+      }
+      .article-card {
+        box-shadow: none;
+        border-radius: 0;
+      }
+      aside {
+        position: static;
+      }
+    }
+
+
+    .als-site-return {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,63,92,.15);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .als-site-return-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 22px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:center;
+    }
+
+    .als-site-return a {
+      color:#003f5c;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .als-site-return span {
+      color:#239b45;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">← Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+  <div class="page-shell">
+    <article class="article-card">
+      <header class="hero">
+        <div class="eyebrow">Leadership Article</div>
+        <h1>The Steak's No Good—and People Are Done Pretending It Is</h1>
+        <p class="subtitle">Why companies keep choosing long-term dysfunction over the short-term discomfort of actually fixing what hurts.</p>
+      </header>
+
+      <div class="content">
+        <main class="article-body">
+          <h2>You ever deal with pain for so long that you start pretending it's normal?</h2>
+          <p>That was me.</p>
+          <p>My shoulder had been hurting for a year. Sleeping was uncomfortable. Working was annoying. Every day it was this low-level, constant nuisance I had learned to live around.</p>
+          <p>I adjusted. I compensated. I avoided certain movements. I told myself it wasn't that bad.</p>
+          <p>But let's be honest. It was bad enough to complain about. It was bad enough to affect my day. It was bad enough to wake me up at night.</p>
+          <p>I just didn't want the inconvenience of getting it fixed.</p>
+
+          <div class="lead-block">Then I finally went to physical therapy. Within two weeks, the pain was gone.</div>
+
+          <p>Turns out it was an impingement. Nothing mysterious. Nothing dramatic. It just needed attention, consistency, and a little discomfort in the short term.</p>
+          <p>Yes, I had to do exercises every morning. Yes, it cut into my day. Yes, it was inconvenient.</p>
+          <p>But being pain-free was worth it.</p>
+
+          <div class="punchline">
+            <p>It wasn't complicated. I just had to stop avoiding the short-term discomfort of solving the problem.</p>
+          </div>
+
+          <h2>Companies do the exact opposite every single day.</h2>
+          <p>They tolerate dysfunction. They make excuses. They protect toxic people. They know the issue, but they would rather limp with it than fix it.</p>
+          <p>Because fixing it would mean dealing with acute pain.</p>
+
+          <ul class="tight-list">
+            <li>Having the hard conversation.</li>
+            <li>Replacing the person everyone claims is indispensable.</li>
+            <li>Admitting the company waited too long.</li>
+            <li>Training someone new.</li>
+            <li>Letting the team feel short-handed for a while.</li>
+          </ul>
+
+          <p>So they choose chronic pain instead.</p>
+          <p>They build workarounds. They tell everyone to be patient. They coach the rest of the team to adjust. They stack initiative after initiative over a cracked foundation and call it progress.</p>
+          <p>Meanwhile, the culture gets heavier. The best people get quieter. The room gets colder. And everybody knows exactly where the pain is coming from.</p>
+
+          <h2>“We can't afford to lose them.”</h2>
+          <p>Really?</p>
+          <p>What does it cost to keep them?</p>
+          <ul class="tight-list">
+            <li>Burned-out high performers.</li>
+            <li>Silent resentment.</li>
+            <li>Meetings full of fake smiles.</li>
+            <li>People who stop giving their best because their best keeps getting punished.</li>
+            <li>Exit after exit from people the company actually needed.</li>
+          </ul>
+
+          <p>Companies love to talk about the risk of removing a toxic person. They rarely calculate the cost of keeping one.</p>
+          <p>And that cost is brutal.</p>
+          <p>A toxic employee does not just do their own damage. They poison the air around them. They slow decisions down. They make good people defensive. They drain emotional energy from the people who are actually trying to make the place better.</p>
+          <p>Sometimes a team performs better down one person because the person who left was the blockage.</p>
+          <p>Not every empty seat is a crisis. Sometimes it is the first deep breath the team has taken in years.</p>
+
+          <div class="punchline">
+            <p>Removing toxicity is cultural physical therapy: short-term strain, long-term healing.</p>
+          </div>
+
+          <h2>“But we're a great company!”</h2>
+          <p>Are you?</p>
+          <p>Or do you just think you are?</p>
+
+          <div class="restaurant-card">
+            <div class="restaurant-top">
+              <div class="stars">★★★★★</div>
+              <h3>Best Steak in Town</h3>
+            </div>
+            <div class="restaurant-body">
+              <p>Imagine a restaurant with a big, shiny sign outside that says, “Best Steak in Town.”</p>
+              <p>The website looks amazing. The photos are perfect. The menu is confident. The owners believe every word of it.</p>
+              <p>Then you walk in, order the ribeye, and it is dry, tough, flavorless, and overcooked.</p>
+              <p>So who is right? The restaurant, or the person eating the steak?</p>
+              <p><strong>The person eating the steak.</strong></p>
+            </div>
+          </div>
+
+          <p>The restaurant can insist it is great all day long. It can print it on the menu. It can put it on the sign. It can post it online.</p>
+          <p>But if the customer eats the steak and says, “This is terrible,” the customer is not confused. The customer had the experience.</p>
+          <p>And if enough customers stop coming back, the restaurant has its answer.</p>
+
+          <div class="punchline">
+            <p>You don't get to decide if your company is a great place to work. Your employees do.</p>
+          </div>
+
+          <p>That sentence bothers people because it takes control out of the company's hands.</p>
+          <p>Good.</p>
+          <p>Because culture is not what a company claims. Culture is what people experience.</p>
+          <p>If people are quitting, coasting, shutting down, or begging to be heard, you have your answer.</p>
+          <p>You can plaster values on the wall. You can launch culture campaigns. You can hand out pizza, shirts, mugs, and slogans.</p>
+          <p>But if people are walking out the door or emotionally checking out while still collecting a paycheck, the steak's no good.</p>
+
+          <h2>You already know what is wrong.</h2>
+          <p>That is the part nobody wants to say out loud.</p>
+          <p>Most companies are not confused. They are avoiding.</p>
+          <p>They have the survey results. They have the exit interviews. They have the hallway whispers. They have the names. They have the patterns. They have the meetings after the meetings where people finally tell the truth because they did not feel safe saying it in the actual meeting.</p>
+          <p>But instead of acting, the company goes looking for more advice.</p>
+          <p>Another consultant. Another workshop. Another benchmark visit. Another leadership book. Another committee. Another listening session.</p>
+          <p>And all of that can look responsible.</p>
+          <p>But sometimes it is just delay wearing a nice shirt.</p>
+
+          <div class="lead-block">The answer is not hidden. It is sitting in the feedback the company keeps asking for and refusing to act on.</div>
+
+          <h2>For owners, founders, and executives who take this personally.</h2>
+          <p>This is where it gets uncomfortable.</p>
+          <p>In privately held companies especially, criticism can feel personal. Owners pour years, money, energy, and identity into the business. So when employees say the culture hurts, it can sound like they are trashing the company.</p>
+          <p>They are not.</p>
+          <p>They are not attacking your legacy. They are not disrespecting your sacrifice. They are not trying to burn down what you built.</p>
+          <p>They are saying, “We want this to be a good place to work.”</p>
+          <p>That should not be treated like betrayal. That should be treated like a gift.</p>
+          <p>The people who still speak up usually still care. The truly checked-out people do not fight for better. They leave, coast, or wait for retirement.</p>
+
+          <div class="punchline">
+            <p>The people telling you it hurts are not always your enemies. Sometimes they are the last people trying to save the place.</p>
+          </div>
+
+          <p>But companies punish truth-tellers all the time because the truth creates acute pain.</p>
+          <p>It forces a decision. It removes plausible deniability. It makes someone responsible.</p>
+          <p>And that is why chronic pain wins.</p>
+          <p>Chronic pain can be explained away. Acute pain demands action.</p>
+
+          <h2>So the company keeps limping.</h2>
+          <p>It keeps pretending the steak is great.</p>
+          <p>It keeps hoping people stop complaining.</p>
+          <p>It keeps calling turnover a fit issue.</p>
+          <p>It keeps calling dysfunction a communication issue.</p>
+          <p>It keeps protecting the problem and asking everyone else to be professional about the damage.</p>
+
+          <div class="finale">
+            <p>You can live with pain and pretend you are fine.</p>
+            <p>Or you can deal with it, feel the sting, and finally get better.</p>
+            <p>But you cannot do both.</p>
+          </div>
+
+          <p>The people who still care are not trying to tear the company down.</p>
+          <p>They are tired of pretending it tastes good when it does not.</p>
+          <p>They are tired of limping around a problem everyone can see.</p>
+          <p>They are tired of companies choosing long-term pain because short-term healing feels inconvenient.</p>
+          <p class="short">Fix the shoulder. Fire the toxin. Cook a better steak.</p>
+          <p>But stop asking people to clap for a meal they can barely swallow.</p>
+        </main>
+
+        <aside>
+          <div class="side-box">
+            <div class="side-label">Core Truth</div>
+            <p>Culture is not what the company claims. Culture is what employees experience.</p>
+          </div>
+
+          <div class="side-box light">
+            <div class="side-label">The Cost</div>
+            <p>Keeping a toxic person rarely preserves stability. More often, it quietly drains the people holding the place together.</p>
+          </div>
+
+          <div class="side-box">
+            <div class="side-label">Gut Check</div>
+            <p>If people keep leaving the restaurant, stop arguing with the reviews and check the steak.</p>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

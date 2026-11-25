@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Determines Your Worth? | Jared Scott</title>
+<meta name="description" content="Two stories, a priceless Ming vase mistaken for a flowerpot and a crumpled hundred-dollar bill, make the case that your worth was never up for a vote.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Self-Worth</p>
+  <h1>What Determines Your Worth?</h1>
+  <p class="dek">A misappraised painting and a dirty hundred-dollar bill both make the same point: your value was never up for someone else's vote.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <img alt="" class="inline-photo" src="https://media.licdn.com/dms/image/v2/C5612AQGQcrVZ4KtHXA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1628706180085?e=1786579200&amp;v=beta&amp;t=tsVpsdIEZaAoD5us9wZo_Nq4TONQ52-iOyZX36sgsNg"/><p class="lead">SEVERAL years ago a woman wanted to have one of her oil paintings appraised. This prized painting had been in her family for over two centuries.  She contacted a man in this line of work to perform the appraisal. When he arrived at her home, as he was walking up through the garden entryway, he noticed a small vase with a flower growing out of it. As the women met him at the door, he asked her “Where did you get that vase?”</p><p>“Oh, that old thing? My husband received that on one of his business trips to the Orient.” No one knows what the painting was ever appraised for, but the vase happened to be a 15th century piece of the Ming Dynasty and it was appraised at over 1 million US dollars. </p><p>What's the point of this story? Just because we have something of value in our possession, doesn't automatically mean that we know it or appreciate its value. In the case of the woman, it wasn't until someone came along that could point out the true value of something that, until that moment, was just another place to put a flowering plant. </p><p>While it is great to feel valued and appreciated by others, we often find that appreciation is like a scarce commodity in the world that we live in. More often than not, affirmation comes in the form of a thumbs up, a smiley face, or a heart emoji on one's social media post. It is as if we crave affirmation to determine our value as set by strangers. </p><img alt="" class="inline-photo" src="https://media.licdn.com/dms/image/v2/C4D12AQGj_RkfshBPKQ/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1628710715697?e=1786579200&amp;v=beta&amp;t=Vjde9T-84ISgrRRrhODMO-chRRJs2g6L_RrwYFSdMOY"/><p>Now imagine you are standing on a street corner and a piece of greenish paper catches your eye. It is crinkled up and dirty. Who knows where it’s been but you see on the corner edge what looks like a 1 followed by two 0's. You immediately make the connection and walk over to grab this One-hundred dollar bill that has been discarded. Let me ask you, "Is that bill worth less than face value because it is dirty, wrinkled, and maybe even tattered?" "Absolutely not!" you say. Well, you are 100% correct. Regardless of the appearance of that bill, it is still worth $100 US Dollars.</p><p>What's the point of this situation? We should never let other people's view of us determine our worth. Is it nice to be appreciated? Absolutely. Is there a connection between our monetary compensation and appreciation? No doubt there is. However, we will rarely receive either in the amount and way that we feel we deserve. </p><p>This is why it is so important that we recognize on our own, our personal value and worth. Perform a self-appraisal. Ask yourself, "What am I good at? How can I leverage my strengths to increase my personal value? How can I shore up my weaknesses?" It is a mind-set that takes discipline, effort, and patience. </p><p>One of my favorite quotes about personal value says, "Your value doesn't decrease based upon someone's inability to see your worth"- anonymous. If not for that appraiser’s keen eye, that vase may still be filled with dirt and a plant. It is so important that we periodically step back and examine where we are and where we want to go regarding our view of our self-worth. What is the best way to do this?</p><p>One way to do this is to recognize the things that do NOT determine your self-worth: Your Job, Your Age, Your Appearance, Other People, and Your Money. Now that those are off the table, what are you left with? You have what makes you who you are, your personality, your loyalty, your work ethic, your kindness, and your self-reliance. Focus on YOU.</p><p>I always like to end with answering why I picked the opening image for this article. The photo was taken by me at Muir Woods National Park in California. This park contains hundreds of Redwoods, and you can learn a lot from these majestic trees. In the case of determining your value, be like a redwood. Whether or not people come to admire them, they stand tall and proud. They have taken many centuries to reach the heights they have by patiently developing from a small seed that could fit on the tip of your pinky finger into towering giants. They have produced bark over a foot thick to weather the heat of raging fires. So stand tall knowing your worth, be patient as you develop your worth, and be resilient to situations that seek to undermine your worth.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why We Wait for Catastrophe Before We Change</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #5f6368;
+      --paper: #ffffff;
+      --soft: #f4f1ec;
+      --line: #d8d2c8;
+      --accent: #b00020;
+      --deep: #242424;
+      --quote: #8a0018;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--soft);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.65;
+    }
+
+    .top-rule {
+      height: 7px;
+      background: var(--accent);
+      width: 100%;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: var(--paper);
+      min-height: 100vh;
+      box-shadow: 0 20px 70px rgba(0,0,0,0.10);
+    }
+
+    header {
+      padding: 58px 72px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 78px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      margin: 0 0 22px;
+      font-weight: 500;
+      max-width: 950px;
+    }
+
+    .subtitle {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--deep);
+      font-size: 22px;
+      line-height: 1.45;
+      max-width: 830px;
+      margin: 0 0 28px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+
+    .content-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 720px) 260px;
+      gap: 54px;
+      padding: 54px 72px 72px;
+      align-items: start;
+    }
+
+    article p {
+      font-size: 20px;
+      margin: 0 0 25px;
+    }
+
+    article .lead {
+      font-size: 26px;
+      line-height: 1.45;
+      color: var(--deep);
+    }
+
+    h2 {
+      font-size: 36px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin: 52px 0 20px;
+      font-weight: 500;
+    }
+
+    .pullquote {
+      border-left: 6px solid var(--accent);
+      padding: 10px 0 10px 24px;
+      margin: 42px 0;
+      font-size: 33px;
+      line-height: 1.15;
+      color: var(--quote);
+      letter-spacing: -0.035em;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      border-top: 4px solid var(--accent);
+      padding-top: 18px;
+    }
+
+    .sidebar h3 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0 0 14px;
+    }
+
+    .sidebar ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--deep);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .sidebar li { margin-bottom: 12px; }
+
+    .case-box {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f4ef;
+      border: 1px solid var(--line);
+      padding: 22px 24px;
+      margin: 42px 0;
+    }
+
+    .case-box h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+
+    .case-box p, .case-box li {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .case-box ul { margin-bottom: 0; padding-left: 20px; }
+
+    .sources {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .sources a { color: var(--accent); text-decoration: none; }
+    .sources a:hover { text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      header, .content-wrap { padding-left: 28px; padding-right: 28px; }
+      .content-wrap { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      article p { font-size: 18px; }
+      article .lead { font-size: 22px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; }
+      .sidebar { position: static; }
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="top-rule"></div>
+  <main class="page">
+    <header>
+      <div class="eyebrow">Leadership & Change Management</div>
+      <h1>Why We Wait for Catastrophe Before We Change</h1>
+      <p class="subtitle">The UPS MD-11 tragedy is not just an aviation story. It is a hard lesson in how organizations tolerate known risk until the cost of ignoring it becomes impossible to hide.</p>
+      <div class="meta">
+        <span>Case Study</span>
+        <span>UPS Flight 2976</span>
+        <span>MD-11 Pylon Bearing Failure</span>
+        <span>Prepared for leadership discussion</span>
+      </div>
+    </header>
+
+    <div class="content-wrap">
+      <article>
+        <p class="lead">Most organizations do not change when the warning light first comes on. They change when the smoke fills the room.</p>
+
+        <p>That is what makes the UPS MD-11 accident such a painful and useful case study. The point is not to turn a tragedy into a slogan. The point is to look honestly at a pattern that shows up in aviation, manufacturing, leadership, culture, safety, relationships, and business: we often know enough to act before disaster, but we wait until disaster gives us permission.</p>
+
+        <p>On November 4, 2025, UPS Flight 2976, a Boeing/McDonnell Douglas MD-11F, crashed shortly after takeoff from Louisville Muhammad Ali International Airport. The NTSB reported that the aircraft was destroyed after impacting buildings and the ground, killing the three crewmembers and people on the ground. The FAA later issued an emergency airworthiness directive for MD-11 and MD-11F aircraft after the accident, prohibiting further flight until inspections and corrective actions were completed.</p>
+
+        <div class="pullquote">Catastrophe often does not create clarity. It reveals clarity that was ignored.</div>
+
+        <p>The emerging focus was the left engine and pylon. The FAA’s directive said the accident involved the left-hand engine and pylon detaching from the airplane during takeoff. NTSB investigative updates identified fatigue cracking in areas connected to the pylon structure and spherical bearing assembly. Afterward, the response was immediate: grounding, inspections, emergency directives, operational disruption, and ultimately UPS retiring its MD-11 fleet.</p>
+
+        <p>And that is the uncomfortable leadership lesson. The risk did not become serious only after the crash. It became impossible to dismiss after the crash.</p>
+
+        <h2>The dangerous gap between “known” and “mandatory”</h2>
+
+        <p>In most organizations, there is a large and dangerous space between these two statements:</p>
+
+        <p><strong>“We know this could become a problem.”</strong></p>
+        <p><strong>“We are required to fix it now.”</strong></p>
+
+        <p>That gap is where risk learns to hide.</p>
+
+        <p>Before catastrophe, the language usually sounds careful and reasonable. Monitor it. Review it. Inspect it at the next interval. Wait for more data. Study the trend. See if the condition repeats. Avoid unnecessary disruption. Do not overreact.</p>
+
+        <p>Sometimes that caution is wise. Not every risk deserves a five-alarm response. But caution becomes cowardice when repeated warnings are treated as background noise simply because the worst-case outcome has not happened yet.</p>
+
+        <p>That is the trap. Leaders and regulators can become more comfortable managing the paperwork around risk than eliminating the risk itself.</p>
+
+        <h2>Why organizations wait</h2>
+
+        <p>Waiting rarely feels reckless in the moment. It often feels responsible, disciplined, and financially mature. Fixes cost money. Mandatory action disrupts operations. Grounding assets creates pressure. Pulling equipment out of service affects customers. Replacing parts too early can look wasteful. Raising the alarm can make the person raising it look dramatic.</p>
+
+        <p>So the organization learns to live with the warning.</p>
+
+        <p>That same pattern shows up far beyond aviation. A toxic supervisor stays because the numbers are good. A failing process remains because employees have learned workarounds. A safety hazard sits unresolved because no one has been badly hurt yet. A training gap is ignored because mistakes have been recoverable. A culture problem gets minimized because turnover has not exploded.</p>
+
+        <p>Then something breaks. Someone gets hurt. A customer leaves. A lawsuit lands. A key employee quits. A machine fails. A public incident exposes what insiders already knew.</p>
+
+        <p>Suddenly, the fix that was “too expensive” becomes non-negotiable.</p>
+
+        <div class="case-box">
+          <h3>Leadership Discussion Questions</h3>
+          <ul>
+            <li>What known risk are we currently tolerating because it has not hurt us badly enough yet?</li>
+            <li>Where have we confused inspection, tracking, or discussion with actual corrective action?</li>
+            <li>What would we fix immediately if a serious incident happened tomorrow?</li>
+            <li>Why are we waiting for the incident?</li>
+          </ul>
+        </div>
+
+        <h2>The false comfort of “no catastrophe yet”</h2>
+
+        <p>One of the most dangerous sentences in leadership is, “It has not happened yet.”</p>
+
+        <p>That sentence feels like evidence. It is not. It is a temporary condition.</p>
+
+        <p>“It has not happened yet” does not mean the system is safe. It may only mean the system has been lucky. It may mean the failure mode is rare, hidden, intermittent, slow-moving, or waiting for the right combination of age, fatigue, pressure, temperature, workload, schedule, and human decision-making.</p>
+
+        <p>Luck can make weak systems look strong for a long time.</p>
+
+        <p>That is why strong leadership has to ask a harder question: <strong>Are we safe because the system is healthy, or are we safe because nothing has exposed the weakness yet?</strong></p>
+
+        <h2>Catastrophe as a forcing function</h2>
+
+        <p>After a catastrophe, urgency appears instantly. Meetings get scheduled. Budgets open. Decisions accelerate. Policies change. Leaders who once asked for more data suddenly ask why no one acted sooner.</p>
+
+        <p>But that urgency is not leadership. It is consequence.</p>
+
+        <p>Real leadership acts before consequence removes all other choices. It does not need a death, lawsuit, scandal, shutdown, or customer revolt to do the obvious thing. It respects weak signals before they become breaking news.</p>
+
+        <p>This is not about panic. It is about moral seriousness. When the stakes involve people, safety, trust, or long-term organizational health, waiting for catastrophe is not patience. It is gambling with someone else’s future.</p>
+
+        <h2>The lesson for leaders</h2>
+
+        <p>The UPS MD-11 case is still subject to formal investigation, and aviation professionals should rely on the NTSB and FAA for final technical conclusions. But as a leadership case study, the lesson is already clear enough to use.</p>
+
+        <p>Known risk without action is not wisdom. It is delayed responsibility.</p>
+
+        <p>Every organization has its own version of the pylon bearing. A part, a process, a person, a culture issue, a training gap, a maintenance shortcut, a staffing weakness, a leadership habit. Something that people know is not right but have learned to tolerate.</p>
+
+        <p>The challenge is simple, but not easy: find it before it fails.</p>
+
+        <p>Because the most expensive change is the change you make after people are already hurt.</p>
+
+        <section class="sources">
+          <strong>Source notes:</strong><br />
+          NTSB investigation page and investigative update for UPS Flight 2976; FAA Emergency Airworthiness Directive 2025-23-51 and related Federal Register notices; AP reporting on UPS retiring the MD-11 fleet after the Louisville crash. This article uses those public sources as factual grounding while framing the broader leadership lesson as commentary.
+          <br /><br />
+          <a href="https://www.ntsb.gov/investigations/Pages/DCA26MA024.aspx">NTSB investigation page</a> ·
+          <a href="https://www.federalregister.gov/documents/2025/11/14/2025-19891/airworthiness-directives-the-boeing-company-airplanes">FAA / Federal Register AD</a> ·
+          <a href="https://apnews.com/article/9832be76e1a025ba2b89582778ee45db">AP report on UPS MD-11 retirement</a>
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <h3>The Core Lesson</h3>
+        <ul>
+          <li>Known risk does not become urgent just because leaders finally acknowledge it.</li>
+          <li>Tracking a problem is not the same as fixing it.</li>
+          <li>Catastrophe often exposes decisions that were postponed, softened, or normalized.</li>
+          <li>The best leaders act while change is still optional.</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leading Yourself First</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>:root{--bg:#FFFFFF;--surface:#EEF1EE;--soft:#FBEBCF;--text:#23292E;--head:#1D2B36;--mute:#5E6A70;--rule:#C9D0CC;--gold:#E9A23B;--goldtext:#9A5F0B;--pine:#2E5E4E;--pinetext:#2E5E4E;--railbg:rgba(255,255,255,.92);--field:#FFFFFF;--letter:#FCFBF7;
+--serif:"Lora",Georgia,"Times New Roman",serif;--sans:"Poppins",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141B21;--surface:#1E2830;--soft:#3A2E1A;--text:#E4E8EA;--head:#F2F4F5;--mute:#A3AEB4;--rule:#3A4751;--goldtext:#F0B75A;--pinetext:#8FC9B4;--pine:#3F7A66;--railbg:rgba(20,27,33,.92);--field:#18212A;--letter:#1A232B}}
+:root[data-theme="dark"]{--bg:#141B21;--surface:#1E2830;--soft:#3A2E1A;--text:#E4E8EA;--head:#F2F4F5;--mute:#A3AEB4;--rule:#3A4751;--goldtext:#F0B75A;--pinetext:#8FC9B4;--pine:#3F7A66;--railbg:rgba(20,27,33,.92);--field:#18212A;--letter:#1A232B}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;font-weight:400;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--serif);color:var(--head);line-height:1.15;font-weight:700;margin:0 0 .5em}
+h2{font-size:clamp(1.9rem,4.5vw,2.8rem);max-width:22ch}
+h3{font-size:1.25rem}
+h3.sub{font-size:1.45rem;margin-top:2rem}
+h4{font-size:.95rem;font-weight:700;color:var(--pinetext);margin:0 0 .4em}
+p{margin:0 0 1em}
+em{font-family:var(--serif);font-style:italic}
+b{color:var(--head)}
+a{color:var(--pinetext)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.lede{font-size:1.2rem;font-weight:300;line-height:1.55}
+.small{font-size:.88rem;color:var(--mute)}
+main{display:block}
+.sec{padding:0 0 4.5rem}
+.wrap{max-width:860px;margin:0 auto;padding:3rem 1.4rem 0}
+.center{text-align:center}.center h2{margin-left:auto;margin-right:auto}.center .lede{max-width:40ch;margin:0 auto 1.6rem}
+
+/* rail */
+.rail{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--railbg);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:calc(env(safe-area-inset-top,0px) + .55rem) 1rem .5rem;border-bottom:1px solid var(--rule);transform:translateY(-110%);transition:transform .3s}
+.rail.show{transform:none}
+.track{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;position:relative}
+.track:before{content:"";position:absolute;left:5px;right:5px;top:5px;height:2px;background:var(--rule)}
+.track a{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.72rem;color:var(--mute);text-decoration:none;font-weight:500}
+.track a:first-child{align-items:flex-start}.track a:last-child{align-items:flex-end}
+.track i{width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--rule);z-index:1}
+.track a.done i{background:var(--rule)}
+.track a.on{color:var(--head);font-weight:700}.track a.on i{background:var(--gold);border-color:var(--gold)}
+@media (max-width:560px){.track a span{display:none}.track a.on span{display:block;position:absolute;top:16px;white-space:nowrap}.track a:first-child.on span{left:0}.track a:last-child.on span{right:0}.rail{padding-bottom:1.4rem}}
+
+/* cover */
+.cover{min-height:100vh;min-height:100svh;background-size:cover;background-position:35% center;position:relative;display:flex;align-items:center;justify-content:flex-end;color:#fff}
+.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,26,34,0) 15%,rgba(18,26,34,.55) 50%,rgba(18,26,34,.92) 85%)}
+.cover-in{position:relative;width:min(460px,100%);padding:3rem 2rem;margin-right:4vw}
+.cover h1{color:#fff;font-size:clamp(3rem,8vw,5rem);line-height:.98;margin:.4rem 0 1.4rem}
+.for{color:var(--gold);font-weight:500;font-size:.95rem;margin:0}
+.cover .sub{font-family:var(--serif);font-style:italic;font-size:1.45rem;line-height:1.35;border-top:3px solid var(--gold);padding-top:1rem}
+.by{font-weight:500;margin-top:2.2rem}.by span{display:block;font-weight:300;font-size:.9rem;opacity:.85}
+.begin{display:inline-block;margin-top:.6rem;background:var(--gold);color:#1D2B36;font-weight:700;padding:.75rem 1.4rem;text-decoration:none}
+@media (max-width:700px){.cover{align-items:flex-end;background-position:30% center}.cover:before{background:linear-gradient(180deg,rgba(18,26,34,0) 25%,rgba(18,26,34,.92) 70%)}.cover-in{margin:0;padding:2rem 1.4rem 3rem}}
+
+/* heroes */
+.hero{height:58vh;min-height:320px;max-height:620px;background-size:cover;background-position:center;position:relative}
+.hero.tall{height:70vh;max-height:720px}
+.hero.short{height:42vh;min-height:260px;max-height:440px}
+.hero.low{background-position:center 70%}
+.hero.start{background-position:center 30%}
+.hero.shade:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.65))}
+.hero > *{position:absolute;z-index:1}
+.on-img{left:max(1.4rem,calc(50% - 430px));bottom:2rem;color:#fff;max-width:min(18ch,calc(100% - 2.8rem));text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.on-img.boxed{color:#1D2B36;text-shadow:none;background:rgba(255,255,255,.92);padding:.6rem 1rem;bottom:auto;top:2rem;left:auto;right:1.4rem;max-width:min(13ch,calc(100% - 2.8rem))}
+.on-img.boxed.low{top:auto;bottom:1.5rem}
+.hero-cap{left:max(1.4rem,calc(50% - 430px));right:1.4rem;bottom:2rem;max-width:760px}
+.mark{right:1.4rem;bottom:1.8rem;background:#fff;color:#1D2B36;border-left:6px solid var(--gold);padding:1rem 1.3rem;font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1.2;max-width:min(360px,calc(100% - 2.8rem))}
+.mark.left{right:auto;left:1.4rem;top:1.8rem;bottom:auto}
+.mark span{display:block;font-family:var(--sans);font-size:.8rem;color:#9A5F0B;margin-bottom:.2rem}
+.mark em{font-weight:400;font-size:1.1rem;display:block}
+.mtn{height:80vh;max-height:760px;min-height:420px;background-size:cover;background-position:center 30%;position:relative;display:flex;align-items:flex-end}
+.mtn h2{width:100%;max-width:none;margin:0 0 12%;text-align:center;background:rgba(255,255,255,.93);color:#1D2B36;padding:1rem;border-top:4px solid #1D2B36;border-bottom:4px solid #1D2B36}
+
+/* verse */
+.verse{margin:.7rem 0 0}
+.verse .ref{display:block;font-size:.8rem;font-weight:700;color:var(--pinetext)}
+.verse .vt{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.4}
+.verse.big .ref{color:#fff;font-weight:500}.verse.big .vt{color:#fff;font-size:clamp(1.3rem,3vw,1.9rem);text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.verse.line{border-top:1.5px solid var(--rule);padding-top:.8rem;margin-top:2rem}
+.verse.line .ref{display:inline;margin-right:.5rem}
+.verse.top{border:none;padding:0;margin:-.4rem 0 1.4rem}
+.pull{font-family:var(--serif);font-style:italic;font-size:1.45rem;line-height:1.35;color:var(--head);border-left:4px solid var(--gold);padding-left:1rem}
+.pull.wide{font-size:1.65rem;margin:2rem 0}
+
+/* layout */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2rem}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.split{display:grid;grid-template-columns:300px 1fr;gap:2rem;align-items:start;margin-top:1rem}
+.split.rev{grid-template-columns:1fr 280px}
+.inset{margin:0}.inset img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.panel{background:var(--surface);padding:1.3rem 1.5rem}
+@media (max-width:720px){.two,.three,.split,.split.rev{grid-template-columns:1fr}.split.rev figure{order:-1}}
+ul.ticks{list-style:none;padding:0;margin:0}
+ul.ticks li{padding-left:1.6rem;position:relative;margin-bottom:.45rem}
+ul.ticks li:before{content:"";position:absolute;left:.1rem;top:.45em;width:.65rem;height:.35rem;border-left:2.5px solid var(--pinetext);border-bottom:2.5px solid var(--pinetext);transform:rotate(-45deg)}
+
+/* inputs */
+textarea,input[type=text]{width:100%;font:inherit;font-size:1rem;color:var(--text);background:var(--field);border:1.5px solid var(--rule);border-radius:3px;padding:.7rem .85rem;margin:0 0 1.2rem;line-height:1.6;resize:vertical}
+textarea{background-image:linear-gradient(transparent calc(1.6em + .7rem - 1px),var(--rule) 0);background-size:100% 1.6em;background-position:0 -.05rem;background-origin:content-box;background-attachment:local}
+textarea::placeholder,input::placeholder{color:var(--mute);opacity:.8}
+.fl{display:block;font-weight:700;font-size:.95rem;color:var(--pinetext);margin:1rem 0 .35rem}
+.two > div > .fl:first-child,.three > div > .fl:first-child{margin-top:0}
+.prompt{border-top:3px solid var(--gold);padding-top:1.2rem;margin-top:1.8rem}
+.q{border-top:3px solid var(--gold);padding-top:1rem}.q p{font-size:.95rem}
+button.ghost{font:inherit;font-size:.9rem;font-weight:500;background:none;border:1.5px solid var(--rule);color:var(--text);padding:.55rem 1rem;cursor:pointer}
+
+/* leader grid */
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.2rem 0 2rem}
+.quad figure{margin:0}.quad img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#fff}.quad img.contain{object-fit:contain}
+.quad figcaption{font-size:.85rem;color:var(--mute);line-height:1.4;margin-top:.5rem}
+@media (max-width:640px){.quad{grid-template-columns:1fr 1fr}}
+
+/* truths */
+.map{display:grid;grid-template-columns:1fr 220px;gap:1.5rem;align-items:center}
+.sign{width:100%;background:#fff}
+@media (max-width:640px){.map{grid-template-columns:1fr}.sign{max-width:200px;margin:0 auto;order:-1}}
+ol.truths{list-style:none;padding:0;margin:0}
+ol.truths li{display:grid;grid-template-columns:3.2rem 1fr;gap:1rem;padding:1.3rem 0;border-bottom:1.5px solid var(--rule)}
+ol.truths li:first-child{border-top:1.5px solid var(--rule)}
+ol.truths .n{font-family:var(--serif);font-weight:700;font-size:3rem;line-height:.9;color:var(--gold)}
+ol.truths p{margin:0 0 .3rem}
+ol.truths a{font-size:.88rem;font-weight:500}
+.band{margin-top:2.4rem;background:#1D2B36;color:#fff;font-family:var(--serif);font-style:italic;font-size:1.4rem;text-align:center;padding:1.3rem}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0 1rem}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;border:1.5px solid var(--rule);border-radius:999px;padding:.3rem .9rem;font-size:.9rem;cursor:pointer;user-select:none}
+.chip input:checked + span{background:var(--pine);border-color:var(--pine);color:#fff}
+.chip input:focus-visible + span{outline:3px solid var(--gold);outline-offset:2px}
+
+/* rating */
+.scale{display:flex;justify-content:space-between;font-size:.8rem;color:var(--mute);margin:.8rem 0 .3rem}
+.rate{border:none;border-bottom:1px solid var(--rule);margin:0;padding:.9rem 0;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.rate legend{float:left;padding:0;max-width:26rem}
+.rate legend b{display:block}.rate legend span{font-size:.88rem;color:var(--mute)}
+.opts{display:flex;gap:.4rem}
+.opts input,.days input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;border:2px solid var(--rule);font-weight:500;cursor:pointer}
+.opts input:checked + span{background:var(--gold);border-color:var(--gold);color:#1D2B36}
+.opts input:focus-visible + span,.days input:focus-visible + span{outline:3px solid var(--gold);outline-offset:2px}
+.score{margin:1.2rem 0 1.4rem;font-size:1.05rem}.score b{font-size:1.4rem;color:var(--goldtext)}
+
+/* blame/ownership */
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
+.tri div{background:var(--surface);padding:1rem 1.1rem}.tri .gold{background:var(--soft)}
+.tri p{margin:0;font-family:var(--serif);font-style:italic}
+@media (max-width:640px){.tri{grid-template-columns:1fr}}
+.swaphead{display:grid;grid-template-columns:1fr 2.2rem 1fr;font-weight:700;font-size:.9rem}
+.swaphead span{padding:.45rem .8rem;color:#fff;background:#5E6A70}.swaphead span:last-child{grid-column:3;background:#2E5E4E}
+.swap{display:grid;grid-template-columns:1fr 2.2rem 1fr;align-items:center;border-bottom:1px solid var(--rule)}
+.swap p{margin:0;padding:.75rem .8rem}.blame{color:var(--mute)}.own{color:var(--head);font-weight:500}
+.arr{width:.8rem;height:.8rem;border-top:2.5px solid var(--gold);border-right:2.5px solid var(--gold);transform:rotate(45deg);justify-self:center}
+@media (max-width:560px){.swaphead{display:none}.swap{grid-template-columns:1fr;padding:.4rem 0}.swap p{padding:.2rem 0}.arr{transform:rotate(135deg);justify-self:start;margin:.2rem .3rem}}
+ol.reset{list-style:none;padding:0;counter-reset:r;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1rem 0 1.4rem}
+ol.reset li{counter-increment:r;background:var(--surface);border-top:4px solid var(--gold);padding:1rem;font-size:.92rem;line-height:1.45}
+ol.reset li:before{content:counter(r);display:block;font-family:var(--serif);font-weight:700;font-size:1.8rem;color:var(--goldtext);line-height:1;margin-bottom:.3rem}
+ol.reset b{display:block;font-size:1.05rem}
+@media (max-width:720px){ol.reset{grid-template-columns:1fr 1fr}}
+
+/* tracker */
+.ex{background:var(--surface);padding:.9rem 1.1rem;font-size:.92rem}
+.tracker{margin:1.4rem 0 0}
+.trow{border-bottom:1px solid var(--rule);padding:.9rem 0}
+.trow .pr{margin-bottom:.6rem}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:.35rem}
+.days span{display:grid;place-items:center;height:2.6rem;border:2px solid var(--rule);font-size:.8rem;font-weight:500;cursor:pointer}
+.days input:checked + span{background:var(--pine);border-color:var(--pine);color:#fff}
+.rule{border-left:5px solid var(--gold);padding:.2rem 0 .2rem 1.1rem;margin:1.4rem 0}
+.rule p{margin:0}
+
+/* partner */
+ol.q5{padding-left:1.2rem;margin:0}ol.q5 li{margin-bottom:.4rem;font-size:.95rem}
+.covenant{border:2px solid var(--head);padding:1.4rem 1.6rem;margin-top:2.2rem}
+.cv{font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.sigs{display:grid;grid-template-columns:1fr 1fr;gap:0 1.4rem}
+.sigs span{font-size:.82rem;color:var(--mute)}
+@media (max-width:560px){.sigs{grid-template-columns:1fr}}
+
+/* dark past */
+.sec.dark{background:linear-gradient(rgba(12,18,24,.8),rgba(12,18,24,.92)),var(--rings) center/cover;color:#fff;padding-bottom:4rem}
+.sec.dark .wrap{padding-top:4rem}
+.sec.dark h2{color:#fff}.sec.dark b{color:#fff}
+.litany{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
+.litany p{margin:0 0 .55rem;font-weight:300;color:rgba(255,255,255,.88)}
+@media (max-width:640px){.litany{grid-template-columns:1fr}}
+.turn{font-family:var(--serif);font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);color:var(--gold);margin:1.8rem 0}
+.grace{border-top:1.5px solid rgba(255,255,255,.3);padding-top:1.3rem}
+.grace p{color:rgba(255,255,255,.92);font-weight:300}
+.verse.lightv{border:none;padding-top:.4rem}.lightv .ref{color:var(--gold)}.lightv .vt{color:#fff}
+
+.sort .box{background:var(--surface);padding:1.1rem 1.2rem .1rem}.sort .mine{background:var(--soft)}
+.note{border-top:1px solid var(--rule);padding-top:.8rem;margin-top:1rem}
+.zoom{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center bottom;margin-bottom:1.8rem;background:#fff}
+.potter{margin-top:1.4rem;align-items:center}
+.letterbox{background:var(--letter);border:1px solid var(--rule);padding:1.4rem 1.6rem .4rem;margin-top:1.2rem}
+.salute{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-bottom:.4rem}
+.letterbox textarea{border:none;background-color:transparent;padding-left:0;padding-right:0}
+.recap{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.recap span{background:var(--pine);color:#fff;padding:.45rem 1rem;font-weight:500;font-size:.95rem}
+
+.about{display:grid;grid-template-columns:minmax(0,380px) 1fr;background:var(--surface);align-items:center}
+.jared{width:100%;height:100%;min-height:420px;object-fit:cover;object-position:top}
+.about > div{padding:3rem 2rem;max-width:520px}
+.logo{width:220px;margin:0 0 1.5rem;background:#fff;padding:.6rem}
+@media (max-width:720px){.about{grid-template-columns:1fr}.jared{min-height:0;aspect-ratio:1/1}}
+
+@media print{.rail,.begin,button{display:none}.sec{break-inside:avoid-page}textarea{resize:none}}
+
+/* presentation additions */
+@media (min-width:1100px){body{font-size:19px}}
+.talk{margin:2.2rem 0 0;background:var(--soft);border-left:6px solid var(--gold);padding:1.3rem 1.6rem 1.1rem}
+.talk h4{font-family:var(--serif);font-size:1.35rem;color:var(--head);margin-bottom:.5rem}
+.talk ul{margin:0;padding:0;list-style:none}
+.talk li{position:relative;padding-left:1.6rem;margin-bottom:.6rem;font-size:1.1rem;line-height:1.45}
+.talk li:before{content:"";position:absolute;left:0;top:.5em;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold)}
+.sec.dark .talk{background:rgba(255,255,255,.08);color:#fff}.sec.dark .talk h4{color:#fff}
+.chip{display:inline-block;border:1.5px solid var(--rule);border-radius:999px;padding:.3rem .9rem;font-size:.95rem}
+.scale5{display:grid;grid-template-columns:repeat(5,1fr);max-width:420px;margin:0 0 1.2rem;row-gap:.3rem;text-align:center}
+.scale5 span{display:grid;place-items:center;width:2.6rem;height:2.6rem;margin:0 auto;border-radius:50%;border:2px solid var(--gold);font-weight:700;color:var(--head)}
+.scale5 em{font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--mute);grid-row:2}
+.scale5 em:first-of-type{grid-column:1}.scale5 em:last-of-type{grid-column:5}
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.area{background:var(--surface);padding:1rem;border-top:3px solid var(--pine)}
+.area b{display:block;font-size:1.05rem;margin-bottom:.2rem}.area span{font-size:.88rem;color:var(--mute);line-height:1.4;display:block}
+@media (max-width:800px){.areas{grid-template-columns:1fr 1fr}}
+button.swap{width:100%;font:inherit;text-align:left;background:none;border:none;border-bottom:1px solid var(--rule);color:inherit;cursor:pointer;padding:0}
+button.swap > span{padding:.8rem}
+button.swap .blame{color:var(--mute)}
+.own .ans{display:none;color:var(--head);font-weight:500}
+.own .hint{color:var(--goldtext);font-weight:500;font-size:.95rem}
+.swap.open .ans{display:inline}.swap.open .hint{display:none}
+#showall{margin-top:1rem}
+.tracker{border:1px solid var(--rule);margin:.4rem 0 0}
+.trow{display:grid;grid-template-columns:minmax(9rem,2.2fr) repeat(7,1fr);align-items:center;border-bottom:1px solid var(--rule);padding:0}
+.trow:last-child{border-bottom:none}
+.trow > span{padding:.7rem .4rem;text-align:center}
+.trow .pr{text-align:left;padding-left:.9rem;font-weight:500}
+.trow.head{background:#1D2B36;color:#fff;font-size:.85rem;font-weight:700}
+.trow .y:before{content:"";display:inline-block;width:1.4rem;height:1.4rem;background:var(--pine);border-radius:3px}
+.trow .n:before{content:"";display:inline-block;width:1.4rem;height:1.4rem;border:2px solid var(--rule);border-radius:3px}
+@media (max-width:560px){.trow{grid-template-columns:6.5rem repeat(7,1fr)}.trow > span{padding:.5rem .1rem;font-size:.75rem}.trow .pr{padding-left:.5rem}.trow .y:before,.trow .n:before{width:1rem;height:1rem}}
+ul.plain{margin:0 0 1rem;padding-left:1.1rem}ul.plain li{margin-bottom:.3rem}
+.sort .box{padding:1.2rem 1.3rem .4rem}
+.marks > div{border-top:3px solid var(--gold);padding-top:.8rem}
+.starters{list-style:none;padding:0;margin:0 0 1rem}
+.starters li{font-family:var(--serif);font-style:italic;font-size:1.15rem;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+ol.steps5{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}
+ol.steps5 li{counter-increment:s;background:var(--surface);border-top:4px solid var(--gold);padding:1rem;font-size:.9rem;color:var(--mute);line-height:1.4}
+ol.steps5 li:before{content:counter(s);display:block;font-family:var(--serif);font-weight:700;font-size:1.7rem;color:var(--goldtext);line-height:1;margin-bottom:.3rem}
+ol.steps5 b{display:block;color:var(--head);font-size:1rem;margin-bottom:.2rem}
+@media (max-width:800px){ol.steps5{grid-template-columns:1fr 1fr}}
+.keys{position:fixed;right:1rem;bottom:calc(env(safe-area-inset-bottom,0px) + .8rem);margin:0;font-size:.75rem;color:var(--mute);background:var(--railbg);padding:.3rem .7rem;border:1px solid var(--rule);opacity:0;transition:opacity .4s;pointer-events:none}
+.keys.show{opacity:1}
+@media (hover:none){.keys{display:none}}
+@media print{.keys,#showall{display:none}.own .ans{display:inline}.own .hint{display:none}}
+</style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+<meta name="site-list" content="hidden">
+</head><body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<nav class="rail" aria-label="Workbook progress"><div class="track"><a href="#leader" data-i="0"><i></i><span>Base camp</span></a><a href="#crossroads" data-i="1"><i></i><span>Lead yourself</span></a><a href="#truth2" data-i="2"><i></i><span>Own it</span></a><a href="#truth3" data-i="3"><i></i><span>Act with integrity</span></a><a href="#climb" data-i="4"><i></i><span>Summit</span></a></div></nav><main><header class="cover" data-stop="0" style="background-image:url(../../assets/article-images/leading-yourself-first-ff385ed3fc.webp)">
+<div class="cover-in">
+<h1>Leading Yourself First</h1>
+<p class="sub">The hardest and most important job you’ll ever have</p>
+<p class="by">Jared L. Scott<span>Authentic Leadership Solutions</span></p>
+<a class="begin" href="#leader">Start the climb</a>
+</div></header><section id="leader" data-stop="0" class="sec "><div class="wrap">
+<h2>What comes to mind when you hear the word “leader”?</h2>
+<div class="quad">
+<figure><img src="../../assets/article-images/leading-yourself-first-ed430478ae.webp" alt="A mother working at a kitchen table with her daughter in her lap"><figcaption>A mom working at the kitchen table with her daughter in her lap.</figcaption></figure>
+<figure><img src="../../assets/article-images/leading-yourself-first-e00941c84f.webp" alt="Sketch of Jesus"><figcaption>A carpenter from Nazareth who knelt to wash feet.</figcaption></figure>
+<figure><img src="../../assets/article-images/leading-yourself-first-b362bd156e.webp" alt="Stone memorial statue"><figcaption>A preacher who kept marching when it cost him.</figcaption></figure>
+<figure><img class="contain" src="../../assets/article-images/leading-yourself-first-6939755f23.webp" alt="Smiling firefighter"><figcaption>A firefighter who runs in while everyone else runs out.</figcaption></figure>
+</div>
+<p class="lede">None of them waited for a title. Leadership isn’t a job description or a corner office. It’s the way you carry yourself when life gets heavy, and the difference you make for the people around you.</p>
+<aside class="talk"><h4>Talk about it</h4><ul><li>Who is one person who led you well, even if they never had a title? What did they actually <em>do</em>?</li><li>Which of these four pictures feels most like leadership to you, and why?</li></ul></aside>
+</div></section><section id="serve" data-stop="0" class="sec "><div class="hero tall shade" style="background-image:url(../../assets/article-images/leading-yourself-first-bf8fec4bf6.webp)"><div class="hero-cap"><p class="verse big"><span class="ref">Matthew 20:26–28</span><span class="vt">“Whoever wants to become great among you must be your servant.”</span></p></div></div>
+<div class="wrap">
+<h2>Serve first</h2>
+<p>Jesus had every right to be served. Instead, He picked up a towel and a basin and washed the dirty feet of the men who followed Him, including the one who would betray Him that same night. That is the picture of leadership this whole talk is built on.</p>
+<p>Leading like that doesn’t start with being in charge. It starts with asking yourself two honest questions.</p>
+<div class="two">
+<div class="q"><h3>Do I want to lead for the right reasons?</h3><p>Is this about respect, control, or proving someone wrong? Or is it about becoming someone others can count on?</p></div>
+<div class="q"><h3>Am I willing to serve first?</h3><p>Showing up early, doing the unnoticed job, helping a neighbor down the hall without keeping score.</p></div>
+</div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>What are some wrong reasons people want to lead?</li><li>What would serving first look like where you live this week?</li></ul></aside></div></section><section id="crossroads" data-stop="1" class="sec "><div class="hero tall shade" style="background-image:url(../../assets/article-images/leading-yourself-first-96fdafad18.webp)"><h2 class="on-img">Before you lead others, you must learn to lead yourself</h2></div>
+<div class="wrap two">
+<div><p class="lede">Every morning you stand at a fork in the road.</p>
+<p>One way is easy: hit snooze, skip the appointment, blame the bus, spend the money, say the thing you’ll regret. The other way is harder, and it’s the only one that goes up.</p>
+<p>Nobody else can walk that road for you. A caseworker can point. A friend can encourage. God will walk with you. But your feet have to move.</p></div>
+<div class="panel"><h4>Leading yourself looks like</h4><ul class="ticks">
+<li>Getting up when you said you would</li><li>Showing up on time, or calling ahead when you can’t</li><li>Telling the truth, even when it costs you</li><li>Handling your money on purpose</li><li>Choosing your words when you’re angry</li><li>Asking for help before things fall apart</li></ul></div>
+</div>
+<div class="wrap"><aside class="talk"><h4>Talk about it</h4><ul><li>Which of these is the hardest for you right now?</li><li>What usually pulls people toward the easy road?</li></ul></aside></div></section><section id="truths" data-stop="1" class="sec "><div class="wrap">
+<h2>Three truths for the climb</h2>
+<p class="lede">These three truths are your trail markers. Each one comes with a practice so it doesn’t stay an idea on a screen.</p>
+<div class="map"><ol class="truths">
+<li><span class="n">1</span><div><h3>You’re always leading someone</h3><p>Even if it’s just you. Every choice teaches someone, starting with the person in the mirror.</p><a href="#checkin">Practice: the self-leadership check-in</a></div></li>
+<li><span class="n">2</span><div><h3>Ownership is the opposite of blame</h3><p>You can’t change what you won’t own. Owning it is where your power comes back.</p><a href="#practice">Practice: the ownership reset</a></div></li>
+<li><span class="n">3</span><div><h3>Right action beats right words</h3><p>People trust what you do over time, not what you promise today.</p><a href="#tracker">Practice: the keep-your-word tracker</a> and <a href="#partner">an accountability partner</a></div></li>
+</ol><img class="sign" src="../../assets/article-images/leading-yourself-first-6ae5eb3d1d.webp" alt="Street signs reading Lead Yourself, Own It, Act With Integrity"></div>
+<p class="band">Lead yourself. Own it. Act with integrity.</p>
+</div></section><section id="truth1" data-stop="1" class="sec "><div class="hero shade" style="background-image:url(../../assets/article-images/leading-yourself-first-01735a56f6.webp)"><div class="mark"><span>Truth 1</span>You’re always leading someone <em>(even if it’s just you)</em></div></div>
+<div class="wrap">
+<p class="lede">Somebody is always watching how you handle a hard day. Your kids. Your roommate. The new resident who just moved in down the hall. Your coworkers. And you. You are learning from yourself every day, whether the lesson is “I quit when it’s hard” or “I keep going.”</p>
+<div class="split">
+<figure class="inset"><img src="../../assets/article-images/leading-yourself-first-ec6c5c0382.webp" alt="Paper heart reading guard your heart on an open Bible"><p class="verse "><span class="ref">Proverbs 4:23</span><span class="vt">“Above all else, guard your heart, for everything you do flows from it.”</span></p></figure>
+<div><p class="pull">Leadership is not about being in charge. It’s about taking care of what’s been entrusted to you.</p>
+<h4>What’s been trusted to you right now?</h4>
+<div class="chips"><span class="chip">My time</span><span class="chip">My money</span><span class="chip">My body and health</span><span class="chip">My words</span><span class="chip">My room and my things</span><span class="chip">My job</span><span class="chip">My kids or family</span><span class="chip">My recovery</span><span class="chip">My faith</span><span class="chip">My promises</span></div></div>
+</div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>Who is watching how you handle a hard day?</li><li>Which of these is easiest to neglect? Which one, if you took care of it, would change the most?</li></ul></aside></div></section><section id="checkin" data-stop="1" class="sec "><div class="hero short" style="background-image:url(../../assets/article-images/leading-yourself-first-811d327e15.webp)"><h2 class="on-img boxed">Self-leadership check-in</h2></div>
+<div class="wrap">
+<p class="lede">Take a quiet minute. In your head, give yourself a number from 1 to 5 on each of these. 1 means “not yet,” 5 means “I’ve got this.” Nobody has to share their score.</p>
+<div class="scale5" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><em>not yet</em><em>I’ve got this</em></div>
+<div class="areas"><div class="area"><b>Health and recovery</b><span>I take care of my body, my rest, and my sobriety</span></div><div class="area"><b>Showing up</b><span>I’m on time for work, meetings, and appointments</span></div><div class="area"><b>Money</b><span>I know where my money goes and I stick to a plan</span></div><div class="area"><b>Words</b><span>I speak with respect, even when I’m frustrated</span></div><div class="area"><b>Promises</b><span>I do what I say I’ll do</span></div><div class="area"><b>Home</b><span>I keep my space and shared spaces clean</span></div><div class="area"><b>People</b><span>I stay away from people who pull me backward</span></div><div class="area"><b>Faith</b><span>I make time to pray, read, or be still with God</span></div></div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>Which area do you think most people struggle with the most? Why?</li><li>Pick your lowest one. What is one small thing that would move it up just one point this week?</li><li>Why does it matter to be honest with yourself before anyone else?</li></ul></aside>
+</div></section><section id="truth2" data-stop="2" class="sec "><div class="hero shade" style="background-image:url(../../assets/article-images/leading-yourself-first-93d3f968f9.webp)"><div class="mark left"><span>Truth 2</span>Stop pointing, start leading</div></div>
+<div class="wrap">
+<div class="split rev"><div>
+<p class="lede">Blame is the oldest move in the book. Literally.</p>
+<p>When God asked Adam what happened in the garden, Adam didn’t say, “I did it.” He said, <em>“The woman you gave me…”</em> In one sentence he blamed Eve and God. Eve blamed the serpent. Nobody owned anything, and nothing got fixed.</p>
+<p>We still do it. The bus was late. My boss has it out for me. My caseworker didn’t call back. Some of that may even be true. But every time we point, we hand our power to someone else. Ownership takes it back.</p></div>
+<figure class="inset"><img src="../../assets/article-images/leading-yourself-first-83287d7075.webp" alt="Illustration of a serpent and a hand offering an apple"><p class="verse "><span class="ref">Genesis 3:12</span><span class="vt">“The woman you gave me…”</span></p></figure></div>
+<p class="pull wide">Blame is easy. Ownership is where change happens.</p>
+<div class="tri"><div><h4>Blame says</h4><p>“It’s not my fault, so it’s not my problem.”</p></div><div><h4>Excuses say</h4><p>“It’s my problem, but I couldn’t help it.”</p></div><div class="gold"><h4>Ownership says</h4><p>“Whatever happened, what I do next is on me.”</p></div></div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>What are the most common things people blame when life goes sideways?</li><li>Why does blame feel better in the moment? What does it cost us later?</li></ul></aside>
+</div></section><section id="practice" data-stop="2" class="sec "><div class="wrap">
+<h2>Ownership in practice</h2>
+<p class="lede">Ownership starts with the words you use. Read each blame line out loud and let the room flip it before you reveal the answer.</p>
+<div class="swaphead"><span>Blame talk</span><span>Ownership talk</span></div>
+<div class="swaps"><button type="button" class="swap"><span class="blame">“The bus made me late.”</span><span class="arr" aria-hidden="true"></span><span class="own"><span class="hint">What would ownership say?</span><span class="ans">“I left too late. Tomorrow I’m catching the earlier bus.”</span></span></button><button type="button" class="swap"><span class="blame">“My boss is always on me.”</span><span class="arr" aria-hidden="true"></span><span class="own"><span class="hint">What would ownership say?</span><span class="ans">“What is my boss seeing that I need to fix?”</span></span></button><button type="button" class="swap"><span class="blame">“I didn’t know the rent was due.”</span><span class="arr" aria-hidden="true"></span><span class="own"><span class="hint">What would ownership say?</span><span class="ans">“I didn’t check. I’m putting it in my phone today.”</span></span></button><button type="button" class="swap"><span class="blame">“He made me so mad.”</span><span class="arr" aria-hidden="true"></span><span class="own"><span class="hint">What would ownership say?</span><span class="ans">“I let my anger talk. I owe him an apology.”</span></span></button><button type="button" class="swap"><span class="blame">“Nobody told me.”</span><span class="arr" aria-hidden="true"></span><span class="own"><span class="hint">What would ownership say?</span><span class="ans">“I should have asked. What do I need to know now?”</span></span></button><button type="button" class="swap"><span class="blame">“That’s just how I am.”</span><span class="arr" aria-hidden="true"></span><span class="own"><span class="hint">What would ownership say?</span><span class="ans">“That’s how I’ve been. It’s not who I have to be.”</span></span></button></div><button type="button" class="ghost" id="showall">Show all answers</button>
+<h3 class="sub">The ownership reset</h3>
+<p>When you mess up, and you will, work through these four steps in order. It works at your job, at home, with your kids, and with God.</p>
+<ol class="reset"><li><b>Own it.</b> “That was me.” No “but.”</li><li><b>Say it.</b> Tell the person you affected. Out loud, not just in your head.</li><li><b>Fix it.</b> Make it right as much as you can. Repay, redo, repair.</li><li><b>Learn it.</b> What will I do differently next time? Then do it.</li></ol>
+<aside class="talk"><h4>Talk about it</h4><ul><li>Which of the four steps is hardest for you? Why?</li><li>Think of a time someone owned a mistake with you. How did it change the way you saw them?</li></ul></aside>
+<p class="verse line"><span class="ref">Galatians 6:5</span><span class="vt">“For each one should carry their own load.”</span></p>
+</div></section><section id="truth3" data-stop="3" class="sec "><div class="hero shade low" style="background-image:url(../../assets/article-images/leading-yourself-first-9552efc93e.webp)"><div class="mark"><span>Truth 3</span>Consistency over charisma</div></div>
+<div class="wrap">
+<p class="lede">You don’t have to be the loudest person in the room. You have to be the one who keeps showing up.</p>
+<p>Work boots don’t get worn in on the first day. They get that way one shift at a time. Trust works the same way. Nobody believes a big speech from someone who keeps missing. But people start to notice the person who does the small things right, day after day, when nobody is clapping.</p>
+<div class="split"><figure class="inset"><img src="../../assets/article-images/leading-yourself-first-4b7e70b501.webp" alt="Baskets of bread on a hillside crowd"><p class="verse "><span class="ref">James 1:22</span><span class="vt">“Be doers of the word, not hearers only.”</span></p></figure>
+<div><p class="pull">Talk is cheap. Jesus did more than He said.</p><p>He fed the hungry, touched the sick, and sat with people everyone else avoided. His actions made His words believable. Ours can too.</p>
+<h4>Small things that build big trust</h4><ul class="ticks"><li>Answer the phone, or call back the same day</li><li>Pay back what you borrowed, when you said you would</li><li>Finish the chore before you’re reminded</li><li>Keep your word on the little stuff</li></ul></div></div>
+</div></section><section id="tracker" data-stop="3" class="sec "><div class="wrap">
+<h2>Keep your word to yourself first</h2>
+<p class="lede">If you can’t keep a promise to yourself, it gets hard to keep one to anyone else. Start with promises so small you can’t talk yourself out of them, and track them every day.</p>
+<h4>Here’s what one week might look like</h4>
+<div class="tracker"><div class="trow head"><span></span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="trow"><span class="pr">Out of bed by 6:30</span><span class="y" aria-label="kept"></span><span class="y" aria-label="kept"></span><span class="n" aria-label="missed"></span><span class="y" aria-label="kept"></span><span class="y" aria-label="kept"></span><span class="y" aria-label="kept"></span><span class="n" aria-label="missed"></span></div><div class="trow"><span class="pr">Read one chapter of Scripture</span><span class="y" aria-label="kept"></span><span class="y" aria-label="kept"></span><span class="y" aria-label="kept"></span><span class="y" aria-label="kept"></span><span class="n" aria-label="missed"></span><span class="y" aria-label="kept"></span><span class="y" aria-label="kept"></span></div><div class="trow"><span class="pr">Put $5 aside</span><span class="y" aria-label="kept"></span><span class="n" aria-label="missed"></span><span class="y" aria-label="kept"></span><span class="n" aria-label="missed"></span><span class="y" aria-label="kept"></span><span class="n" aria-label="missed"></span><span class="y" aria-label="kept"></span></div></div>
+<div class="rule"><h4>The two-miss rule</h4><p>Miss once, it’s a slip. Get back on it the next day without beating yourself up. Miss twice in a row, it’s a pattern starting. That’s the moment to tell your accountability partner, not hide it.</p></div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>Look at the example week. What do you notice about the misses?</li><li>What’s one small promise you could keep every single day this week?</li><li>What usually makes you break a promise to yourself?</li></ul></aside>
+</div></section><section id="partner" data-stop="3" class="sec "><div class="wrap">
+<h2>Don’t climb alone</h2>
+<p class="verse line top"><span class="ref">Ecclesiastes 4:9–10</span><span class="vt">“Two are better than one… If either of them falls down, one can help the other up.”</span></p>
+<p class="lede">Owning your life doesn’t mean doing it alone. It means inviting someone close enough to tell you the truth. Accountability isn’t someone watching you fail. It’s someone helping you keep the promises you already made.</p>
+<div class="two"><div><h3 class="sub">Pick the right person</h3><ul class="ticks"><li>Someone who will be honest with you, not just agree with you</li><li>Someone moving in the direction you want to go</li><li>A mentor, a staff member, a pastor, or a steady friend</li><li>Someone you can meet or call once a week</li></ul></div>
+<div class="panel"><h4>Five questions for your weekly check-in</h4><ol class="q5"><li>Did I keep my word this week? Where didn’t I?</li><li>Is there anything I’m blaming someone else for?</li><li>What am I hiding or avoiding?</li><li>Where did I see God at work?</li><li>What is my one next step before we talk again?</li></ol></div></div>
+<div class="covenant"><h4>What asking sounds like</h4><p class="cv">“I’m working on keeping my word. Would you check in with me once a week? You have my permission to ask me hard questions and tell me the truth. I’ll answer honestly.”</p></div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>What makes someone a good accountability partner? What makes a bad one?</li><li>Why is it so hard to ask someone to hold us accountable?</li><li>Who in your life could you ask this week?</li></ul></aside>
+</div></section><section id="past" data-stop="2" class="sec dark" style="--rings:url(../../assets/article-images/leading-yourself-first-1203fd014a.webp)"><div class="wrap">
+<h2>Maybe it was never the past</h2>
+<div class="litany"><div><p>Maybe you didn’t grow up with much.</p><p>Maybe nobody pushed you.</p><p>Maybe no one showed you how to get ahead.</p><p>Maybe you started at the bottom.</p><p>Maybe you had to figure it out alone.</p><p>Maybe it took longer than it should have.</p><p>Maybe people made assumptions.</p><p>Maybe you got passed over.</p><p>Maybe you got used to being overlooked.</p></div><div><p>Maybe your family didn’t believe in college.</p><p>Maybe you took the first job you could get.</p><p>Maybe you had to work twice as hard just to be seen.</p><p>Maybe your past wasn’t fair.</p><p>Maybe your start wasn’t ideal.</p><p>Maybe your story didn’t go the way it was supposed to.</p><p>Maybe that’s all true.</p><p>Maybe none of it’s your fault.</p><p>Or maybe…</p></div></div>
+<p class="turn">It’s time to stop letting it hold you back.</p>
+<div class="grace"><p>That can be hard to hear. It’s meant to be honest, not harsh. What happened to you was real, and some of it wasn’t fair. God sees every bit of it.</p>
+<p>But here is the truth that sets people free: <b>your past explains your story. It doesn’t get to write the next chapter.</b> That pen is in your hand now.</p>
+<p class="verse line lightv"><span class="ref">Lamentations 3:22–23</span><span class="vt">“His compassions never fail. They are new every morning.”</span></p></div>
+<aside class="talk"><h4>Sit with it</h4><ul><li>How can something be “not your fault” and still be your responsibility?</li><li>What’s the difference between explaining your story and excusing it?</li></ul></aside>
+</div></section><section id="sort" data-stop="2" class="sec "><div class="wrap">
+<h2>What happened, and what’s mine now</h2>
+<p class="lede">Ownership doesn’t mean pretending the hard things didn’t happen. It means sorting them honestly.</p>
+<div class="two sort"><div class="box"><h4>What happened to me</h4><p class="small">Things I didn’t choose and couldn’t control</p><ul class="plain"><li>How I was raised</li><li>What others did to me</li><li>Doors that got shut</li><li>Losses I didn’t see coming</li></ul></div>
+<div class="box mine"><h4>What’s mine to own now</h4><p class="small">Choices, habits, and next steps that are in my hands</p><ul class="plain"><li>How I spend today</li><li>Who I let speak into my life</li><li>Whether I ask for help</li><li>What I do after I fall</li></ul></div></div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>What else belongs on each side?</li><li>Is there an excuse you’ve heard, or used, that you’re ready to let go of?</li></ul></aside>
+<p class="small note">If this brings up more than you expected, you don’t have to carry it alone. Talk with a staff member, your counselor, or your pastor.</p>
+</div></section><section id="climb" data-stop="4" class="sec "><div class="hero tall shade" style="background-image:url(../../assets/article-images/leading-yourself-first-b976f06a45.webp)"><h2 class="on-img">Sometimes we don’t see the climb</h2></div>
+<div class="wrap">
+<p class="lede">When you’re halfway up a mountain, all you can see is the next rock in front of you. Your legs hurt, the top looks just as far as it did yesterday, and it’s easy to believe you haven’t moved at all.</p>
+<div class="split"><figure class="inset"><img src="../../assets/article-images/leading-yourself-first-2e0c93e236.webp" alt="Sunrise over mountain ridges"><p class="verse "><span class="ref">Psalm 121:1–2</span><span class="vt">“I lift up my eyes to the mountains, where does my help come from? My help comes from the Lord.”</span></p></figure>
+<div><p class="pull">Progress isn’t always visible. But God sees the whole picture.</p><p>Some days, progress looks like not going back. Not making the call you used to make. Paying one bill. Saying no once. Those days count. They’re the climb.</p></div></div>
+</div></section><section id="zoom" data-stop="4" class="sec "><div class="wrap">
+<h2>Zoom out to see the progress</h2>
+<img class="zoom" src="../../assets/article-images/leading-yourself-first-42ff121740.webp" alt="Hikers at different points on a snowy mountain, one celebrating at the summit">
+<div class="three marks">
+<div><h4>Where I started</h4><p>What was life like the day you arrived here?</p></div>
+<div><h4>Where I am today</h4><p>What’s different now, even a little?</p></div>
+<div><h4>Where I’m headed</h4><p>What does the top look like for you? Steady work, your own place, your family together, a stronger faith?</p></div></div>
+<div class="split potter"><figure class="inset"><img src="../../assets/article-images/leading-yourself-first-e7505fffa6.webp" alt="Hands shaping clay on a potter’s wheel"></figure>
+<div><p class="verse "><span class="ref">Philippians 1:6</span><span class="vt">“He who began a good work in you will carry it on to completion.”</span></p><p class="pull">You may not feel it, but you’ve come further than you know.</p></div></div>
+</div></section><section id="letter" data-stop="4" class="sec "><div class="hero short" style="background-image:url(../../assets/article-images/leading-yourself-first-a8cad13e27.webp)"><h2 class="on-img boxed right">Write to the future you</h2></div>
+<div class="wrap">
+<p class="lede">Here’s your assignment for this week. On paper, write a letter to the person you’ll be one year from today. Seal it, and give it to someone you trust to hand back to you in a year.</p>
+<div class="letterbox"><p class="salute">Dear me,</p>
+<ul class="starters"><li>Right now I’m…</li><li>The hardest part is…</li><li>I’m choosing to let go of…</li><li>I’m fighting for…</li><li>I hope by the time you read this…</li></ul></div>
+<aside class="talk"><h4>Talk about it</h4><ul><li>Why might it help to hear from your past self a year from now?</li><li>What would you want the future you to thank you for?</li></ul></aside>
+</div></section><section id="next" data-stop="4" class="sec "><div class="hero short start" style="background-image:url(../../assets/article-images/leading-yourself-first-7e799833a5.webp)"><h2 class="on-img boxed low">What’s your next move?</h2></div>
+<div class="wrap">
+<p class="lede">Big changes are made of small first steps. Don’t plan the whole mountain. Plan the next step, and make it one you can take in the next seven days.</p>
+<ol class="steps5"><li><b>My one next step</b>Small enough to do this week</li><li><b>When I’ll do it</b>A day and a time</li><li><b>Who I’ll tell</b>Say it out loud to someone</li><li><b>What might get in my way</b>Be honest</li><li><b>What I’ll do if it does</b>Decide now, not in the moment</li></ol>
+<aside class="talk"><h4>Pair up</h4><ul><li>Turn to the person next to you and walk through these five together.</li><li>What’s the difference between a goal and a next step?</li></ul></aside>
+</div></section><section id="mountain" data-stop="4" class="sec "><div class="mtn" style="background-image:url(../../assets/article-images/leading-yourself-first-15e89c904c.webp)"><h2>This is your mountain</h2></div>
+<div class="wrap">
+<div class="split"><figure class="inset"><img src="../../assets/article-images/leading-yourself-first-2b5cd17394.webp" alt="A woman running up a misty mountain trail"></figure>
+<div><p class="verse "><span class="ref">Hebrews 12:1–2</span><span class="vt">“Let us run with perseverance the race marked out for us, fixing our eyes on Jesus.”</span></p><p class="pull">Walk with Christ and lead like Him.</p><p>Nobody else can climb it for you, and you were never meant to climb it without Him. Keep your eyes up and your feet moving.</p></div></div>
+</div></section><section id="made" data-stop="4" class="sec "><div class="hero tall" style="background-image:url(../../assets/article-images/leading-yourself-first-ed053a60da.webp)"></div>
+<div class="wrap center">
+<h2>You were made to lead</h2>
+<p class="lede">Not someday, when things are perfect. Today, right where you are. Start with yourself: your mornings, your words, your promises. Own what’s yours. Let your actions do the talking. And trust that God isn’t finished with you yet.</p>
+<p class="recap"><span>Lead yourself</span><span>Own it</span><span>Act with integrity</span></p>
+</div></section><footer class="about"><img class="jared" src="../../assets/article-images/leading-yourself-first-5583dc4bc4.webp" alt="Jared L. Scott">
+<div><img class="logo" src="../../assets/article-images/leading-yourself-first-5b06c4e458.webp" alt="Authentic Leadership Solutions: Trust, Growth, Learning">
+<h3>Jared L. Scott</h3><p>Jared L. Scott leads Authentic Leadership Solutions, offering practical, faith-grounded leadership for real-world success.</p>
+</div></footer></main><p class="keys" aria-hidden="true">Use arrow keys or space to move between sections</p><script>(function(){
+  // reveal ownership answers
+  document.querySelectorAll("button.swap").forEach(function(b){
+    b.setAttribute("aria-expanded","false");
+    b.addEventListener("click",function(){var o=b.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")});
+  });
+  var sa=document.getElementById("showall");
+  if(sa) sa.addEventListener("click",function(){
+    var all=document.querySelectorAll("button.swap"), anyClosed=[].some.call(all,function(b){return !b.classList.contains("open")});
+    all.forEach(function(b){b.classList.toggle("open",anyClosed);b.setAttribute("aria-expanded",anyClosed?"true":"false")});
+    sa.textContent=anyClosed?"Hide all answers":"Show all answers";
+  });
+  // progress rail
+  var rail=document.querySelector(".rail"), links=rail.querySelectorAll("a"), cover=document.querySelector(".cover");
+  var secs=[].slice.call(document.querySelectorAll("[data-stop]"));
+  var keys=document.querySelector(".keys");
+  function onScroll(){
+    var y=window.scrollY||window.pageYOffset;
+    rail.classList.toggle("show", y > cover.offsetHeight*0.6);
+    var mid=y+window.innerHeight*0.35, cur=0;
+    secs.forEach(function(s){ if(s.offsetTop<=mid) cur=+s.getAttribute("data-stop") });
+    links.forEach(function(l,i){ l.classList.toggle("on",i===cur); l.classList.toggle("done",i<cur) });
+  }
+  window.addEventListener("scroll",onScroll,{passive:true}); window.addEventListener("resize",onScroll); onScroll();
+  // presenter keys: jump section to section
+  var targets=secs.concat([].slice.call(document.querySelectorAll("footer.about")));
+  function railH(){return rail.classList.contains("show")?rail.offsetHeight:0}
+  function go(dir){
+    var y=(window.scrollY||window.pageYOffset)+railH()+4, i;
+    if(dir>0){ for(i=0;i<targets.length;i++){ if(targets[i].offsetTop>y+2) break; } }
+    else { for(i=targets.length-1;i>=0;i--){ if(targets[i].offsetTop<y-8) break; } }
+    if(i<0||i>=targets.length) return;
+    window.scrollTo({top:Math.max(0,targets[i].offsetTop-(i===0?0:rail.offsetHeight)),behavior:"smooth"});
+  }
+  document.addEventListener("keydown",function(e){
+    var t=e.target.tagName; if(t==="INPUT"||t==="TEXTAREA"||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key==="ArrowRight"||e.key==="PageDown"||(e.key===" "&&!e.shiftKey&&t!=="BUTTON")){e.preventDefault();go(1)}
+    else if(e.key==="ArrowLeft"||e.key==="PageUp"||(e.key===" "&&e.shiftKey)){e.preventDefault();go(-1)}
+  });
+  if(keys){ setTimeout(function(){keys.classList.add("show")},1200); setTimeout(function(){keys.classList.remove("show")},7000); }
+})();
+</script></body></html>

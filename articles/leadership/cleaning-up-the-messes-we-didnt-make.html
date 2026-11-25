@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleaning Up the Messes We Didn't Make: A Leadership Responsibility | Jared Scott</title>
+<meta name="description" content="Why leaders end up owning problems they didn't create, and why that's the job.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Responsibility</p>
+  <h1>Cleaning Up the Messes We Didn't Make: A Leadership Responsibility</h1>
+  <p class="dek">Why leaders end up owning problems they didn't create, and why that's the job.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">Driving home last night, I was in that autopilot mode so many of us slip into after a long day at work. The winter darkness had already settled in, even though it was just after 5:30 PM. Brake lights flared ahead, which didn't seem unusual at first—seeing brake lights is a normal part of the evening commute.</p>
+  <p>But something was different this time. Cars weren't just slowing down; they were swerving into the opposite lane of the two-lane road, creating some close calls. When I finally got closer, I realized what was causing the commotion.</p>
+  <p>A large box and a metal fan had fallen off a trailer or truck and landed in the middle of the road. Drivers were dodging the debris, their frustration obvious, but no one stopped to do anything about it. Honestly, I've been that person before—grumbling about someone else's carelessness and driving around the problem, annoyed that it even existed.</p>
+  <p>But this time, I couldn't just keep driving.</p>
+  <p>I pulled over, put on my hazard lights, and stepped into action. Cars were moving slowly, so while it wasn't entirely safe, I saw an opportunity to act. I dragged the box to the side of the road and moved the fan out of harm's way. It wasn't my responsibility, but I did it because it needed to be done.</p>
+  <h2>Leadership Lessons: Cleaning Up the Messes We Didn't Make</h2>
+  <p>This moment reminded me of a fundamental truth about leadership: leaders often have to clean up messes they didn't create.</p>
+  <p>In organizations, it's not uncommon for leaders to inherit problems—a failed project, a toxic culture, or even broken systems. Like that debris on the road, these issues can slow progress, frustrate everyone involved, and create danger if left unresolved.</p>
+  <p>But here's the thing: it's not always convenient—or safe—for leaders to address these issues. Yet real leadership means stepping up, even when it's risky or inconvenient.</p>
+  <h2>1. Leaders Assume Responsibility Without Being Asked</h2>
+  <p>Just like moving debris off the road, leadership is about taking action when others won't. The best leaders recognize that waiting for someone else to handle the problem often does more harm than good.</p>
+  <ul>
+    <li><strong>Example:</strong> Consider a leader stepping into a failing department. They didn't create the dysfunction, but their willingness to take responsibility can set the stage for renewal.</li>
+    <li><strong>Practical Tip:</strong> Don't wait for permission to lead. If you see a problem affecting the greater good, step in.</li>
+  </ul>
+  <h2>2. Cleaning Up Isn't Always Safe or Convenient</h2>
+  <p>When I pulled over last night, I knew there was some level of risk. But I also knew leaving the debris there would only make things worse. Leaders face the same challenges when stepping into messy situations—whether it's delivering bad news, addressing conflict, or cleaning up an operational failure.</p>
+  <ul>
+    <li><strong>Example:</strong> A leader addressing a long-ignored issue in their team's workflow may face resistance or backlash. It's not easy, but resolving it can lead to a stronger, more effective team.</li>
+    <li><strong>Practical Tip:</strong> Acknowledge the risks but weigh them against the potential harm of inaction. Leadership often demands calculated courage.</li>
+  </ul>
+  <h2>3. It's About More Than Assigning Blame</h2>
+  <p>In moments like this, it's tempting to focus on who's at fault. But assigning blame doesn't fix the problem. Leaders who focus on solutions rather than pointing fingers set a tone of accountability and progress.</p>
+  <ul>
+    <li><strong>Example:</strong> When a customer's order gets delayed due to a mistake in shipping, a leader might apologize and resolve the issue immediately, focusing on restoring trust rather than explaining what went wrong.</li>
+    <li><strong>Practical Tip:</strong> Lead with action. Accountability can follow once the immediate issue is addressed.</li>
+  </ul>
+  <h2>Conclusion: Real Leadership Steps Up</h2>
+  <p>Driving home last night, I didn't have to stop for the debris in the road. But I did it because sometimes, leadership means doing what others won't—stepping in, cleaning up, and making things better, even when it's inconvenient or risky.</p>
+  <p>Leadership isn't about waiting for a mess to land in your lap; it's about recognizing when something needs to be done and doing it for the greater good.</p>
+  <p>It's not always safe. It's not always fair. But it's always necessary.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

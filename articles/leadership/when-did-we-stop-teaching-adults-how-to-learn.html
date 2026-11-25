@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Did We Stop Teaching Adults How to Learn? | Jared Scott</title>
+<meta name="description" content="Thirty years of teaching adults technical skills leads to a hard question: why do we blame the learner instead of the method once someone leaves childhood?">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Learning & Development</p>
+  <h1>When Did We Stop Teaching Adults How to Learn?</h1>
+  <p class="dek">We adjust instantly when a child does not understand something. Somewhere along the way, we stopped extending adults the same grace.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">A friend of mine posted a picture on Facebook of his son sitting in class. My eyes went right past him and landed on a sign on the wall behind him.</p><p>It said,</p><div class="pull"><p>If they can’t learn the way we teach, we teach the way they learn.</p></div><p>And I kept coming back to that.</p><div class="dinkus">• • •</div><p>I’ve been teaching adults technical information for close to 30 years. I’ve worked with people in different roles, in different environments, and one thing has been true every single time. People don’t all learn the same way.</p><p>I know that not just from teaching, but from how I learn myself.</p><p>I’ve never been someone who does well sitting behind a computer going through modules. I can get through it, sure, but that doesn’t mean I actually learned anything. If you show me how something works and then let me try it myself, that’s when it clicks. That’s how I learned in school, and that hasn’t changed.</p><p>At the same time, I’ve taught plenty of people who don’t learn that way at all.</p><p>And that’s really where this starts to matter.</p><div class="dinkus">• • •</div><p>When a kid doesn’t understand something, we naturally adjust. We explain it a different way, we slow things down, we try another approach until it makes sense. Nobody debates that.</p><p>But when we’re dealing with adults, especially in a work environment, that thinking disappears.</p><p>Instead, we build a system and expect everyone to fit into it.</p><p>We decide how something is going to be taught, and from that point on, the responsibility shifts almost completely to the learner. If they don’t pick it up, we don’t question the method first. We question the person.</p><div class="dinkus">• • •</div><p>You can see it in how we design training.</p><p>We go back and forth on e-learning versus classroom like one of them is going to solve the problem. Then we land on blended learning, which sounds like a balanced answer.</p><p>But most of the time, blended learning just means we added more.</p><p>Take this online, then come to this class. Or sit in this class, then go complete this module.</p><p>It turns into, “Eat your vegetables so you can have your dessert.”</p><p>That’s not blending. That’s just stacking.</p><div class="dinkus">• • •</div><p>After doing this as long as I have, you start to notice what actually makes a difference.</p><p>Some people need to see something before they understand it. Others need to hear it explained. Some people won’t really get it until they can do it themselves, and even then, it might take a few tries before it clicks.</p><p>Most people need a combination, but not in the same order and not in the same way.</p><p>That’s where the gap is.</p><p>Because real learning doesn’t start with the format. It starts with the person.</p><div class="dinkus">• • •</div><p>There’s a line from Malcolm Knowles that’s always stuck with me:</p><div class="scripture">“People learn what they need to know when they need to know it.”<span>Malcolm Knowles</span></div><p>If that’s true, then our job isn’t just to deliver information. It’s to make it make sense at the moment it matters.</p><div class="dinkus">• • •</div><p>That sign on the wall got it right in a way most workplace training still hasn’t caught up to.</p><p>If someone isn’t learning, the job isn’t done.</p><p>Not because the content wasn’t covered. Not because the system was followed.</p><p>Because the outcome didn’t happen.</p><p>And if the outcome didn’t happen, we don’t get to hide behind the method.</p><p>We have to own it.</p><div class="dinkus">• • •</div><p>We get this right with kids without even thinking about it.</p><p>It’s time we start doing the same thing with adults.</p><div class="dinkus">• • •</div><figure><img class="inline-photo" src="https://media.licdn.com/dms/image/v2/D5612AQFwlopxdv1u4g/article-inline_image-shrink_1000_1488/B56Z0A9ebQI0AQ-/0/1773837609148?e=1786579200&amp;v=beta&amp;t=HDkg8yo2mTgjkgN5FanOuv5E-8hnqQMaHkRgfIsOSdU"/></figure>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

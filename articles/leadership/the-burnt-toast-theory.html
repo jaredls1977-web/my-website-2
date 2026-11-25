@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Burnt Toast Theory: Leadership Lessons in Life's Small Disruptions | Jared Scott</title>
+<meta name="description" content="A ruined breakfast becomes a lesson in how leaders respond when small things go wrong.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Disruption</p>
+  <h1>The Burnt Toast Theory: Leadership Lessons in Life's Small Disruptions</h1>
+  <p class="dek">A ruined breakfast becomes a lesson in how leaders respond when small things go wrong.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <h2>Burnt toast.</h2>
+  <p>It's a small annoyance that might delay your morning routine, but that delay could have a larger impact. Maybe it saves you from an accident at an intersection you would have reached earlier, or maybe it puts you behind a slow-moving vehicle, compounding your frustration. Small disruptions ripple through our days, often shaping outcomes in ways we can't predict. What if, as leaders, we embraced these disruptions—not just in our personal lives but in our teams and organizations?</p>
+  <p>The <strong>Burnt Toast Theory</strong> draws on the idea of the butterfly effect: small events creating big ripple effects. But instead of focusing on chaos, it emphasizes how we can find meaning and growth in life's imperfections. For leaders, this perspective is essential.</p>
+  <h2>Leadership and the Ripple Effect</h2>
+  <p>Leadership is full of burnt toast moments: unexpected project delays, last-minute resource changes, or even a meeting thrown off by someone's late arrival. The question isn't <em>if</em> these disruptions will happen—it's how we respond when they do.</p>
+  <h2>Adaptability in Action</h2>
+  <p>During one of my vacations, I returned to work to find an overwhelming inbox—hundreds of emails waiting for my attention. Naturally, I started with the oldest messages, thinking I'd work my way to the newest. Big mistake. Time and again, I'd reply to a detailed request only to find, a few emails later, the sender had resolved the issue or no longer needed my input. That experience taught me a crucial leadership lesson: <strong>start with the newest information.</strong></p>
+  <p>It's a simple shift, but it changed how I approached not just emails but problem-solving in general. In leadership, focusing on outdated priorities can waste time and resources. Instead, leaders must begin with what's most relevant and work backward if needed.</p>
+  <h2>Finding Opportunities in Imperfection</h2>
+  <p>Burnt toast moments are inevitable, but they don't have to derail us. They often hold hidden opportunities if we choose to look for them. Here's how leaders can reframe disruptions into something meaningful:</p>
+  <ol>
+    <li><strong>See Delays as a Chance to Reassess</strong>\ A delayed meeting might allow time for additional preparation or reveal inefficiencies in scheduling. A leader's willingness to see these as opportunities rather than setbacks fosters a growth-oriented mindset.</li>
+    <li><strong>Teach Your Team Resilience</strong>\ When plans fall apart, it's a leader's job to show their team how to pivot. Whether it's a supply chain delay or a last-minute project change, every setback is an opportunity to practice resourcefulness and adaptability.</li>
+    <li><strong>Embrace Imperfection to Move Forward</strong>\ Leaders who get stuck on perfection often stagnate. It's better to acknowledge mistakes—burnt toast and all—and keep moving. This teaches teams to value progress over paralysis.</li>
+  </ol>
+  <h2>Practical Advice for Leaders</h2>
+  <p>Leadership, like life, is full of small, seemingly insignificant choices that compound into larger impacts. Here are practical ways to embrace the Burnt Toast Theory:</p>
+  <ul>
+    <li><strong>Reframe Setbacks</strong>: Instead of asking, "Why did this happen to me?" ask, "What can I learn from this?"</li>
+    <li><strong>Lead with Flexibility</strong>: Like starting with the newest emails, focus on the present and adapt to changes as they unfold.</li>
+    <li><strong>Model Calmness</strong>: When you respond calmly to disruptions, your team will too. Panic is contagious, but so is composure.</li>
+  </ul>
+  <h2>Closing Thoughts</h2>
+  <p>Burnt toast moments remind us that life—and leadership—doesn't always go according to plan. Sometimes, that's a good thing. Whether it's being stuck behind a slow-moving truck or rethinking how to tackle an inbox, these disruptions can shape our day—and our teams—for the better.</p>
+  <p>The real lesson of the Burnt Toast Theory is this: <strong>leaders who embrace life's imperfections can teach their teams to thrive amid chaos and uncertainty.</strong> A leader's mindset in these moments can turn a day of small frustrations into one filled with growth, resilience, and opportunity.</p>
+  <p><em>Burnt toast doesn't ruin the day—it rewrites it. Great leaders know how to turn every burnt slice into a better story.</em></p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

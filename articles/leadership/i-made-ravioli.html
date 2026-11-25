@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Made Ravioli | Jared Scott</title>
+<meta name="description" content="In a pasta-making class in Italy, I put too much filling in my ravioli. The chef didn&#x27;t lecture me. She just fixed it. On correcting people&#x27;s mistakes without making them feel small.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<style>
+  .wrap figure{margin:2.2rem 0}
+  .wrap figure img{width:100%;height:auto;max-width:100%;border:1px solid var(--rule,#d6c9b7);display:block}
+  .wrap figcaption{font-family:Arial,Helvetica,sans-serif;font-size:.78rem;color:var(--muted,#6f685d);margin-top:.6rem;text-align:center;font-style:italic}
+</style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+  <article class="wrap">
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+  <p class="kicker">On Correction</p>
+  <h1>I Made Ravioli</h1>
+  <p class="dek">In a pasta-making class in Italy, I put too much filling in my ravioli. The chef didn&#x27;t lecture me. She just fixed it. On correcting people&#x27;s mistakes without making them feel small.</p>
+  <p class="byline">By Jared Scott</p>
+  <p class="lead">I made ravioli in Italy, which is a sentence that by itself probably would have made my grandmother happy. What happened next probably would have caused her to take over the kitchen.</p>
+  <p>We were making pasta by hand, and the chef had already explained one very important thing about ravioli: do not overfill it. Simple enough, except I was standing there looking at ricotta cheese thinking that if some cheese is good, more cheese has to be better. Right? The chef had literally just warned us not to do this, but apparently I believed several hundred years of Italian cooking tradition had somehow failed to account for my personal theory on ricotta, so I added more.</p>
+  <p>It did not seem like an absurd amount when I was putting it in. It became absurd when I tried to close the ravioli. Now I was trying to stretch pasta around a pile of ricotta that clearly had no intention of cooperating, and then the dough started cracking. That part was my fault too. I had gotten too much flour into the egg mixture, so the edge of the pasta was a little dry. As I tried to work the ravioli closed, one side started splitting, which left me standing there in an Italian kitchen with an overstuffed ravioli made from slightly overfloured dough, trying to convince the whole thing to stay together.</p>
+  <p>I could almost see my grandmother shaking her finger at me. “Madonna mia, che hai combinato?” Literally, “My God, what have you done?” But in the hands of an Italian grandmother it carries some of the same energy as our Southern “bless your heart.” It is not really a question. She already knows what you have done. She just wants you to know that she knows, and in my case the evidence was lying right there on the table.</p>
+  <p>The chef came over and had every right to say, “I told you not to put that much filling in there,” because she had. Like, minutes earlier. Instead, she looked at my ravioli, looked at the cracked edge, and said something very close to, “It’s not a problem. We just fix it.”</p>
+  <p>Then she did. She worked the bad edge back together, turned the ugly side over and set it down. Once it was cooked, she told me, nobody would see it.</p>
+  <p>That was the whole crisis. We just kept making pasta.</p>
+  <figure><img src="../../assets/article-images/i-made-ravioli-6a30f2951a.webp" alt="Handmade ricotta ravioli and hand-cut linguini from a pasta-making class in Italy" loading="lazy"><figcaption>The ravioli in question, plus the linguine that came out just fine.</figcaption></figure>
+  <p>I should add, for the sake of my reputation, that I also made hand rolled and hand cut linguini that day, and it came out pretty well. I have photographic evidence. But I kept thinking about that ravioli, and more specifically about how little interest the chef had in making sure I understood that she had been right.</p>
+  <p>She knew I had been told. She knew I had ignored the instruction and knew exactly why the thing was cracking apart in front of us, but none of that seemed to matter as much to her as helping me fix it. She was more interested in making the ravioli than proving a point.</p>
+  <p>That stayed with me because I have been on both sides of that moment in leadership. There are times when someone does exactly what you asked them not to do. You explained it, you warned them, and sometimes you even told them exactly what would happen. Then they do it anyway, and five minutes later there is the leadership equivalent of an overstuffed ravioli sitting on the table.</p>
+  <p>That is a tempting moment because there is a part of us that wants to say, “I told you.” Not because it fixes anything, but because it feels good to have been right. The chef could have done that with me and she would have been completely justified, but she did not seem to care about winning that little moment.</p>
+  <blockquote>She just fixed the ravioli.</blockquote>
+  <p>There are mistakes that need more than a quick correction. There are times when someone needs to understand the seriousness of what happened, and leadership is not pretending that everything is fine. But every mistake does not need to become a trial. Sometimes somebody is still learning. Sometimes they got a little too confident. Sometimes they genuinely believed more cheese would make the ravioli better and now they are standing there looking at the result.</p>
+  <p>The chef could have made me feel the mistake. Instead, she showed me how to recover from it.</p>
+  <p>The funny thing is that I do not remember every instruction she gave us that day, but I remember that one little moment. “It’s not a problem. We just fix it.” She corrected the work without making me the problem.</p>
+  <p>The Gordon Ramsay version probably makes better television. The Italian chef made better ravioli.</p>
+  <p>And when somebody I lead puts too much cheese in theirs, I think I know which one I would rather be.</p>
+  <p><em>Prego.</em></p>
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+  </article>
+</body>
+</html>

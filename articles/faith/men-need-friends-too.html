@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Men Need Friends Too | Jared Scott Leadership</title>
+<style>
+  :root{
+    --paper:#F2EDE3;        /* warm linen */
+    --paper-deep:#E8E0D2;   /* card edge */
+    --ink:#2B2620;          /* near-black brown */
+    --ink-soft:#4A4339;     /* body text */
+    --clay:#9C5B33;         /* terracotta accent */
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;        /* muted olive */
+    --rule:#C9BEA9;         /* hairline */
+    --gold:#B0852F;         /* aged brass for drop cap */
+  }
+
+  *{box-sizing:border-box;}
+
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  /* ---- Eyebrow / kicker ---- */
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  /* ---- Headline ---- */
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  /* ---- Body ---- */
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  /* Drop cap */
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  /* Section divider - three dots */
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  /* Pull quote */
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* The "try this" card */
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:21px;
+    color:var(--ink);
+    margin:0 0 12px;
+  }
+  .card ul{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+  .card .scratch{
+    text-decoration:line-through;
+    color:#A79C88;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Faith Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">The Examined Life</p>
+  <h1>Men Need Friends Too</h1>
+  <p class="dek">You can serve shoulder to shoulder with a man for fifteen years and still not know his favorite ball team, where he takes his wife to eat, or that he's been quietly going under the whole time.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">If you grew up anything like I did, friendship was not something you scheduled. It just found you. You walked out the screen door, let it slap shut behind you, and somewhere down the street there was already a boy straddling his bike waiting on you. That was the bicycle gang. A loose little federation of neighborhood kids with banana seats and no particular place to be, riding around all afternoon stirring up trouble. And by trouble I mean pedaling down to the gas station for a hotdog, a Pepsi sweating in your hand, and a fresh pack of baseball cards with that flat pink slab of gum that could crack a molar. For the Southerners reading this, you know I'm talking about The Pantry. For everybody else, just close your eyes and picture the most beloved, fluorescent lit gas station of your childhood, the one with the screen door bell and the man behind the counter who knew your daddy, and you've got it.</p>
+
+  <p>Nobody had to introduce us. Friendship was just the default setting back then. You showed up, somebody was already out there, and that was pretty much the whole arrangement. No calendar. No text thread. You just went outside.</p>
+
+  <p>Then we grew up. And somewhere between the mortgage and the carpool line and the third oil change of the year, the circle got small. Now that is not necessarily a bad thing. A tight circle can be a fine and healthy one. But here is the part that caught me square between the eyes. You can be all in at church, plugged into your community group, knocking out every men's Bible study they put on the calendar, your travel mug in one hand and your worn Bible in the other, and still drive home on a Sunday feeling like you don't actually have a single friend.</p>
+
+  <div class="dinkus">&bull; &bull; &bull;</div>
+
+  <h2>The Busyness Trap (and Where I Almost Took a Cheap Shot)</h2>
+
+  <p>Now, part of me wanted to write a fiery little piece blaming the church, and Lord knows that piece writes itself. You picture the fellow who is at the building four nights a week. He is stacking chairs until his back gives out, running the soundboard, parking cars in the rain with one of those orange flashlight wands, signed up for every workday and every potluck and every cleanup. And he calls all of that fellowship. He is busier than a one armed paper hanger, and somehow lonelier than when he started.</p>
+
+  <p>But the more I chewed on it, the more that take fell apart in my hands. Those same community groups and men's studies are not the obstacle at all. They are the open door. They drop you in a room with men you would never in a hundred years have bumped into otherwise. Even the cringe is a gift, and stay with me here, because I know cringe is a strong word.</p>
+
+  <p>You know the exact moment I'm talking about. The worship set winds down to that soft little piano part, the lights come up just a hair, and the pastor steps to the edge of the stage with that big inviting smile, the one that means something is about to be asked of you, and he says, "All right, before we get seated, everybody go ahead and turn around and greet your neighbor."</p>
+
+  <p>And for a certain kind of man, that is the longest thirty seconds in all of Christendom.</p>
+
+  <p>Now some folks light up like a pinball machine. They were born for this. They are already three rows deep, pumping hands and clapping shoulders like a man running for county commissioner two weeks before the primary. But the rest of us? We get that warm little flush up the back of the neck. We do the half stand, that crouched hover that is neither sitting nor standing. We shake the two hands within arm's reach, throw a tight nod and a pointed finger at a third fellow we can't quite get to, mutter "good to see you, good to see you" to a man whose name has left us entirely, and then ease back down into our seat praying nobody comes in for the side hug. There are men among us who would rather give in the offering plate twice than do the greeting one time.</p>
+
+  <p>But here is the thing about that little ritual. There is an actual point buried in it. And it does not work, I want to be real clear about this, it does not work one bit if you have driven a permanent stake into the same seat for the last fifteen years. You know exactly the man I mean. Same pew, same end, same cushion worn into the precise shape of him, like a recliner that has finally given up and accepted its fate. He greets the same four people every single Sunday for the simple reason that those are the only four souls the good Lord has ever seated within his reach. He has been faithfully "meeting his neighbor" since the first Bush administration, and he still could not tell you that neighbor's last name if you spotted him the first letter.</p>
+
+  <div class="pull">
+    <p>That thirty seconds of holy awkwardness is quietly one of the most undervalued ministries in the whole building. But only if you are willing to go and sit somewhere new.</p>
+  </div>
+
+  <p>You have stood up on a Sunday and shaken a dozen hands you will never remember. You have served right next to some of those same men for years, close enough to smell the coffee on them. But be honest with yourself for just a second. How well do you actually <em>know</em> a single one of them?</p>
+
+  <div class="dinkus">&bull; &bull; &bull;</div>
+
+  <h2>The 250-Word Test</h2>
+
+  <p>A while back I was sitting in a leadership meeting, the kind with the lukewarm coffee in the little styrofoam cups and a flip chart up front, and the facilitator handed out the strangest little assignment. Write 250 words about each person on your team. Not their job. Not their title. Their actual selves. And I'll be honest with you, the room got real quiet, real fast. It is a humbling thing to sit there with a sharp pencil and a blank line and realize you have got nothing.</p>
+
+  <p>So let me hand you that very same challenge, except I'm pointing it at the pew instead of the office. Pick a man you serve right alongside and try to fill 250 words about him. Here is the catch though, and it's the whole game. Not one word of it can be about what he does at church. You already know that part. That part is easy.</p>
+
+  <p>What does he do on a Saturday with nobody watching? Where does he take his wife to eat when they finally get a night out? Does he have a ball team he will defend clean past the point of reason? (I'm a die hard Atlanta Braves man myself, born and bred, so the second a fellow tells me he pulls for the Mets we are going to have us a conversation.) And listen, if you cannot fill that page, that is not a failure. Don't hang your head over it. That blank space is just the starting line.</p>
+
+  <div class="dinkus">&bull; &bull; &bull;</div>
+
+  <h2>Friendship Is a Verb Now</h2>
+
+  <p>So here is the whole point of all my rambling. As grown men, friends do not just get handed to us anymore. When we were boys, they were practically forced on us by sheer proximity, by the simple fact of living three houses down. But now? Now everybody has got something going on. And whatever it is you have got going on, I promise you the other fellow has got his own version of it too, sitting just as heavy on him. So you cannot just settle into the porch rocker and wait for the bicycle gang to come riding back around the cul de sac. Those days are gone, son. You have got to get up and go knock on the door yourself.</p>
+
+  <p>And being intentional does not mean being vague. "We ought to get together sometime" is the place where friendships go to quietly lie down and die. Everybody nods, everybody means it, and not a soul ever does it. You have got to get specific.</p>
+
+  <div class="card">
+    <p class="label">Try This Instead</p>
+    <h3>Trade the empty "sometime" for an actual invitation</h3>
+    <ul>
+      <li><span class="scratch">"We ought to grab breakfast sometime."</span><br>&rarr; "Want to meet me for breakfast tomorrow at 7? I'm buying."</li>
+      <li><span class="scratch">"We ought to catch a game one of these days."</span><br>&rarr; "I've got an extra ticket Friday. You in or not?"</li>
+      <li><span class="scratch">"We ought to play golf sometime."</span><br>&rarr; "You free to play golf at 10 on Saturday?"</li>
+    </ul>
+  </div>
+
+  <p>And do not go getting discouraged when the calendars don't line up on the first swing. They won't always. A man has got a lot of irons in the fire. Just keep on making the effort anyway, because that stubborn persistence right there, that is not the thing that comes before the friendship. That <em>is</em> the friendship, being built one rejected invitation at a time.</p>
+
+  <div class="dinkus">&bull; &bull; &bull;</div>
+
+  <h2>Even Jesus Had to Be Patient</h2>
+
+  <p>I think a lot about Jesus picking his twelve. Now the man had an advantage I will flat never have. He could read hearts. He knew exactly what he was signing up for with every last one of them, warts and all. And he <em>still</em> spent three long, patient, dusty years walking those Galilean roads, sharing fish over a fire, and putting up with that hardheaded crew of fishermen and tax collectors. If the very Son of God put in that kind of time to build those relationships, I cannot for the life of me figure out why I expect mine to show up at my door instantly and fully assembled, batteries included.</p>
+
+  <p>Or take David and Jonathan. We tell that one like their friendship just happened on its own, like it fell out of the sky because the two families already ran in the same circles. But it did not just happen. They covenanted. They made a flat out promise to one another and then they kept it, showing up for each other at real and bloody personal cost. They put in the work, same as you and I have to.</p>
+
+  <div class="scripture">
+    "A man who has friends must himself be friendly, but there is a friend who sticks closer than a brother."
+    <span>Proverbs 18:24</span>
+  </div>
+
+  <div class="dinkus">&bull; &bull; &bull;</div>
+
+  <h2>One More Thing, From My Wife</h2>
+
+  <p>Now I'll tell you the real honest reason I sat down and wrote all this. My wife and I are both squarely middle aged now, settled into that comfortable season, and every so often she will look up at me from across the room, at her big loyal golden retriever of a husband (some days more of a German shepherd, depending entirely on the mood and how the Braves played the night before), and she will say to me, with every bit of love in her heart, <em>"Honey, can you please go and do something with somebody?"</em></p>
+
+  <p>And the woman is right. She knows good and well it's good for me. Now let me be crystal clear about something. I am not talking about the kind of "friendship" that ends with three days in Vegas and a long list of things you swear before God you will never speak of again. That is not friendship. That is a cautionary tale. I am talking about good men. The kind who will encourage you when you've got nothing left. The kind who will get a hand under you and pick you back up off the floor when you are down.</p>
+
+  <div class="pull">
+    <p>But they cannot pick you up off the floor when you're down if they don't know you. And they will never know you if you made good and sure they were never really let in.</p>
+  </div>
+
+  <p>And that right there, friends, is the quiet danger of a circle that got <em>too</em> small. So this is my encouragement to you this morning, brother to brother, plain as I know how to say it. Be intentional. Write the 250 words. Send the specific invitation, day and time attached. Get up off the porch and go knock on the door. Because honestly the truth has not changed all that much between the bicycle gang and the breakfast table. We were never, not one of us, built to ride around out here all by ourselves.</p>
+
+  <p>Men need friends too.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

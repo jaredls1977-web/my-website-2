@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No More Sugarcoating: The Power of Delivering Tough News with Honesty and Heart | Jared Scott</title>
+<meta name="description" content="How to deliver bad news in a way that respects people enough to tell them the truth.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Honesty</p>
+  <h1>No More Sugarcoating: The Power of Delivering Tough News with Honesty and Heart</h1>
+  <p class="dek">How to deliver bad news in a way that respects people enough to tell them the truth.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">When bad news is in the air, everyone feels it. It's that tense silence, the whispers behind closed doors, and the unsettling feeling that something big is happening—but no one's saying a word. Few things are more frustrating for a team than sensing trouble and having leadership avoid or delay addressing it. We all know the discomfort of waiting, of being left in the dark, and in these moments, what we crave most is straightforward honesty. This article dives into the best ways for leaders to deliver bad news with integrity, why it matters, and how it can build a culture where employees feel respected—even in the hardest times.</p>
+  <h2>The Frustration of Silence</h2>
+  <p>Think of a time when you suspected something was wrong, yet no one in charge would confirm it. That uncertainty breeds mistrust, anxiety, and, eventually, resentment. Whether it's news of layoffs, a shift in the company's direction, or a challenging quarter, silence can be damaging. It tells employees that they aren't trusted with the truth or that leadership isn't prepared to stand up and face the reality of the situation.</p>
+  <p>But imagine instead if a leader walked in and told you exactly what was happening. No fluff, no unnecessary silver linings—just an honest, direct conversation. Wouldn't that feel like a breath of fresh air?</p>
+  <h2>Why Honesty Is Better than Sugarcoating</h2>
+  <p>When it comes to hard news, most people prefer leaders who are direct. Sugarcoating or "spinning" tough messages may feel easier in the moment, but it erodes trust over time. People want to feel respected, and there's no greater way to show respect than to tell the truth—even when it's hard to hear.</p>
+  <p>One team member may be facing potential layoffs, while another could be losing out on a bonus. Whatever the news, the sting is lessened when it's delivered upfront and clearly. If leadership tries to wrap bad news in a comforting package, it often feels more like avoidance than compassion. Leaders owe it to their teams to be transparent.</p>
+  <h2>Key Principles for Delivering Bad News Well</h2>
+  <ol>
+    <li><strong>Be Clear and Compassionate</strong> Transparency isn't about stripping away empathy; it's about combining clarity with kindness. Deliver the news in plain terms, and don't sidestep the tough parts. Address the reality without trying to "fix" it with empty reassurances.</li>
+    <li><strong>Provide the 'Why' Behind the News</strong> People are more understanding when they know the rationale behind a decision. Give employees the respect of knowing why changes are happening, especially if it affects them directly.</li>
+    <li><strong>Listen and Show That You Care</strong> After delivering the news, make room for questions and reactions. Acknowledge the emotional weight of the moment. If your employees sense that you're truly listening, it will help them accept the reality and process the impact.</li>
+    <li><strong>Follow Through with Support</strong> If there are resources or support available—whether it's job placement services, extra training, or mental health support—make those offerings clear. Actions speak louder than words, so backing up tough news with real help shows genuine care.</li>
+  </ol>
+  <h2>What to Avoid When Breaking Bad News</h2>
+  <ol>
+    <li><strong>Don't Pretend Everything Is Fine</strong> Sugarcoating or dismissing the gravity of the situation is a mistake. Telling people it's "not that bad" when they know it is only fuels frustration. Acknowledge the difficulty, and don't shy away from the hard truths.</li>
+    <li><strong>Don't Delay the Inevitable</strong> Delays lead to rumors, distrust, and a sense of being kept in the dark. Once you know tough news must be shared, prepare yourself, and deliver it as soon as possible. The sooner you address the elephant in the room, the less damaging it will be.</li>
+    <li><strong>Don't Shift the Burden to Your Team</strong> Avoid making employees feel responsible for your difficult position. Don't say, "This is hard for me too," or, "I don't like being the one to tell you." Focus on what your team needs to hear, not on your own challenges.</li>
+  </ol>
+  <h2>Conclusion</h2>
+  <p>Delivering bad news will never be easy, but choosing to be honest, direct, and compassionate can transform a moment of disappointment into a foundation for future trust. Leaders who are willing to be open, who stand by their people and see them through the tough times, build a resilient culture. As difficult as it may feel, stepping up to deliver tough news can be a powerful opportunity to lead with integrity.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

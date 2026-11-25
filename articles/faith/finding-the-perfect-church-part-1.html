@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding the Perfect Church, Part 1: Spoiler Alert—You Won't</title>
+  <style>
+    :root {
+      --sand: #f3eadc;
+      --linen: #fbf7ef;
+      --paper: #fffdf8;
+      --ink: #2f2a24;
+      --soft-ink: #5f554b;
+      --clay: #a66f4f;
+      --clay-dark: #7c4f37;
+      --sage: #7f8b6f;
+      --sage-dark: #56624b;
+      --moss: #3f4a3c;
+      --wheat: #dfc89f;
+      --rule: #e2d5bf;
+      --quote-bg: #f5efe4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(166, 111, 79, 0.18), transparent 26rem),
+        radial-gradient(circle at 92% 16%, rgba(127, 139, 111, 0.18), transparent 30rem),
+        linear-gradient(180deg, var(--sand) 0%, #efe3d1 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.76;
+    }
+
+    .top-band {
+      background: linear-gradient(135deg, #4c5a45 0%, #71624f 56%, #9f7657 100%);
+      color: #fffaf0;
+      padding: 34px 22px 88px;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-band::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -38% -8%;
+      height: 190px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .series-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: #fff7e8;
+      background: rgba(47, 42, 36, 0.24);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .series-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--wheat);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: clamp(2.75rem, 6vw, 5.7rem);
+      line-height: 0.96;
+      max-width: 960px;
+      margin: 0;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(1.2rem, 2.1vw, 1.65rem);
+      color: #f8ead2;
+      margin: 22px 0 0;
+      font-style: italic;
+    }
+
+    .byline {
+      margin-top: 28px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f1e3cd;
+      font-size: 0.98rem;
+    }
+
+    .shell {
+      width: min(980px, calc(100% - 28px));
+      margin: -50px auto 62px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      position: relative;
+      z-index: 2;
+    }
+
+    main {
+      background: var(--paper);
+      border: 1px solid rgba(126, 101, 74, 0.18);
+      border-radius: 22px;
+      box-shadow: 0 22px 48px rgba(79, 60, 40, 0.16);
+      padding: clamp(32px, 5vw, 64px);
+    }
+
+    aside {
+      position: sticky;
+      top: 22px;
+      background: rgba(255,253,248,0.84);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(126, 101, 74, 0.18);
+      border-radius: 22px;
+      box-shadow: 0 18px 36px rgba(79, 60, 40, 0.12);
+      padding: 24px;
+    }
+
+    .dek {
+      font-size: 1.36rem;
+      line-height: 1.58;
+      color: var(--soft-ink);
+      padding: 0 0 28px;
+      margin: 0 0 34px;
+      border-bottom: 1px solid var(--rule);
+      font-style: italic;
+    }
+
+    article p {
+      font-size: 1.09rem;
+      margin: 0 0 1.42rem;
+    }
+
+    article p:first-of-type::first-letter {
+      float: left;
+      font-size: 4.9rem;
+      line-height: 0.86;
+      padding: 0.15rem 0.52rem 0 0;
+      color: var(--clay-dark);
+      font-weight: bold;
+    }
+
+    .scripture-card {
+      margin: 0 0 22px;
+      padding: 20px 20px 18px;
+      background: linear-gradient(180deg, #fbf5e8 0%, #f4ead8 100%);
+      border: 1px solid var(--rule);
+      border-left: 5px solid var(--sage);
+      border-radius: 18px;
+    }
+
+    .scripture-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .scripture-card p {
+      margin: 0;
+      color: var(--moss);
+      line-height: 1.55;
+      font-size: 1.02rem;
+      font-style: italic;
+    }
+
+    .note-card {
+      margin-top: 18px;
+      padding: 20px;
+      background: #efe3d1;
+      border-radius: 18px;
+      border: 1px solid #deceb6;
+      color: var(--soft-ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .article-footer {
+      margin-top: 38px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--soft-ink);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-pill {
+      display: inline-block;
+      background: #f0e3ce;
+      color: var(--clay-dark);
+      border: 1px solid #dcc7a7;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 700;
+    }
+
+
+    .series-nav-box {
+      margin: 34px 0 0;
+      padding: 24px;
+      border: 1px solid var(--rule);
+      border-radius: 18px;
+      background: #fbf5e8;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .series-nav-box h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 1.55rem;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+    .series-nav-box p { margin: 0 0 18px; color: var(--soft-ink); font-size: .96rem; }
+    .series-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .series-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .series-links a:hover { border-color: var(--clay); color: var(--clay-dark); }
+    .series-links .current { background: #efe3d1; color: var(--clay-dark); }
+    .part-nav {
+      margin-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .part-nav a {
+      text-decoration: none;
+      color: var(--clay-dark);
+      font-weight: 700;
+      border-bottom: 1px solid currentColor;
+    }
+    @media (max-width: 680px) {
+      .series-links { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 920px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .note-card {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .top-band {
+        padding: 30px 18px 74px;
+      }
+
+      .shell {
+        width: calc(100% - 22px);
+        margin-top: -42px;
+      }
+
+      main {
+        border-radius: 18px;
+        padding: 28px 22px;
+      }
+
+      aside {
+        grid-template-columns: 1fr;
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      article p {
+        font-size: 1.03rem;
+      }
+
+      .dek {
+        font-size: 1.16rem;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<header class="top-band">
+    <div class="hero-inner">
+      <div class="series-tag">Faith • Part 1 of 4</div>
+      <h1>Finding the Perfect Church</h1>
+      <p class="subtitle">Spoiler Alert—You Won't</p>
+      <p class="byline">By Jared Scott</p>
+    </div>
+  </header>
+
+  <div class="shell">
+    <main>
+      <div class="dek">A move, a room full of boxes, and a question neither of us really wanted to answer.</div>
+      <article>
+<p>The first thing that disappears when you&#x27;re moving isn&#x27;t the furniture. The furniture stays for a while. The couch sits where it&#x27;s always sat. The kitchen table remains in place. The pictures stay on the walls. To anyone walking through the front door, everything appears normal. But if you&#x27;ve ever packed up a house, you know there&#x27;s a moment when something changes. It usually happens quietly. A closet gets emptied. A bookshelf disappears. A picture comes off the wall and leaves behind a faint rectangle where sunlight never reached. Suddenly the house starts looking less like a home and more like a place you&#x27;re borrowing until someone else arrives.</p>
+<p>Our house had entered that stage. There were boxes stacked along the dining room wall and more boxes in the spare bedroom. The garage had become a temporary warehouse of things we had forgotten we owned. Every flat surface seemed to be covered with tape, markers, paperwork, or some object that hadn&#x27;t yet found a place inside a cardboard box. Robin was sitting at the dining room table sorting through papers while I stood in front of a shelf trying to decide whether I needed to keep a collection of cables that had somehow survived three computers, two televisions, and at least one previous move. The answer was no. I packed them anyway.</p>
+<p>Moving has a way of exposing the strange relationship people have with possessions. You find yourself holding an object you haven&#x27;t touched in eight years and suddenly convincing yourself it might be essential to your future happiness. Rational thought leaves the building. Every item becomes a historical artifact. Every object becomes a memory. Every memory becomes an argument for keeping something that should probably be thrown away. I was standing there holding a cable whose purpose I could no longer identify when Robin looked up from the stack of papers in front of her.</p>
+<p>&quot;What are we going to do about church?&quot;</p>
+<p>The question landed in the room and stayed there. I set the cable down and pulled out a chair. Neither of us spoke for a few seconds. The silence wasn&#x27;t awkward. It was familiar. Married people know the difference. Some silences mean nobody has anything to say. Others mean both people are thinking about the exact same thing. This was the second kind.</p>
+<p>The new house would put us about forty-five minutes away from Grace. On paper, that doesn&#x27;t sound terrible. Forty-five minutes feels reasonable when you&#x27;re talking about a vacation destination. Forty-five minutes feels reasonable when you&#x27;re driving somewhere once a month. Forty-five minutes starts feeling very different when you&#x27;re discussing a place that is supposed to become part of the rhythm of your life. A church isn&#x27;t a concert venue. You don&#x27;t attend it once. You return to it again and again, Sunday after Sunday, year after year. That&#x27;s why the question sat there for a while, because neither of us wanted to answer it.</p>
+<p>Eventually I leaned back in the chair and looked around the room. The late afternoon sunlight was coming through the windows at an angle that made the dust floating in the air visible. The boxes along the wall cast long shadows across the hardwood floor. Somewhere in the house, the air conditioning kicked on with a familiar sound I knew I wouldn&#x27;t hear much longer. &quot;I guess we&#x27;re going to have to start looking,&quot; I finally said. Robin nodded. The words sounded simple enough. The reality behind them wasn&#x27;t.</p>
+<p>Church shopping is one of the strangest things Christians do. The longer I sat there that evening, the more I found myself thinking about how absurd the process actually is. When people move to a new town, they don&#x27;t usually spend months comparing grocery stores. They don&#x27;t visit six different pharmacies before deciding where they&#x27;ll fill prescriptions. They don&#x27;t spend entire afternoons watching online videos of local hardware stores before committing to buy nails and light bulbs from a particular location. Church sits somewhere between family, community, faith, tradition, and personal conviction. It occupies a space in life that is difficult to describe and even harder to replace. The longer you&#x27;ve been part of a church, the more difficult it becomes to separate the building from the memories attached to it.</p>
+<p>What made the entire process even stranger for me was the simple fact that I didn&#x27;t grow up in church. At least not in the way most people mean it. Growing up, Sunday mornings looked very different from the experiences many Christians describe when they talk about childhood. There were no youth groups. No church camps. No Sunday School classrooms decorated with Bible stories and construction paper artwork. There were no pastors standing at the front of a sanctuary. There was a Kingdom Hall.</p>
+<p>The older I get, the more I realize how much that shaped the way I see churches today. When you&#x27;re raised inside a particular system, it becomes invisible. You don&#x27;t analyze it because you don&#x27;t know there&#x27;s anything to compare it against. It simply becomes the backdrop of life. Looking back now, I can still picture the Kingdom Hall where I spent countless hours. I remember the smell of the carpet. I remember the rows of chairs. I remember the literature counters. I remember the way conversations sounded before and after meetings. At the time, it all felt normal.</p>
+<p>Then I left. Years later, after becoming a Christian, I walked into my first modern church service. The memory remains surprisingly vivid. I remember standing in the lobby before the service started, watching people talk and laugh as they carried coffee cups from one side of the room to the other. I remember noticing how casually everyone dressed. I remember hearing music from inside the sanctuary before I ever saw the room itself. Most of all, I remember the feeling. Not disagreement. Not discomfort. Not criticism. Disorientation. The same feeling you experience when visiting a country where everyone understands the customs except you.</p>
+<p>The people around me knew when to stand. They knew when to sing. They knew where to go. They knew what to expect. I didn&#x27;t. Everything felt unfamiliar, which made me pay attention to details that regular attendees probably never noticed. I noticed the lighting. I noticed the screens. I noticed the music. I noticed the way people interacted with one another. I noticed how different it all felt from the religious environment where I had spent my childhood.</p>
+<p>The years that followed introduced me to more churches than I can easily count. Some were large, some were small, some met in impressive buildings, and some met in places that looked as though they had stories to tell. Some felt highly structured, while others felt relaxed. Some services moved with the precision of a carefully planned production, while others felt as though they were unfolding in real time. The surprising part wasn&#x27;t the differences. The surprising part was the people, because no matter where I went, I kept encountering individuals who genuinely loved Christ. Not perfect people. Not identical people. Not people who agreed on everything. Just ordinary believers trying to follow Jesus.</p>
+<p>That should have made the search easier. Instead, it made it more complicated, because it forced me to confront a truth I would have preferred to avoid. The more churches I visited, the more I discovered that many of the things I considered important weren&#x27;t necessarily theological convictions at all. They were preferences. They felt important because they were familiar. They felt right because they matched my expectations. They felt biblical because I happened to agree with them. There is a difference between conviction and preference, but the difference isn&#x27;t always obvious while you&#x27;re living inside it.</p>
+<p>That realization didn&#x27;t arrive all at once. It emerged slowly through conversations, experiences, and countless drives home after visiting churches. Some of those drives were filled with excitement. Others were filled with uncertainty. Most included some version of the same discussion. What did you think? What did you like? What didn&#x27;t you like? How did it feel? The interesting thing about those conversations is that they revealed as much about me as they did about the churches we visited.</p>
+<p>A church would preach a biblically faithful sermon, and I&#x27;d find myself talking about the music. The congregation would be warm and welcoming, and I&#x27;d find myself discussing the service schedule. People would clearly love one another, and I&#x27;d find myself focused on secondary details that had little to do with the actual health of the church. The pattern became difficult to ignore once I noticed it. Somewhere along the way, I had quietly started comparing real churches to an imaginary church that existed only in my mind.</p>
+<p>The imaginary church was remarkable. It always had exactly the right atmosphere. It had exactly the right sermon length, exactly the right music, exactly the right programs, and exactly the right people. The only problem was that it didn&#x27;t exist. Real churches never matched it. They couldn&#x27;t. Real churches are made of real people.</p>
+<p>As the evening grew darker around us, Robin continued sorting papers while I sat there thinking about all the churches I&#x27;d visited over the years. I thought about the people I&#x27;d met. I thought about the conversations I&#x27;d had. I thought about how easy it is to evaluate churches from the perspective of a consumer instead of a participant. At some point my thoughts drifted toward a verse I&#x27;d read many times before: Christ loved the church and gave Himself up for her.</p>
+<p>I&#x27;ve read those words countless times. That evening they felt different. Perhaps it was because I was surrounded by boxes and transitions and uncertainty. Perhaps it was because I was preparing to begin another search. Whatever the reason, I found myself sitting there with a simple realization that felt far more significant than the cable still sitting on the shelf behind me. Christ loved the church long before I started evaluating it. He loved it in all its imperfections. He loved it with all its flaws. He loved it despite its shortcomings. He loved it enough to give Himself for it.</p>
+<p>The room had grown darker by the time we started packing again. The conversation moved on to other topics. There were still boxes to fill and decisions to make. The move wasn&#x27;t finished. The church question wasn&#x27;t answered. Nothing had been resolved. And yet something had shifted. The search ahead no longer felt like a quest to discover the perfect church. Maybe such a thing had never existed in the first place. Maybe the more important task was learning how to recognize what actually mattered once perfection was removed from the equation. That question stayed with me long after the boxes were packed, and it became the beginning of a very different conversation.</p>
+      </article>
+
+      <section class="series-nav-box" aria-label="Finding the Perfect Church series navigation">
+        <h2>Finding the Perfect Church Series</h2>
+        <p>Read the four articles in order.</p>
+        <div class="series-links">
+          <a class="current" href="finding-the-perfect-church-part-1.html">Part 1: Finding the Perfect Church<br><span>Spoiler Alert — You Won&#x27;t</span></a> <a href="finding-the-perfect-church-part-2.html">Part 2: What Are You Actually Looking For?</a> <a href="finding-the-perfect-church-part-3.html">Part 3: Church Hurt Is Real, But It Isn&#x27;t Jesus</a> <a href="finding-the-perfect-church-part-4.html">Part 4: Every Church Is Somebody&#x27;s Perfect Church</a>
+        </div>
+        <div class="part-nav"><a href="finding-the-perfect-church-series.html">Series Landing Page</a><a href="finding-the-perfect-church-part-2.html">Next: What Are You Actually Looking For?</a></div>
+      </section>
+      <div class="article-footer">
+        <span class="footer-pill">Finding the Perfect Church</span>
+        <span>Part 2: What Are You Actually Looking For?</span>
+      </div>
+    </main>
+</div>
+</body>
+</html>

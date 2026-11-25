@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behind the Smile</title>
+  <style>
+    :root {
+      --bg: #f2eee8;
+      --paper: #fffaf2;
+      --ink: #1f2527;
+      --muted: #62615d;
+      --soft: #d8cfc2;
+      --accent: #8a5f3d;
+      --accent-dark: #46372f;
+      --quote: #efe3d4;
+      --shadow: rgba(45, 38, 32, 0.18);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(138,95,61,.16), transparent 34%),
+        linear-gradient(180deg, #e8e1d8 0%, var(--bg) 38%, #f8f5ef 100%);
+      color: var(--ink);
+      line-height: 1.72;
+    }
+    .page { max-width: 1120px; margin: 0 auto; padding: 42px 22px 70px; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      gap: 34px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+    .hero-text { padding: 26px 0; }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      line-height: .92;
+      letter-spacing: -0.055em;
+      color: var(--accent-dark);
+    }
+    .subtitle {
+      margin: 24px 0 0;
+      max-width: 680px;
+      font-size: clamp(1.18rem, 2.2vw, 1.7rem);
+      line-height: 1.35;
+      color: #3d3d3a;
+    }
+    .photo-card {
+      margin: 0;
+      background: var(--paper);
+      padding: 13px 13px 18px;
+      border: 1px solid rgba(70,55,47,.16);
+      box-shadow: 0 24px 58px var(--shadow);
+      transform: rotate(.35deg);
+    }
+    .photo-card img { width: 100%; height: auto; display: block; filter: saturate(.93) contrast(1.03); }
+    figcaption {
+      margin-top: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: .88rem;
+      text-align: center;
+    }
+    article {
+      background: rgba(255,250,242,.84);
+      border: 1px solid rgba(70,55,47,.12);
+      box-shadow: 0 18px 48px rgba(45,38,32,.10);
+      padding: clamp(26px, 5vw, 62px);
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    article p { margin: 0 0 1.1rem; font-size: clamp(1.05rem, 1.35vw, 1.18rem); }
+    .lead {
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.25;
+      color: var(--accent-dark);
+      margin-bottom: 1.35rem;
+      font-weight: 700;
+    }
+    .humor {
+      margin: 26px 0;
+      padding: 22px 24px;
+      background: #f5eadc;
+      border-left: 6px solid var(--accent);
+      border-radius: 0 14px 14px 0;
+      font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+    }
+    .turn {
+      margin: 34px 0 20px;
+      padding-top: 22px;
+      border-top: 1px solid var(--soft);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+    }
+    blockquote {
+      margin: 28px 0;
+      padding: 25px 30px;
+      background: var(--quote);
+      color: var(--accent-dark);
+      border-left: 6px solid var(--accent);
+      font-size: clamp(1.35rem, 2.5vw, 2rem);
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    .line-list { margin: 24px 0; padding: 8px 0 4px 22px; border-left: 3px solid var(--soft); }
+    .line-list p { margin-bottom: .65rem; }
+    .closing {
+      margin-top: 34px;
+      padding: 28px;
+      background: #2f2b28;
+      color: #fff7ed;
+      border-radius: 18px;
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      line-height: 1.45;
+    }
+    .closing strong { color: #f2c99c; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-text { padding: 8px 0 0; }
+      .photo-card { transform: none; }
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<main class="page">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Men's Mental Health Awareness Month</p>
+        <h1>Behind the Smile</h1>
+        <p class="subtitle">A first day at work, a family funeral, and the reminder that grief does not always look like grief.</p>
+      </div>
+      <figure class="photo-card">
+        <img src="../../assets/article-images/behind-the-smile-4de5e3222f.webp" alt="Jared on his first day at SEW-EURODRIVE in June 1995" />
+        <figcaption>Jared on his first day at SEW-EURODRIVE, June 1995.</figcaption>
+      </figure>
+    </section>
+
+    <article>
+      <p class="lead">The young man in this picture is me.</p>
+
+      <div class="humor">
+        Go ahead. The first thing you probably notice is those big-ass glasses. Trust me, I know. They were not a fashion statement. I was blind as a bat, and apparently I was just 31 years early for them to come back in style.
+      </div>
+
+      <p>This photo was taken on my very first day at SEW-EURODRIVE in June of 1995. I was 18 years old. Since that was 31 years ago, I should probably clarify that this really is me before anyone starts wondering who the kid in the work shirt is.</p>
+
+      <p class="turn">Now look at the picture again.</p>
+
+      <p>Most people see a young man starting his first real job.</p>
+
+      <p>What they do not see is what happened during the week before this picture was taken.</p>
+
+      <p>A little over a week earlier, I had graduated from high school. Like most 18-year-olds, I was looking forward to what came next.</p>
+
+      <p>Then, early Saturday morning, the phone rang.</p>
+
+      <p>I remember my mom answering it and then handing it to my dad.</p>
+
+      <blockquote>"Honey, it's your mom."</blockquote>
+
+      <p>A few moments later, I heard my father cry for the first time in my life.</p>
+
+      <p>My grandfather had died.</p>
+
+      <p>It was sudden. Unexpected.</p>
+
+      <p>My family packed up and headed to Ossian, Indiana, where the rest of the family had gathered. A friend and I drove up later for the funeral.</p>
+
+      <p>What should have been a week of celebrating graduation became a week filled with grief, sadness, family gatherings, and saying goodbye.</p>
+
+      <p>Two days before this picture was taken, I helped carry my grandfather's casket alongside my brothers and cousins.</p>
+
+      <p>He was the only grandfather I ever really knew.</p>
+
+      <p>He was the reason I thought tractors were cool. The reason I thought maybe one day I would be a farmer. He left a mark on my life in ways I did not fully appreciate until he was gone.</p>
+
+      <p>On Saturday, we buried him in Ossian, Indiana.</p>
+
+      <p>On Sunday night, we drove home because Monday morning I had to start my first real job.</p>
+
+      <p>I still remember showing up that first day and realizing I had forgotten my steel-toe shoes.</p>
+
+      <p>Not exactly the best way to start a career.</p>
+
+      <p>The gentleman training me looked down and asked why I was not wearing them. He knew a little bit about what had happened and showed me some grace. Instead of making a big deal about it, he had me work on safety training while they found a solution.</p>
+
+      <p>Eventually, they gave me a pair of steel-toe covers that fit over my shoes.</p>
+
+      <p>I called them the "metal clip-clops of shame."</p>
+
+      <p>I spent my first day clunking around the plant wearing those things.</p>
+
+      <p class="turn">Now look at the picture one more time.</p>
+
+      <div class="line-list">
+        <p>Do you see someone who is devastated?</p>
+        <p>Do you see someone heartbroken because the only grandfather he ever knew was gone?</p>
+        <p>Do you see someone trying to process grief, loss, graduation, a funeral, a long drive home, and the first day of adulthood all within the span of a single week?</p>
+      </div>
+
+      <p>Probably not.</p>
+
+      <p>I look like a young man starting his first job.</p>
+
+      <p>And that is the point.</p>
+
+      <p>Grief does not always present itself in tears, frowns, or visible agony.</p>
+
+      <p>The human mind is resilient. Sometimes people carry enormous burdens while appearing completely normal on the outside.</p>
+
+      <p>The same is true for the people around us.</p>
+
+      <p>What is going on inside of us may be completely different from what is going on inside someone else. And what someone else is carrying may be completely invisible to us.</p>
+
+      <p>That is why empathy matters.</p>
+
+      <p>That is why kindness matters.</p>
+
+      <p>That is why we should be careful about assuming we know what someone is going through based only on what we can see.</p>
+
+      <div class="closing">
+        As we recognize Men's Mental Health Awareness Month, that is the lesson this picture reminds me of: <strong>you never really know what is happening behind the smile.</strong>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

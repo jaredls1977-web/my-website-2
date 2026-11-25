@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding the Perfect Church, Part 3: Church Hurt Is Real, But It Isn't Jesus</title>
+  <style>
+    :root {
+      --sand: #f3eadc;
+      --paper: #fffdf8;
+      --ink: #2f2a24;
+      --soft-ink: #5f554b;
+      --clay: #a66f4f;
+      --clay-dark: #7c4f37;
+      --sage: #7f8b6f;
+      --rule: #e2d5bf;
+      --wheat: #dfc89f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(166, 111, 79, 0.18), transparent 34rem),
+        radial-gradient(circle at 92% 16%, rgba(127, 139, 111, 0.18), transparent 30rem),
+        linear-gradient(180deg, var(--sand) 0%, #efe3d1 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.76;
+    }
+    .top-band {
+      background: linear-gradient(135deg, #4c5a45 0%, #71624f 56%, #9f7657 100%);
+      color: #fffaf0;
+      padding: 34px 22px 88px;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .top-band::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -38% -8%;
+      height: 190px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50% 50% 0 0;
+    }
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .series-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: #fff7e8;
+      background: rgba(47, 42, 36, 0.24);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .series-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--wheat);
+      border-radius: 50%;
+    }
+    h1 {
+      font-size: clamp(2.75rem, 6vw, 5.7rem);
+      line-height: 0.96;
+      max-width: 960px;
+      margin: 0;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(1.2rem, 2.1vw, 1.65rem);
+      color: #f8ead2;
+      margin: 22px 0 0;
+      font-style: italic;
+    }
+    .byline {
+      margin-top: 28px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f1e3cd;
+      font-size: 0.98rem;
+    }
+    .shell {
+      width: min(980px, calc(100% - 28px));
+      margin: -50px auto 62px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      position: relative;
+      z-index: 2;
+    }
+    main {
+      background: var(--paper);
+      border: 1px solid rgba(126, 101, 74, 0.18);
+      border-radius: 22px;
+      box-shadow: 0 22px 48px rgba(79, 60, 40, 0.16);
+      padding: clamp(32px, 5vw, 64px);
+    }
+    .dek {
+      font-size: 1.36rem;
+      line-height: 1.58;
+      color: var(--soft-ink);
+      padding: 0 0 28px;
+      margin: 0 0 34px;
+      border-bottom: 1px solid var(--rule);
+      font-style: italic;
+    }
+    article p {
+      font-size: 1.09rem;
+      margin: 0 0 1.42rem;
+    }
+    article p:first-of-type::first-letter {
+      float: left;
+      font-size: 4.9rem;
+      line-height: 0.86;
+      padding: 0.15rem 0.52rem 0 0;
+      color: var(--clay-dark);
+      font-weight: bold;
+    }
+    .article-footer {
+      margin-top: 38px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--soft-ink);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .footer-pill {
+      display: inline-block;
+      background: #f0e3ce;
+      color: var(--clay-dark);
+      border: 1px solid #dcc7a7;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 700;
+    }
+
+    .series-nav-box {
+      margin: 34px 0 0;
+      padding: 24px;
+      border: 1px solid var(--rule);
+      border-radius: 18px;
+      background: #fbf5e8;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .series-nav-box h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 1.55rem;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+    .series-nav-box p { margin: 0 0 18px; color: var(--soft-ink); font-size: .96rem; }
+    .series-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .series-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .series-links a:hover { border-color: var(--clay); color: var(--clay-dark); }
+    .series-links .current { background: #efe3d1; color: var(--clay-dark); }
+    .part-nav {
+      margin-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .part-nav a {
+      text-decoration: none;
+      color: var(--clay-dark);
+      font-weight: 700;
+      border-bottom: 1px solid currentColor;
+    }
+    @media (max-width: 680px) {
+      .series-links { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .top-band { padding: 30px 18px 74px; }
+      .shell { width: calc(100% - 22px); margin-top: -42px; }
+      main { border-radius: 18px; padding: 28px 22px; }
+      article p { font-size: 1.03rem; }
+      .dek { font-size: 1.16rem; }
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<header class="top-band">
+    <div class="hero-inner">
+      <div class="series-tag">Faith • Part 3 of 4</div>
+      <h1>Church Hurt Is Real, But It Isn't Jesus</h1>
+      <p class="subtitle">Finding the Perfect Church, Part 3</p>
+      <p class="byline">By Jared Scott</p>
+    </div>
+  </header>
+
+  <div class="shell">
+    <main>
+      <div class="dek">Some wounds come from people who spoke in God's name, but that does not mean God was the one who wounded you.</div>
+      <article>
+<p>There are certain kinds of silence that do not feel empty. They feel crowded. I have known that kind of silence in rooms where religion was supposed to make things clear but instead made everything harder to say. It is the silence that falls when a question is asked and everyone knows the answer is not allowed to be honest. It is the silence that follows a comment from someone in authority when no one wants to challenge it. It is the silence of a child learning that the safest thing to do is nod, sit still, and keep the complicated thoughts somewhere deep inside where nobody can inspect them.</p>
+<p>I learned that silence young. Growing up as one of Jehovah&#x27;s Witnesses meant growing up in a world where spiritual certainty was treated almost like oxygen. It was everywhere. It surrounded every conversation, every meeting, every decision, and every future hope. There was comfort in that when I was little because children often mistake certainty for safety. If everyone around you speaks with confidence, you assume confidence is the same thing as truth. It takes years to understand that a person can speak with great certainty and still be wrong.</p>
+<p>I do not remember a single moment when I suddenly understood everything that had happened to me religiously. It did not work that way. The unraveling was slower than that, more like noticing a loose thread on a sweater and tugging it just enough to realize the whole thing might come apart if you kept pulling. Some questions arrived quietly. Others came with force. Some were theological. Others were personal. Many were tied to memory, to old fears, to things said in living rooms and Kingdom Hall conversations that seemed ordinary at the time but later came back with sharp edges.</p>
+<p>That is the difficult thing about religious hurt. It does not always announce itself while it is happening. Sometimes it feels like obedience. Sometimes it feels like loyalty. Sometimes it feels like being a good person. Only later do you begin to recognize the weight you were carrying. You remember the fear. You remember the pressure. You remember the way authority could be framed as love and control could be presented as protection. You remember how easily a group can convince itself that questioning is rebellion when sometimes questioning is simply the first honest breath a person has taken in years.</p>
+<p>When people talk about church hurt, they often say the phrase as if it means one thing. It does not. For one person, church hurt may be gossip that spread through a congregation like smoke under a door. For another, it may be a pastor who used Scripture like a weapon instead of a lamp. For another, it may be a community that disappeared when life became complicated. For another, it may be years of being told that God&#x27;s approval depended on performance, appearance, obedience, or silence. The stories are different, but the ache underneath them often sounds familiar.</p>
+<p>Because of my background, I carry a certain alertness into religious spaces. I notice tone. I notice language. I notice how leaders handle questions. I notice whether people are allowed to disagree without being treated like threats. I notice whether Scripture is opened and explained or merely quoted to end discussion. I notice whether a church seems to trust the Holy Spirit or whether it acts as if every person&#x27;s life must be managed by committee. Some of that alertness has served me well. Some of it has also made me tired.</p>
+<p>One evening after visiting a church, Robin and I sat in the car longer than usual before going inside. The sun had gone down, and the dashboard lights gave the inside of the vehicle that dim blue glow that makes ordinary conversations feel more private. We had not visited a terrible church that day. Nobody had done anything outrageous. Nobody had said something that would make a person run for the exit. Still, something in me had tightened during the service, and Robin could tell because marriage gives another person access to the weather inside your face.</p>
+<p>She asked what I was thinking, and for a while I did not know how to answer. I could have talked about the sermon or the music or the people we met, but none of that was really the issue. The issue was the feeling that rose up in me when a leader said something with a little too much certainty, when an expectation was implied more than stated, when the room seemed to agree before anyone had really thought. It may have been harmless. It may have been nothing. But the past has a way of reaching into the present and tapping you on the shoulder at inconvenient times.</p>
+<p>I told her that sometimes I do not know whether I am discerning something unhealthy or simply reacting to something familiar. That is one of the hardest parts of healing from spiritual harm. You do not want to become naive, but you also do not want to become suspicious of everything. You do not want to ignore red flags, but you also do not want to paint every church with the colors of the worst religious experiences you&#x27;ve survived. There is a narrow road between wisdom and cynicism, and I have not always walked it gracefully.</p>
+<p>The temptation, when you&#x27;ve been wounded by religious people, is to put Jesus on trial for their behavior. I understand that temptation. I really do. If the people who claimed to represent God controlled you, shamed you, ignored you, manipulated you, or failed you, it can become almost impossible to separate the name of God from the pain attached to it. A song can bring it back. A phrase can bring it back. A certain kind of sermon voice can bring it back. Even a church lobby can become complicated when your history walks in with you.</p>
+<p>That is why I have very little patience for people who dismiss church hurt with easy answers. Telling someone to simply get over it is usually proof that you have not understood what happened. Wounds connected to faith reach deeper because they touch the place where a person was trying to be most sincere. When ordinary people hurt you, it is painful. When religious people hurt you while claiming divine authority, the wound can make you question not only them but everything they used to justify themselves.</p>
+<p>For a long time, I think I carried more anger than I admitted. Not loud anger. Not the kind that kicks doors open and announces itself. Mine was quieter. It appeared as skepticism. It appeared as impatience. It appeared as an unwillingness to let anyone in religious leadership speak without mentally cross-examining every sentence. I told myself I was being careful, and sometimes I was. Other times I was protecting myself so aggressively that I could not receive anything good without inspecting it first for hidden poison.</p>
+<p>That is no way to live forever. It may be necessary for a season, the way a cast is necessary after a bone breaks, but a cast is not meant to become part of the body. At some point healing requires movement. It requires testing strength again. It requires learning how to trust without surrendering discernment. It requires admitting that while some religious environments are unhealthy, not every church is trying to control you, and not every pastor is secretly waiting to become a tyrant.</p>
+<p>One of the verses that has steadied me more than once is Hebrews 13:8: Jesus Christ is the same yesterday and today and forever. I know that verse can sound simple, almost too familiar to notice, but it matters when your experience with religious people has been unstable. People change. Leaders change. Churches change. Organizations change. The reputation of a ministry can rise and fall in a single news cycle. But Christ does not shift with the failures of those who claim His name.</p>
+<p>That distinction has become necessary for me. Jesus is not the same thing as the worst religious people I&#x27;ve known. He is not the same thing as the system that shaped my childhood. He is not the same thing as the human beings who used certainty where humility was needed. He is not the same thing as every pastor who preached poorly, every leader who mishandled power, every congregation that failed to love well, or every Christian who said the right words and lived the wrong way. If I cannot separate Christ from those things, then my faith will always be held hostage by someone else&#x27;s failure.</p>
+<p>That does not mean the failures do not matter. They do. It does not mean churches should avoid accountability. They should not. It does not mean people should remain in unhealthy places to prove their loyalty. Sometimes leaving is obedience. Sometimes walking away from a church is the healthiest spiritual decision a person can make. There are places where the teaching is distorted, the leadership is unsafe, the culture is manipulative, and the wisest thing to do is leave before the damage becomes deeper.</p>
+<p>But leaving a church is not the same thing as leaving Christ. That distinction may sound obvious, but for many people it is not obvious at all. When the only version of faith they&#x27;ve known was tied to a particular group, a particular leader, or a particular system, walking away from that group can feel like walking away from God Himself. I understand that confusion. I lived inside a world where the organization and truth were tied so closely together that separating them felt almost impossible. That is part of what makes high-control religion so damaging. It teaches people to confuse loyalty to God with loyalty to the group.</p>
+<p>Christianity does not require that confusion. In fact, it should free us from it. The church matters deeply, but the church is not the Savior. Pastors matter, but pastors are not Christ. Community matters, but community is not the cross. Doctrine matters, but doctrine must lead us toward the living Lord, not become a weapon for controlling people. When any human structure becomes so central that Jesus is functionally moved to the side, something has gone wrong, even if the language still sounds religious.</p>
+<p>I have thought about that often during this church search. I do not want my past to make me impossible to shepherd. That would not be health. That would be fear wearing armor. At the same time, I do not want to ignore the parts of my past that gave me eyes to see things I might otherwise miss. Healing does not mean pretending nothing happened. It means learning how to carry the truth without letting the pain steer the car.</p>
+<p>That night in the driveway, Robin and I eventually went inside. The house was quiet, and the moving boxes were still waiting in the rooms where we had left them. Nothing dramatic happened. No thunder rolled. No voice from heaven told us where to attend church. We made something to eat, talked about ordinary things, and moved through the rest of the evening like people who still had work the next day. But the conversation stayed with me because it named something I needed to face honestly.</p>
+<p>I cannot use church hurt as an excuse to abandon Jesus. I also cannot pretend church hurt is imaginary just because some people misuse the phrase. Both things are true. The wounds are real, and Christ is real. The failures are real, and the gospel is real. The hypocrisy is real, and so is grace. If I deny the wounds, I become dishonest. If I let the wounds define Christ for me, I become trapped.</p>
+<p>That is the balance I am still learning. I want to enter churches with open eyes but not a closed heart. I want to ask questions without assuming the worst. I want to recognize danger without becoming addicted to suspicion. I want to remember where I came from without letting it decide where I am allowed to go. Most of all, I want to keep Jesus separate from the failures of people who did not represent Him well.</p>
+<p>The church search continues, and I know we will visit places that are not right for us. Some will be too polished. Some will be too rigid. Some will be sincere but not a fit. Some may stir up old discomfort for reasons I will need to examine carefully before trusting my first reaction. That is part of the process. The goal is not to find a place with no flaws. The goal is to find a place where Christ is central enough that human flaws are not ignored, excused, or placed on the throne.</p>
+<p>By the time I turned off the lights that night, I was tired in the way a person gets tired when the past and present have spent too much time in the same room. But I was not hopeless. That mattered. The boy who grew up in a Kingdom Hall, the man who left, the Christian who still believes, and the husband trying to find a church with his wife were all somehow present in the same life. That life is not as clean or simple as I once thought faith was supposed to be. Maybe that is why I trust Jesus more now, not less. He has remained steady through rooms, systems, questions, losses, and searches that could not hold their shape.</p>
+      </article>
+
+      <section class="series-nav-box" aria-label="Finding the Perfect Church series navigation">
+        <h2>Finding the Perfect Church Series</h2>
+        <p>Read the four articles in order.</p>
+        <div class="series-links">
+          <a href="finding-the-perfect-church-part-1.html">Part 1: Finding the Perfect Church<br><span>Spoiler Alert — You Won&#x27;t</span></a> <a href="finding-the-perfect-church-part-2.html">Part 2: What Are You Actually Looking For?</a> <a class="current" href="finding-the-perfect-church-part-3.html">Part 3: Church Hurt Is Real, But It Isn&#x27;t Jesus</a> <a href="finding-the-perfect-church-part-4.html">Part 4: Every Church Is Somebody&#x27;s Perfect Church</a>
+        </div>
+        <div class="part-nav"><a href="finding-the-perfect-church-part-2.html">Previous: What Are You Actually Looking For?</a><a href="finding-the-perfect-church-part-4.html">Next: Every Church Is Somebody&#x27;s Perfect Church</a></div>
+      </section>
+      <div class="article-footer">
+        <span class="footer-pill">Finding the Perfect Church</span>
+        <span>Part 4: Every Church Is Somebody's Perfect Church</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

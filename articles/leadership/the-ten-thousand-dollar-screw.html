@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The employee who knows which screw to turn may look expensive on a spreadsheet. Losing what they know can cost far more." />
+  <title>The Ten Thousand Dollar Screw | Jared Scott Leadership</title>
+  <style>
+    :root {
+      --ink: #24231f;
+      --muted: #6f6a60;
+      --paper: #fffdf8;
+      --cream: #f1eadc;
+      --sand: #dfd0b7;
+      --copper: #9a5b35;
+      --copper-dark: #6d3b23;
+      --deep: #20272a;
+      --steel: #778187;
+      --line: #ddd2c2;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(45, 37, 28, .14);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 82% 4%, rgba(154, 91, 53, .10), transparent 24rem),
+        linear-gradient(180deg, #eee6d8 0%, #fffdf8 34%, #f4eee4 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.72;
+    }
+
+    a { color: inherit; }
+
+    .site-return {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 253, 248, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(36, 35, 31, .12);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .site-return-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .site-return a {
+      color: var(--deep);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .site-return span {
+      color: var(--copper-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .topline strong { color: var(--deep); }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+      min-height: 510px;
+      overflow: hidden;
+      border-radius: 30px;
+      background: var(--deep);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(154, 91, 53, .44), transparent 31rem),
+        linear-gradient(125deg, rgba(255, 255, 255, .03), transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      align-self: end;
+      padding: 66px 56px 58px;
+    }
+
+    .kicker {
+      margin-bottom: 18px;
+      color: #ddb48f;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 0 0 24px;
+      font-size: clamp(3.4rem, 7.2vw, 7rem);
+      line-height: .88;
+      letter-spacing: -.065em;
+      text-wrap: balance;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0;
+      color: #e9e3da;
+      font-size: clamp(1.12rem, 2vw, 1.45rem);
+      line-height: 1.5;
+    }
+
+    .hero-art {
+      position: relative;
+      z-index: 2;
+      min-height: 510px;
+      display: grid;
+      place-items: center;
+      padding: 34px;
+      background: linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      border-left: 1px solid rgba(255,255,255,.10);
+    }
+
+    .invoice {
+      width: min(310px, 100%);
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 22px;
+      background: rgba(255, 253, 248, .96);
+      color: var(--ink);
+      box-shadow: 0 24px 50px rgba(0,0,0,.23);
+      transform: rotate(2deg);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .invoice-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .invoice-head strong {
+      color: var(--deep);
+      font-size: 1rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .screw {
+      width: 66px;
+      height: 66px;
+      position: relative;
+      flex: 0 0 66px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #c7cccf, #687278);
+      box-shadow: inset 0 2px 5px rgba(255,255,255,.7), inset 0 -4px 8px rgba(0,0,0,.28), 0 7px 16px rgba(0,0,0,.20);
+    }
+
+    .screw::after {
+      content: "";
+      position: absolute;
+      width: 43px;
+      height: 7px;
+      left: 12px;
+      top: 30px;
+      border-radius: 8px;
+      background: #40494e;
+      transform: rotate(-14deg);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.25);
+    }
+
+    .invoice-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid #ded8ce;
+      font-size: .9rem;
+    }
+
+    .invoice-row strong { color: var(--copper-dark); }
+
+    .invoice-total {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 20px;
+      font-weight: 900;
+      color: var(--deep);
+      font-size: 1.1rem;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 34px;
+      align-items: start;
+      margin-top: 36px;
+    }
+
+    article {
+      padding: 54px 58px 62px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255, 253, 248, .96);
+      box-shadow: 0 18px 48px rgba(58, 45, 31, .08);
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      padding-bottom: 24px;
+      margin-bottom: 34px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    article p {
+      margin: 0 0 25px;
+      font-size: 20px;
+    }
+
+    article h2 {
+      margin: 54px 0 19px;
+      color: var(--deep);
+      font-size: clamp(2rem, 3.7vw, 3.15rem);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+
+    .opening {
+      color: #332f29;
+      font-size: 22px;
+    }
+
+    .pullquote {
+      margin: 42px -18px;
+      padding: 34px 38px;
+      border-radius: 22px;
+      background: var(--deep);
+      color: var(--white);
+      font-size: clamp(1.85rem, 3.6vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .pullquote em {
+      color: #ddb48f;
+      font-style: normal;
+    }
+
+    .callout {
+      margin: 38px 0;
+      padding: 28px 30px;
+      border: 1px solid #d8bda8;
+      border-left: 7px solid var(--copper);
+      border-radius: 0 18px 18px 0;
+      background: #f8f0e7;
+    }
+
+    .callout p {
+      margin: 0;
+      color: #4e3527;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .closing {
+      margin-top: 48px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .closing p:last-child {
+      margin-bottom: 0;
+      color: var(--deep);
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 82px;
+    }
+
+    .card {
+      margin-bottom: 20px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 253, 248, .92);
+      box-shadow: 0 12px 28px rgba(58, 45, 31, .07);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .card-label {
+      margin-bottom: 9px;
+      color: var(--copper-dark);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--deep);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      line-height: 1.15;
+    }
+
+    .card p {
+      margin: 0;
+      color: #625d55;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .metric {
+      padding: 22px;
+      border-radius: 20px;
+      background: var(--deep);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      box-shadow: 0 16px 34px rgba(32, 39, 42, .18);
+    }
+
+    .metric strong {
+      display: block;
+      color: #ddb48f;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: #e8e2d9;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 34px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-art { min-height: auto; border-left: 0; border-top: 1px solid rgba(255,255,255,.10); }
+      .invoice { transform: none; }
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .card, .metric { margin: 0; }
+    }
+
+    @media (max-width: 650px) {
+      .shell { width: min(100% - 24px, 1180px); padding-top: 20px; }
+      .site-return-inner, .topline { align-items: flex-start; flex-direction: column; }
+      .hero-copy { padding: 46px 28px 38px; }
+      h1 { font-size: clamp(3.25rem, 17vw, 5rem); }
+      article { padding: 36px 25px 42px; }
+      article p { font-size: 18px; }
+      .pullquote { margin-left: 0; margin-right: 0; padding: 28px; }
+      .sidebar { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .site-return, .sidebar { display: none; }
+      .shell { width: 100%; padding: 0; }
+      .hero, article { box-shadow: none; }
+      .article-layout { display: block; }
+      article { border: 0; padding-left: 0; padding-right: 0; }
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="site-return">
+    <div class="site-return-inner">
+      <a href="../../home.html">← Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="topline">
+      <strong>Jared Scott Leadership</strong>
+      <span>Leadership · Institutional Knowledge · August 18, 2026</span>
+    </div>
+
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="kicker">The hidden cost of experience walking out the door</div>
+        <h1>The Ten Thousand Dollar Screw</h1>
+        <p class="subtitle">The employee who knows which screw to turn may look expensive on a spreadsheet. Losing what they know can cost far more.</p>
+      </div>
+
+      <div class="hero-art" aria-label="Stylized invoice illustrating the ten thousand dollar screw story">
+        <div class="invoice">
+          <div class="invoice-head">
+            <strong>Itemized Invoice</strong>
+            <div class="screw" aria-hidden="true"></div>
+          </div>
+          <div class="invoice-row"><span>Turning the screw</span><strong>$1</strong></div>
+          <div class="invoice-row"><span>Knowing which screw</span><strong>$9,999</strong></div>
+          <div class="invoice-total"><span>Total</span><span>$10,000</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="article-layout">
+      <article>
+        <div class="article-meta">
+          <span>By Jared Scott</span>
+          <span>Leadership</span>
+          <span>Institutional Knowledge</span>
+        </div>
+
+        <p class="opening">There is an old story about Thomas Edison calling Nikola Tesla to one of his plants because a generator had gone down and nobody could figure out what was wrong with it. Tesla walked around the machine, listened to it, studied it for a while, found the right screw, and turned it slightly. The generator came back to life.</p>
+
+        <p>Then he sent Edison a bill for ten thousand dollars.</p>
+
+        <p>Edison supposedly asked for an itemized invoice, so Tesla sent one back. Turning the screw: one dollar. Knowing which screw to turn: nine thousand, nine hundred and ninety nine dollars.</p>
+
+        <p>Whether the story happened exactly that way almost does not matter, because anyone who has worked inside a company long enough knows exactly what it describes. There are people in every organization who know which screw to turn. They know which machine has always made that noise. They know which customer needs to be called before something becomes a problem. They remember why a process was changed twelve years ago, why a certain shortcut should never be taken, why one specification looks strange on paper but exists for a very good reason, and what tends to happen three steps later when somebody changes something that appears completely unrelated.</p>
+
+        <p>Then one day somebody looks at that employee's salary, looks at how long they have been with the company, and decides the organization can probably do without them.</p>
+
+        <p>Sometimes it is a retirement package. Sometimes it is a restructuring. Sometimes it is simply the belief that a younger or less expensive employee can perform the same job for less money. On paper, the math can look pretty convincing. One salary disappears, another smaller one takes its place, and the spreadsheet shows savings.</p>
+
+        <div class="pullquote">The spreadsheet does not show <em>the screw.</em></div>
+
+        <p>That is the problem.</p>
+
+        <p>There is another version of this conversation that feels like something out of a mob movie. Somebody decides the person who has been around forever has gotten too expensive and knows too much, so the solution is to get rid of him and move on. The assumption is that the job remains after the person leaves, so whatever knowledge matters must remain too.</p>
+
+        <p>It does not.</p>
+
+        <p>The person walks out the door, and an enormous amount of what the company actually knows walks out with him.</p>
+
+        <p>The consequences usually do not appear immediately, which is one reason companies continue making the mistake. Nothing explodes the following morning. Orders still ship. Meetings still happen. Production continues. The new person learns the basic job, everybody settles down, and management congratulates itself for making a difficult but necessary decision.</p>
+
+        <p>Then, three years later, something unusual happens. Nobody remembers seeing it before. Except somebody had. He retired.</p>
+
+        <p>Five years later, a problem appears in a product that has not caused trouble in twenty years, and the people standing around it have no idea that the same thing happened once before and that somebody spent six months figuring out why.</p>
+
+        <p>Seven years later, somebody changes a process because the old way seems inefficient. Nobody knows the old way was created after a very expensive failure. The documentation explains what to do but not why it was done that way in the first place.</p>
+
+        <p>Eventually the company relearns the lesson.</p>
+
+        <p>Usually at a much higher price.</p>
+
+        <h2>The bill does not disappear</h2>
+
+        <p>Companies tend to think about knowledge as if it lives in procedures, databases, drawings, training programs, shared drives, and software systems. Some of it does. A tremendous amount of it does not.</p>
+
+        <p>It lives in people.</p>
+
+        <p>It lives in somebody remembering that a particular customer always places an unusual order in October. It lives in the maintenance technician who can hear a motor running from twenty feet away and know something is not right. It lives in the engineer who remembers why a dimension that seems arbitrary absolutely cannot be changed. It lives in the employee who knows which supplier can actually deliver when everyone else says they can. It lives in the supervisor who has watched the same production problem develop three times over twenty years and recognizes the first tiny sign before anyone else notices it.</p>
+
+        <p>That knowledge rarely has a neat title attached to it. Nobody puts “remembers twenty seven years of mistakes we should never repeat” in a job description.</p>
+
+        <p>So it becomes almost invisible.</p>
+
+        <p>Companies spend enormous amounts of time and money while employees search for information, recreate work that has already been done, repeat mistakes somebody else already solved, and train replacements after experienced people leave. The exact cost is different in every organization, but the underlying problem is not difficult to understand. A company can document the steps of a job far more easily than it can document decades of judgment.</p>
+
+        <div class="callout"><p>A procedure can tell someone which screw to turn. Experience tells them when that screw is the problem. Those are not the same thing.</p></div>
+
+        <h2>Why companies keep doing it</h2>
+
+        <p>Public companies at least have an explanation for some of this behavior. They operate under enormous pressure to show results every quarter. Payroll is visible. Institutional knowledge is not. Reducing headcount can improve a number quickly, while the cost of losing experience may not appear for years.</p>
+
+        <p>That creates a dangerous incentive.</p>
+
+        <p>A thirty year employee can look expensive when viewed entirely through the payroll system. Their replacement may cost considerably less. The immediate savings are easy to calculate, so somebody puts a number beside the decision and calls it efficiency.</p>
+
+        <p>What is harder to calculate is the value of the phone calls that never need to happen because that employee catches something early. The production delays that never occur. The customer problems prevented before the customer ever hears about them. The engineering mistakes someone avoids because an experienced employee quietly says, “We tried that once.”</p>
+
+        <p>There is no line on the financial statement for disasters that did not happen.</p>
+
+        <p>There is also no easy way to calculate what it costs when the last person who understood why something works a certain way leaves before anyone thinks to ask.</p>
+
+        <p>Privately held companies have even less excuse for getting this wrong.</p>
+
+        <p>One of the greatest advantages of private ownership is the ability to think beyond the next quarter. An owner can decide that something worth protecting over the next ten years matters more than making one reporting period look cleaner. A private company can invest in people, apprenticeship, succession, and knowledge transfer without having to explain every decision to analysts who may never set foot inside the business.</p>
+
+        <p>That freedom matters.</p>
+
+        <p>If you have the ability to think long term and still treat experienced employees primarily as expensive line items, then the market did not force you into that decision. You made it.</p>
+
+        <p>And sometimes the bill for that decision arrives long after everyone who approved it has moved on.</p>
+
+        <h2>This is not an argument for keeping everybody forever</h2>
+
+        <p>Tenure by itself does not make someone valuable.</p>
+
+        <p>Someone can spend thirty years in a company and still stop contributing. People can become resistant to change. They can hoard knowledge instead of sharing it. They can become the person everyone has to work around because “that is just how he is.” Keeping somebody simply because they have been around a long time is not good leadership either.</p>
+
+        <p>But there is a large difference between dealing with an employee who is no longer doing the job and deciding that experience itself has become too expensive.</p>
+
+        <p>Good companies know the difference.</p>
+
+        <p>They also understand that institutional knowledge should never be allowed to remain trapped inside one person forever. Keeping experienced people is only part of the answer. The other part is using the time you still have with them.</p>
+
+        <p>Ask them why things are done the way they are done. Put younger employees beside them. Have them explain the failures, not just the successes. Ask what they watch for that nobody has written down. Ask what customers, machines, products, systems, and processes behave differently than the documentation suggests. Ask them which decisions in the company's history were made because something went terribly wrong.</p>
+
+        <p>Do that while they are still sitting across the table from you.</p>
+
+        <p>Not six months after the retirement party.</p>
+
+        <div class="pullquote">A company should never discover how valuable someone's knowledge was by experiencing life <em>without it.</em></div>
+
+        <h2>Keep the person who knows which screw to turn</h2>
+
+        <p>The most experienced person in the building may not always be the fastest. They may not know the newest terminology. They may occasionally tell a story you have heard six times already. Their salary may be higher because they have been there longer than half the leadership team.</p>
+
+        <p>None of that tells you what they are worth.</p>
+
+        <p>Their value may be sitting inside thirty years of pattern recognition that nobody else has had enough time to develop. It may be in the problems they prevent rather than the work everybody sees them perform. It may be in the sentence they occasionally say during a meeting that sounds almost casual:</p>
+
+        <div class="callout"><p>“We tried something like that years ago. Here's what happened.”</p></div>
+
+        <p>That sentence can be worth a fortune.</p>
+
+        <p>The mistake is waiting until that person is gone to discover it.</p>
+
+        <p>If someone in your company knows where all the bodies are buried, you probably should not be looking for a reason to get rid of them. You should be finding out why the bodies are there, what created them, and how that person has spent the last twenty years keeping you from burying another one.</p>
+
+        <div class="closing">
+          <p>Pay for the knowledge while you can still get it. Transfer it while there is still someone there to explain it.</p>
+          <p>Because eventually somebody will have to know which screw to turn. The only question is whether you are going to learn it from the person who already knows, or pay much more later while everyone else tries to figure it out.</p>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="card">
+          <div class="card-label">The leadership problem</div>
+          <h3>Salary is visible. Judgment is not.</h3>
+          <p>Experienced employees can look expensive when leadership measures payroll but has no way to price the mistakes, delays, and crises their knowledge prevents.</p>
+        </div>
+
+        <div class="metric">
+          <strong>$1</strong>
+          <span>Turning the screw is the easy part.</span>
+        </div>
+
+        <div class="metric" style="margin-top:20px;">
+          <strong>$9,999</strong>
+          <span>Knowing which screw to turn is where the value lives.</span>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+          <div class="card-label">Before they leave</div>
+          <h3>Capture the why, not just the steps.</h3>
+          <p>Ask experienced people what they notice, what has failed before, what is not written down, and which decisions only make sense when you know the history behind them.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>© 2026 Jared Scott Leadership</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beware the $0.25 Tortilla Problem | Jared Scott</title>
+<meta name="description" content="A tiny cost-cutting decision becomes a case study in how small things quietly damage trust.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Small Things</p>
+  <h1>Beware the $0.25 Tortilla Problem</h1>
+  <p class="dek">A tiny cost-cutting decision becomes a case study in how small things quietly damage trust.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">Leadership is often about the big picture—grand visions, strategic plans, and significant decisions that chart the course of an organization. But sometimes, the smallest decisions can lead to the biggest fallout. Enter Mack Hollins, former Miami Dolphins wide receiver, and his principled stand against a $0.25 tortilla charge.</p>
+  <p>As told by Ryan Fitzpatrick, then a teammate, Mack Hollins had a daily ritual of eating at Chipotle. One day, Chipotle decided to charge him $0.25 extra for an additional tortilla. Now, Mack Hollins isn't just any customer. He's an NFL player with contracts that most of us can only dream about. Yet, when confronted with that seemingly minor charge, he quit going to Chipotle—permanently. To him, it wasn't about the money; it was about principle. And Chipotle lost a loyal customer, all for a quarter.</p>
+  <p>This story, while humorous, is a perfect illustration of how small decisions, when not carefully thought through, can have outsized consequences. Leaders, beware the $0.25 tortilla problem.</p>
+  <h2>The Danger of Overlooking the Little Things</h2>
+  <p>In leadership, small changes can have ripple effects that impact your team, your culture, and your organization. Here are some examples of how minor tweaks can lead to significant problems:</p>
+  <ol>
+    <li><strong>Policy Changes That Alienate</strong> Imagine your company decides to charge employees $5 for parking at work instead of covering the cost. It's not a large amount, but to employees, it feels like a punishment for showing up. Morale dips, and resentment builds—all for a parking fee.</li>
+    <li><strong>Perceived Penny-Pinching</strong> A company decides to downgrade the office coffee to a cheaper brand. Employees grumble, not because they expect luxury but because the small change signals a lack of appreciation for their comfort.</li>
+    <li><strong>Communication Mishaps</strong> A slight tweak in how leaders communicate—like shortening meeting times to save on costs or using a more transactional tone—can make employees feel undervalued, leading to disengagement.</li>
+    <li><strong>Ignoring Feedback</strong> Small but meaningful employee requests, like better-quality tools or flexible work hours, may seem inconsequential to leadership. Yet, ignoring them can create feelings of being unheard, eroding trust and loyalty.</li>
+  </ol>
+  <h2>Why Leaders Need to Think Before They Tweak</h2>
+  <p>The $0.25 tortilla problem teaches us that what seems small to leadership can feel monumental to employees or customers. People don't just respond to the change itself—they respond to what it represents. A small policy shift might inadvertently signal disrespect, stinginess, or a lack of empathy.</p>
+  <p>Here's the key lesson: <strong>What you see as a minor adjustment might be the last straw for someone else.</strong></p>
+  <h2>How to Avoid the Tortilla Trap</h2>
+  <ol>
+    <li><strong>Ask the Right Questions</strong> Before implementing any change, ask:</li>
+    <li><strong>Communicate Transparently</strong> If a change must happen, explain the reasoning clearly and empathetically. People are more likely to accept changes if they understand the "why."</li>
+    <li><strong>Seek Feedback First</strong> Consult your team or customers before making changes. Their input might reveal potential pitfalls you hadn't considered.</li>
+    <li><strong>Balance Cost with Value</strong> Saving money on small items like coffee, office supplies, or employee perks might seem like a win, but what's the true cost to morale and loyalty?</li>
+  </ol>
+  <h2>The Small Things Matter</h2>
+  <p>This principle is well illustrated by a quote often attributed to the poet William Blake: <strong>"Great things are done by a series of small things brought together."</strong> But the inverse is also true: <strong>Great things can be undone by a series of small mistakes.</strong></p>
+  <h2>A Quarter's Worth of Wisdom</h2>
+  <p>Mack Hollins and his $0.25 tortilla problem might make us laugh, but it's a cautionary tale for leaders. The seemingly insignificant decisions we make—policies, charges, or changes—can create lasting impressions. Chipotle lost a customer in Hollins, not because of the quarter itself but because of what that charge symbolized to him.</p>
+  <p>Leaders, think before you tweak. Ask yourself, "Am I creating a $0.25 tortilla problem?" The answer could save you more than just a quarter—it could save your reputation, your culture, or even your business.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

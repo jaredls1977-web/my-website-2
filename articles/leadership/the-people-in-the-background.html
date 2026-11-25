@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The People in the Background | Jared Scott</title>
+<meta name="description" content="There is a difference between not knowing someone's entire story and forgetting that they have one — a reflection on seeing coworkers as people, not background characters.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:560px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:38px 0;
+    padding:6px 0 6px 22px;
+  }
+
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+
+  .five{
+    margin:44px 0 38px;
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:32px 12px 30px;
+  }
+
+  .five .number{
+    display:block;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    color:var(--clay);
+    font-size:76px;
+    line-height:.9;
+    margin-bottom:12px;
+  }
+
+  .five p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:600;
+    font-size:clamp(20px,5vw,24px);
+    line-height:1.35;
+    color:var(--ink);
+    margin:0;
+  }
+
+  .question{
+    margin:42px 0;
+    padding:28px 18px;
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+    text-align:center;
+  }
+
+  .question p{
+    margin:0;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    font-size:clamp(22px,5.8vw,29px);
+    line-height:1.3;
+    color:var(--ink);
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">The Human Side of Leadership</p>
+  <h1>The People in the Background</h1>
+  <p class="dek">There is a difference between not knowing someone’s entire story and forgetting that they have one.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">I use the term NPC in one of my leadership classes. For those who don’t spend much time in the gaming world, NPC stands for non playable character. These are the characters who populate the world around the person actually playing the game. They might give you directions, sell you something, stand behind a counter, walk through a town or simply occupy space that makes the world feel populated. You interact with some of them because you need something. Most of them, though, are just there. You pass them and keep going because whatever story they have isn’t the story you’re playing.</p>
+
+  <p>I’ve used that idea in class because I think we do something remarkably similar in real life without realizing we’re doing it. Think about the number of people you encounter during an ordinary week whose names you don’t know. The cashier you see regularly. The person cleaning the restroom. Someone who parks near you every morning. The employee you pass in the hallway whose face you’ve recognized for years. You know they’re there, and you might even notice if they weren’t, but they exist mostly in the background of whatever is happening in your own life.</p>
+
+  <p>That isn’t necessarily cruel. There are simply too many people for any of us to know everyone. We have families, bills, deadlines, aging parents, kids who need something, relationships we’re trying to take care of, things we’re worried about and private problems occupying parts of our minds while we’re sitting in meetings pretending to concentrate. We walk into work carrying all of that, and so does everybody else. The difference is that we know our own story intimately while usually seeing only a few pages of theirs.</p>
+
+  <div class="dinkus">&bull; &bull; &bull;</div>
+
+  <p>Work makes that distance particularly easy to maintain because workplaces have another way of identifying people. We identify them by what they do.</p>
+
+  <p>That’s someone from Shipping. That’s somebody in Accounting. That’s the person who handles that customer. That’s the new employee in Assembly. That’s the manager I need approval from. That’s the person who never answers my emails. That’s the guy who always complains.</p>
+
+  <p>Eventually a human being can become almost indistinguishable from the function they perform in our lives.</p>
+
+  <p>I’ve been thinking differently about that lately.</p>
+
+  <p>Companies sometimes like to describe themselves as families. I’ve never been completely comfortable with that language because we’re not actually a family, and pretending we are doesn’t make it so. Most of us already have families, and the relationship we have with the people we work beside is different. I don’t think we need to manufacture some sentimental version of work to make people care about one another.</p>
+
+  <p>The reality is significant enough without pretending.</p>
+
+  <p>We spend an enormous portion of our working years around people who probably won’t be sitting around our table at Thanksgiving. For years, sometimes decades, we see many of the same people nearly every weekday. We know when they usually arrive. We recognize their cars. We know their habits. We know whether they’re good at their jobs, whether they’re difficult to work with, whether they’re funny, quiet, loud, impatient or dependable. Someone can work ten feet away from us for twenty years, and despite all that familiarity, we may know almost nothing about what happens when they go home.</p>
+
+  <p>I don’t say that critically. I think it’s simply part of being human. Nobody has the capacity to carry the full weight of every person around them.</p>
+
+  <p>But I do wonder whether workplaces sometimes allow that natural human limitation to become something else.</p>
+
+  <div class="pull">
+    <p>There is a difference between not knowing someone’s entire story and forgetting that they have one.</p>
+  </div>
+
+  <p>That’s where the NPC comparison stops being funny to me.</p>
+
+  <p>Because in a game, when an NPC disappears, the game continues. Something else fills the screen. You move to the next objective. Whatever that character was doing becomes irrelevant because the story was never really about them anyway.</p>
+
+  <p>Organizations are remarkably good at doing the same thing.</p>
+
+  <p>Someone leaves and responsibilities get reassigned. Someone retires and another person takes the position. Someone quits and eventually the opening gets posted. Someone dies and the work that person was doing still has to be done. Customers don’t stop calling because someone is gone. Orders don’t stop coming in. Meetings remain on calendars. Production schedules still have dates attached to them.</p>
+
+  <p>There is a practical necessity to that. An organization cannot stop functioning every time someone leaves it.</p>
+
+  <p>But I have started wondering what happens to us when we become too good at continuing.</p>
+
+  <div class="five">
+    <span class="number">5</span>
+    <p>Because over the past few years, five people who worked where I work have died by suicide.</p>
+  </div>
+
+  <p>I want to be very careful with what I say next because I don’t know why they did it. I don’t know what was happening inside their homes, their relationships, their finances or the private parts of their lives that coworkers never saw. I don’t know what conversations took place before those deaths. I don’t know what burdens they had been carrying for years before any of us ever met them. Most importantly, I do not know whether their workplace had anything to do with the decisions they ultimately made.</p>
+
+  <p>I am not willing to turn five dead human beings into evidence for an accusation I cannot prove. But I am also not willing to pretend five doesn’t bother me. It bothers me deeply, not because I know the answer, but because I don’t.</p>
+
+  <p>There is a temptation whenever something this complicated happens to retreat into the things we can say with certainty. Suicide is complicated. Mental health is complicated. People’s personal lives are complicated. Employers cannot know everything happening outside the workplace. Coworkers aren’t counselors. Managers aren’t therapists. All of those things are true, and I don’t have any interest in pretending otherwise.</p>
+
+  <p>But eventually those explanations run into a much simpler reality.</p>
+
+  <p>Five people who used to come to work are dead.</p>
+
+  <p>They had lives before they arrived in the morning and lives waiting for them when they left. They had relationships we knew nothing about, histories we never heard, fears they probably never mentioned and parts of themselves that never appeared at work. We knew the small portion of them that happened to intersect with our own lives, and for most of us, that was probably enough to create the illusion that we knew who they were.</p>
+
+  <p>Then they were gone. The workplace continued because workplaces do. That’s the part that has stayed with me.</p>
+
+  <p>I don’t expect a company to solve suicide. I don’t expect HR to know what is happening inside every employee’s mind. I don’t expect managers to become mental health professionals, and I certainly don’t believe an employer can assume responsibility for everything that happens in the private lives of the people who work there.</p>
+
+  <p>What I cannot understand is how repeated loss can fail to make us more curious about the people who are still here.</p>
+
+  <div class="question">
+    <p>How many people have to disappear before we become more interested in the people who haven’t?</p>
+  </div>
+
+  <p>I don’t mean interested in their productivity. I don’t mean another survey asking whether employees feel engaged. I don’t mean another program, slogan, poster or email telling people where they can go if they’re struggling. Those things may have value, but none of them can substitute for a workplace where people genuinely notice one another.</p>
+
+  <p>I’m talking about something much less organized and much more difficult. I’m talking about remembering that the person irritating you has a life beyond the thing they’re doing that irritates you. I’m talking about understanding that the employee whose performance has declined may still need to be held accountable while also being treated like a human being. I’m talking about realizing that the person sitting quietly at lunch isn’t scenery and that the person whose name appears on your screen isn’t merely an obstacle between you and whatever you’re trying to accomplish.</p>
+
+  <p>None of that means we can save everybody. That may be one of the hardest realities in writing this. We could become the kindest workplace in America tomorrow and still not know what someone is carrying. We could pay attention and still miss something. We could ask someone how they’re doing and believe the answer when they tell us they’re fine. Human beings can hide extraordinary amounts of pain while continuing to show up, do their jobs and participate in ordinary conversations.</p>
+
+  <p>So this isn’t a prescription for preventing suicide. It’s something more basic than that. It’s an argument against allowing human beings to become background characters simply because their lives intersect with ours at work.</p>
+
+  <p>We don’t need to call ourselves a family to do that. We don’t need to pretend we’re closer than we are. We don’t need to know everyone’s marriage, childhood, finances, diagnosis, struggles or secrets. There are boundaries that should exist between work and home, and there are parts of people’s lives we have no right to enter unless we’re invited.</p>
+
+  <p>But we can know that those lives exist.</p>
+
+  <p>We can remember that every person walking through the building in the morning arrived carrying a story that began long before they pulled into the parking lot. Some of those stories are going well. Others aren’t. Most are probably some mixture of both, because that’s what being alive looks like.</p>
+
+  <p>And occasionally someone walking past us is carrying far more than we realize.</p>
+
+  <div class="dinkus">&bull; &bull; &bull;</div>
+
+  <p>I think about the NPC example differently now because of that.</p>
+
+  <p>When I teach it, I’m usually talking about leadership and the danger of seeing people only through the small role they occupy in our own lives. But five deaths have made the idea considerably less theoretical for me.</p>
+
+  <p>There were five people walking around inside the same world the rest of us were walking around in. Other people passed them in hallways, worked beside them, received emails from them, disagreed with them, laughed with them, depended on them or barely knew them at all.</p>
+
+  <p>Then one day each of them was no longer there.</p>
+
+  <p>The rest of us kept going. I understand why.</p>
+
+  <div class="pull">
+    <p>What I don’t want to understand is how we could experience that five times and allow the people who are still here to remain part of the background.</p>
+  </div>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

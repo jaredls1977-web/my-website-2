@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When the Signs Are There—and When They Aren't: Mental Health in the Workplace | Jared Scott</title>
+<meta name="description" content="A candid look at how mental health struggles show up, and fail to show up, in the people leaders manage every day.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Mental Health</p>
+  <h1>When the Signs Are There—and When They Aren't: Mental Health in the Workplace</h1>
+  <p class="dek">A candid look at how mental health struggles show up, and fail to show up, in the people leaders manage every day.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">Imagine you're driving down a winding road. Your navigation app alerts you: "Caution—stalled vehicle ahead." Instinctively, you ease off the gas, scan the road, and prepare to adapt. A few minutes later, another warning pops up: "Falling rocks ahead." This time, you barely slow down. The difference? One feels immediate and unavoidable, while the other seems like a possibility you'll never encounter.</p>
+  <p>This is how many of us approach mental health in the workplace—both for ourselves and for the people we lead. We heed the urgent signs when burnout or anxiety forces us to stop, yet we often dismiss the quieter warnings. Some signs, like stress, exhaustion, or irritability, are as clear as a blinking hazard light. But what about the ones we can't see, like depression, anxiety, or even suicidal ideation?</p>
+  <p>As leaders, we are responsible for more than hitting targets or meeting deadlines. We are entrusted with the well-being of our teams. But too often, we miss the warnings—sometimes because we're rushing, sometimes because we don't know what to look for, and sometimes because we've ignored the signs within ourselves for far too long.</p>
+  <h2>The Silent Crisis: The Reality of Mental Health in the Workplace</h2>
+  <h2>The Statistics We Can't Ignore</h2>
+  <p>Mental health issues in the workplace are not uncommon, yet they are often swept under the rug. Consider these sobering numbers:</p>
+  <ul>
+    <li>In the United States, nearly <strong>1 in 5 adults experience mental illness each year</strong>, with anxiety and depression topping the list.</li>
+    <li>Workplace stress costs U.S. companies <strong>$300 billion annually</strong> in lost productivity, absenteeism, and health care costs.</li>
+    <li>Suicide, a deeply personal and often hidden struggle, is the <strong>10th leading cause of death in the U.S.</strong>, with over <strong>700,000 lives lost globally each year</strong>. Certain industries—such as construction, farming, and first responders—report some of the highest rates of suicide.</li>
+  </ul>
+  <p>These numbers aren't just statistics; they represent lives—colleagues, friends, and family members we've all been impacted by in some way. For leaders, these realities demand action, not just awareness.</p>
+  <h2>Spotting the Warning Signs in Yourself and Others</h2>
+  <p>Mental health challenges often come with warning signs, but they can be subtle or easy to dismiss, especially in high-pressure workplaces. Here are a few signs leaders should watch for:</p>
+  <h2>In Yourself</h2>
+  <ul>
+    <li>Feeling constantly exhausted or unmotivated</li>
+    <li>Increased irritability or emotional detachment</li>
+    <li>Difficulty concentrating or making decisions</li>
+    <li>Physical symptoms like headaches or digestive issues</li>
+  </ul>
+  <h2>In Your Team</h2>
+  <ul>
+    <li>Uncharacteristic drops in performance or productivity</li>
+    <li>Withdrawal from colleagues or avoidance of communication</li>
+    <li>Increased absenteeism or lateness</li>
+    <li>Sudden mood swings or expressions of hopelessness</li>
+  </ul>
+  <p>However, not everyone will show signs. This is why fostering an environment of empathy, trust, and open communication is critical. When team members feel safe, they're more likely to share struggles before reaching a crisis point.</p>
+  <h2>When Words Become Warnings: The Responsibility to Speak Up</h2>
+  <p>As leaders, it is our moral obligation to act when someone expresses suicidal ideation—clinically referred to as <strong>suicide warning signs</strong> or <strong>suicide speak</strong>. This can include statements such as:</p>
+  <ul>
+    <li>"I don't see the point of going on."</li>
+    <li>"The world would be better off without me."</li>
+    <li>"I just can't handle it anymore."</li>
+  </ul>
+  <p>These statements are never to be ignored or dismissed. Immediate action is essential. Speak up, involve trained professionals, and ensure the individual knows they are not alone. The worst thing a leader can do is to assume it's "not their place" to intervene. Advocacy in moments of crisis is not optional; it is a responsibility.</p>
+  <p>As Ralph Waldo Emerson once said, <strong>"When it is darkest, we can see the stars."</strong> This serves as a reminder that even in the bleakest moments, hope can be found—and leaders have the power to help others find it.</p>
+  <h2>Removing Barriers: Making Help Accessible Without Stigma</h2>
+  <p>Providing mental health resources isn't enough; those resources must be easily accessible and free of stigma. I recall a friend who sought help through his company's mental health program, only to discover the helpline had been quietly discontinued due to "low usage." This decision seems puzzling when we know that <strong>1 in 5 adults experiences mental health struggles annually.</strong></p>
+  <p>So why was the resource underused? Was it the stigma around seeking help? Or was the process of accessing it too cumbersome? Perhaps it was both. For many employees, navigating a maze of forms, approvals, and HR protocols feels overwhelming, especially when they're already struggling.</p>
+  <p>It's also worth noting that while many mental health programs are tied to workplace performance or stress, personal struggles outside of work often play a significant role. Yet, since we spend roughly a <strong>third of our lives at work</strong>, our workplace becomes a major part of our emotional ecosystem. It's not just a job—it's a community.</p>
+  <p>To truly support employees, companies must:</p>
+  <ul>
+    <li><strong>Eliminate obstacles.</strong> Make accessing help as simple as sending a text or making a call.</li>
+    <li><strong>Offer anonymity and safety.</strong> Employees need to trust that seeking help won't result in judgment, gossip, or repercussions for their careers.</li>
+    <li><strong>Normalize the conversation.</strong> Leaders must actively work to reduce the stigma by talking openly about mental health and modeling help-seeking behaviors themselves.</li>
+  </ul>
+  <p>Creating a workplace culture where employees feel safe to seek help is more than a nice-to-have; it's a necessity for fostering trust and long-term well-being.</p>
+  <h2>What Leaders Can Do: Building a Culture of Mental Health Awareness</h2>
+  <p>Leadership is about more than managing tasks; it's about supporting people. Here's how leaders can prioritize mental health in their workplaces:</p>
+  <ol>
+    <li><strong>Start with Yourself</strong> Leaders set the tone. Prioritize your own mental health by taking breaks, seeking support when needed, and modeling healthy work habits. It's not a sign of weakness—it's a powerful example of self-awareness.</li>
+    <li><strong>Train to Recognize and Respond</strong> Equip yourself and your team with mental health training. Programs like Mental Health First Aid can teach you how to recognize, approach, and support someone struggling.</li>
+    <li><strong>Create Safe Spaces for Conversations</strong> Regular one-on-one check-ins should include more than project updates. Ask open-ended questions like, "How are you doing, really?" and be prepared to listen without judgment.</li>
+    <li><strong>Provide Resources and Support</strong> Ensure employees know about available resources, such as Employee Assistance Programs (EAPs) or mental health hotlines. If your company's offerings fall short, advocate for better support systems.</li>
+    <li><strong>Encourage Flexibility</strong> Mental health struggles don't always fit into a neat 9-to-5 schedule. Offering flexible work hours or mental health days can make a huge difference.</li>
+  </ol>
+  <h2>Resources for Immediate Support</h2>
+  <p>If you or someone you know is struggling, here are some resources to help:</p>
+  <ul>
+    <li><strong>National Suicide Prevention Lifeline:</strong> Call or text 988 or click here → <a href="https://988lifeline.org/?utm_source=google&amp;utm_medium=web&amp;utm_campaign=onebox">NSPL Website</a></li>
+    <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+    <li><strong>SAMHSA's National Helpline:</strong> 1-800-662-HELP (4357)</li>
+  </ul>
+  <h2>Closing Thought</h2>
+  <p>We all have a role to play in creating healthier, more supportive workplaces. Let's not wait until the warning signs become impossible to ignore. By prioritizing mental health, we're not just building better teams—we're saving lives.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

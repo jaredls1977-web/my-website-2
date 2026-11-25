@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do Your Time, Don't Let Your Time Do You: Transforming Your Mindset at Work | Jared Scott</title>
+<meta name="description" content="A prison-podcast quote about doing your time becomes a lesson in refusing to let stagnation or victimhood define how you spend your days at work.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Mindset</p>
+  <h1>Do Your Time, Don't Let Your Time Do You: Transforming Your Mindset at Work</h1>
+  <p class="dek">A prison-podcast quote about doing your time becomes a lesson in refusing to let stagnation or victimhood define how you spend your days at work.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">I recently had the privilege of listening to Anthony Bryant on the <em>First Sip</em> podcast, hosted by Masterminds. (You can check out their inspiring content here at <a href="https://www.linkedin.com/company/mastermindsmedianetwork/">MASTERMINDS</a>.) During the episode, Bryant shared a powerful quote that has stayed with me:</p>
+  <p><em>"Do your time; don't let your time do you."</em></p>
+  <p>Bryant's story, captured in his book <em>Both Sides of the Bars: Model Officer to Model Inmate</em>, reflects a journey of profound transformation. As someone who served time in prison and emerged stronger, Bryant used his time to grow, reflect, and prepare for a better future. His quote challenges us to rethink how we approach situations where we feel trapped or stuck—whether behind literal bars or in our own minds.</p>
+  <p>For many of us, work can sometimes feel like "serving time." We fall into routines, face challenges, and wait for change to come to us. But Bryant's story and his powerful words remind us that even in difficult circumstances, we can take control, shift our mindset, and thrive.</p>
+  <h2>Recognizing the Prison of a Fixed Mindset</h2>
+  <p>Work can feel like a sentence when you're stuck in unfulfilling routines or roles. It's easy to get caught up in repetitive tasks, office politics, or the feeling that opportunities are out of reach. This often leads to what psychologist Carol Dweck describes as a "fixed mindset" in her book <em>Mindset: The New Psychology of Success</em>. A fixed mindset convinces us that we're powerless to change our circumstances, fostering disengagement and frustration.</p>
+  <p>Bryant's quote, however, challenges this thinking. It reminds us that even in restrictive situations, we can choose to grow, learn, and take intentional steps forward.</p>
+  <h2>Do Your Time: Focus on Growth and Intentionality</h2>
+  <p>"Doing your time" means actively seeking growth and purpose, even in less-than-ideal circumstances. Here are three practical ways to shift your approach:</p>
+  <ol>
+    <li><strong>Seek Development Opportunities:</strong> Volunteer for a new project, learn a skill, or explore a new area of interest within your role. Growth doesn't require a promotion—it requires intention.</li>
+    <li><strong>Redefine Success:</strong> Success isn't always a new title or a bigger paycheck. It can be deepening relationships, building expertise, or leaving a positive impact on your team.</li>
+    <li><strong>Practice Gratitude:</strong> Gratitude rewires your brain for positivity and focus. Research by Dr. Robert Emmons shows that gratitude increases productivity and engagement, even in challenging work environments.</li>
+  </ol>
+  <h2>Don't Let Your Time Do You: Break Free from Victimhood</h2>
+  <p>When we let "time do us," we relinquish control and slip into a victim mentality. But as Viktor Frankl writes in <em>Man's Search for Meaning</em>, <strong>even in the harshest conditions, we retain the ability to choose our response</strong>.</p>
+  <p>Here's how to reclaim control:</p>
+  <ul>
+    <li><strong>Focus on What's in Your Control:</strong> Identify areas where you can make an impact, no matter how small.</li>
+    <li><strong>Reframe Challenges:</strong> Ask yourself, "What can I learn from this?" Challenges often contain hidden opportunities for growth.</li>
+    <li><strong>Take Action:</strong> Waiting for change only reinforces stagnation. Take one small step today, whether it's networking, learning, or simply reorganizing your priorities.</li>
+  </ul>
+  <h2>Leadership's Role in Breaking the Cycle</h2>
+  <p>Bryant's message isn't just for employees—it's for leaders, too. Leaders have the responsibility to create an environment where people feel engaged and purposeful. Here's how to help your team "do their time" with intention:</p>
+  <ol>
+    <li><strong>Communicate Vision:</strong> Connect individual roles to the broader mission. People are more motivated when they see how their work makes a difference.</li>
+    <li><strong>Celebrate Progress:</strong> Acknowledge small wins to reinforce the value of effort and growth.</li>
+    <li><strong>Offer Development Opportunities:</strong> Foster growth through mentorship, training, or new responsibilities that challenge and inspire your team.</li>
+  </ol>
+  <p>Anthony Bryant's journey, as shared on the <em>First Sip</em> podcast and detailed in his book <em>Both Sides of the Bars</em>, is a testament to the power of mindset. His words, <em>"Do your time; don't let your time do you,"</em> remind us that even in the most restrictive environments, transformation and growth are possible.</p>
+  <p>Whether you feel stuck in your career or face leadership challenges, the key lies in taking ownership—of your mindset, your time, and your impact. Instead of counting down the hours, ask yourself: <em>How can I make my time count today?</em></p>
+  <h2>Six Minutes, a Bottle of Windex, and a Leadership Lesson</h2>
+  <p>Sometimes, leadership lessons emerge from the most unexpected places. Recently, during a training session, I had one of those moments. As I entered the building, the first thing that caught my attention wasn't the people or the training materials, but the windows and entrance door. They were covered in so much grime that I briefly wondered if they were intentionally blocking out the sun. It made me think that maybe the last time they had been cleaned was during the ribbon-cutting ceremony back in the 1970s, when the building was first constructed.</p>
+  <p>I asked the staff when the windows were last cleaned, but no one seemed sure. It's funny how something so obvious can become invisible when you see it every day. Sometimes, it takes a fresh set of eyes to point out what's been overlooked.</p>
+  <p>Standing there, I had a choice. As a corporate manager, it would have been easy to delegate the task. I could have asked someone else to grab some supplies and get the job done. But instead, I found myself reaching for a bottle of Windex and some paper towels. Six minutes later, the windows were sparkling, and the entrance looked transformed.</p>
+  <p>This wasn't about doing something for attention or applause. It was simply a task that needed to be done, and I handled it quietly. And in doing so, it reminded me of a fundamental truth about leadership.</p>
+  <p>As John Wooden wisely said, "The most powerful leadership tool you have is your own example." That simple act of cleaning windows, without fanfare, demonstrated how leadership isn't always about giving orders—it's about stepping up and doing what's necessary, even when it's not glamorous or visible to others.</p>
+  <p>Here's what cleaning those windows taught me:</p>
+  <ul>
+    <li><strong>Leadership is about action, not just words.</strong> True leadership doesn't always come from telling others what to do. It often comes from quietly leading by example, showing that no task is beneath you.</li>
+    <li><strong>Delegation isn't always the answer.</strong> While delegation is an important part of leadership, sometimes the most powerful message is conveyed by rolling up your sleeves and taking on the work yourself. It sets a tone of shared responsibility.</li>
+    <li><strong>Fresh perspectives reveal what others overlook.</strong> The staff had stopped noticing the dirty windows—they had faded into the background. In leadership, having fresh eyes can help bring attention to things that have been ignored or forgotten.</li>
+    <li><strong>Small actions can lead to big results.</strong> Six minutes of cleaning made a noticeable difference in the entrance's appearance. Leadership is often found in those small, seemingly insignificant acts that have a lasting impact.</li>
+  </ul>
+  <p>Reflecting on that moment, I realized that leadership doesn't always need fanfare or recognition. It's the quiet, everyday actions that often speak the loudest and have the most lasting effects. The windows may have gone unnoticed by many, but the results were clear once the work was done.</p>
+  <p>By leading through action, delegating when appropriate, and maintaining a fresh perspective, we can make meaningful, lasting impacts—even through the smallest tasks.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

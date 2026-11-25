@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why "Servant Leadership" Is Overrated | Jared Scott</title>
+<meta name="description" content="A hard look at how a good leadership philosophy gets twisted into an excuse for leaders to avoid making decisions.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Servant Leadership</p>
+  <h1>Why "Servant Leadership" Is Overrated</h1>
+  <p class="dek">A hard look at how a good leadership philosophy gets twisted into an excuse for leaders to avoid making decisions.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">In recent years, "Servant Leadership" has gained popularity in business circles as an ideal leadership model. Advocates of servant leadership promote a style where leaders put others' needs first, encourage personal growth, and foster community. But what if this well-meaning approach is not the ultimate solution it's made out to be? The reality is that servant leadership, while beneficial in certain scenarios, can easily backfire or lead to unintended consequences if applied without balance. Here's why servant leadership might be overrated, and where it can fall short.</p>
+  <h2>Where Servant Leadership Falls Short</h2>
+  <h2>1. Overextension of Leaders</h2>
+  <p>Imagine an ambulance stocked with the best life-saving equipment: defibrillators, oxygen tanks, advanced monitoring systems, and a highly skilled paramedic team ready to respond to emergencies. But, despite all of this life-saving potential, it can't move an inch if there's no gas in the tank. No matter how prepared, without fuel, the ambulance is rendered useless.</p>
+  <p>Leaders who don't prioritize their own well-being are like this ambulance. They may have the skills, knowledge, and resources to support their team, but if they're running on empty, they simply can't perform effectively. Leaders who overextend themselves by always putting others' needs above their own risk burnout, fatigue, and mental exhaustion, which compromises their ability to lead.</p>
+  <h2>The Evidence</h2>
+  <p>Studies in leadership psychology reveal that leaders who overcommit to support roles often sacrifice strategic thinking, innovation, and their own productivity. Leaders who are constantly "available" report higher stress levels and are prone to burnout, which ultimately impacts the effectiveness of the entire team.</p>
+  <h2>2. Lack of Accountability Among Team Members</h2>
+  <p>When leaders focus solely on meeting the needs of their teams, accountability can easily slip. Servant leadership, by nature, prioritizes team comfort and individual development, which can unintentionally create a culture where accountability is sidelined. Employees may begin to rely too much on their leaders, feeling less compelled to take ownership of their responsibilities.</p>
+  <p>For example, Zappos, initially celebrated for its servant leadership approach, encountered challenges in productivity as the company grew. Without a balanced approach that emphasized accountability alongside support, performance and clarity became significant challenges. Employees were given extensive freedom, but without structured accountability, the company's growth eventually plateaued.</p>
+  <h2>The Evidence</h2>
+  <p>Case studies from companies adopting servant leadership models reveal that productivity can suffer without accountability structures. In fact, Gallup research shows that teams with a high degree of "leadership as support" without authority often report lower engagement and performance over time.</p>
+  <h2>3. Potential Confusion in Authority Dynamics</h2>
+  <p>Servant leaders sometimes blur the lines of authority, stepping into roles typically reserved for team members. By taking on too much, these leaders can dilute the sense of responsibility among their teams, leaving employees uncertain about who is responsible for what. This lack of clear boundaries can lead to inefficiency and missed deadlines, as team members may defer to their leaders, expecting them to "handle it" instead of taking initiative.</p>
+  <p>For example, in one organization, the well-intentioned practice of servant leadership resulted in delays and inefficiencies as employees regularly sought approval or waited on input for routine tasks. The line between empowering support and over-involvement became blurred, creating dependency instead of initiative.</p>
+  <h2>The Evidence</h2>
+  <p>Research consistently shows that teams perform better when roles and responsibilities are clear. Gallup studies indicate that when leaders are overly hands-on, engagement actually drops, as employees are less likely to feel empowered to make independent decisions.</p>
+  <h2>When Servant Leadership Works—But Only in Moderation</h2>
+  <p>It's important to note that servant leadership does have its place—when balanced with clear boundaries and accountability. Southwest Airlines, for instance, is often cited as an example of servant leadership done right. However, the company has emphasized that empowering employees doesn't mean removing responsibility. By balancing employee support with clear accountability, they fostered a culture of ownership alongside service.</p>
+  <h2>Balanced Leadership: An Alternative Approach</h2>
+  <p>Perhaps the answer isn't to abandon servant leadership but to approach it with moderation. A balanced leadership style incorporates the compassion and support of servant leadership while maintaining authority, accountability, and a clear vision. Leaders can still empower their teams and encourage growth without sacrificing productivity or clarity.</p>
+  <p>In a balanced model, leaders can serve while also setting expectations, ensuring accountability, and stepping back when their presence isn't necessary. This approach respects the values of servant leadership without compromising the need for direction and responsibility.</p>
+  <h2>Conclusion: The Balanced Leader's Edge</h2>
+  <p>In a world that's quick to embrace trendy leadership approaches, it's worth remembering that no single model has all the answers. Servant leadership has its merits, but when taken to an extreme, it risks undermining the very productivity, responsibility, and growth it seeks to promote.</p>
+  <p>Just like an ambulance that needs fuel to operate, leaders must prioritize their own well-being before they can effectively serve their teams. The best leaders are those who can serve with strength, empower with accountability, and maintain clear authority without sacrificing empathy.</p>
+  <p>By finding this balance, leaders can benefit from the positive aspects of servant leadership without falling into its pitfalls. Leadership isn't just about serving—it's about guiding teams toward a shared vision, inspiring them to take ownership, and enabling sustainable growth.</p>
+  <p>-</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>

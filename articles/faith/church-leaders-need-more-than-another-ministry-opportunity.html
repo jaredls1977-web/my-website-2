@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dear Church Leaders: We Need More Than Another Ministry Opportunity</title>
+  <style>
+    :root {
+      --ink: #1f2524;
+      --muted: #64706d;
+      --soft: #f8f4ed;
+      --paper: #fffdf8;
+      --cream: #efe4d2;
+      --gold: #b88a44;
+      --deep: #253a35;
+      --sage: #d8dfd5;
+      --rust: #9f5136;
+      --line: rgba(31,37,36,.14);
+      --shadow: 0 24px 70px rgba(31, 37, 36, .14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(184,138,68,.16), transparent 34rem),
+        linear-gradient(135deg, #f7efe2 0%, #fffdf8 42%, #edf2ea 100%);
+      line-height: 1.7;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(31,37,36,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31,37,36,.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      pointer-events: none;
+    }
+
+    header.hero {
+      position: relative;
+      padding: 72px 24px 56px;
+      color: #fff;
+      background:
+        linear-gradient(rgba(20,34,31,.76), rgba(20,34,31,.84)),
+        url('https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1800&q=80') center/cover;
+      border-bottom: 8px solid var(--gold);
+    }
+
+    .hero-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: #f3d59d;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      background: #f3d59d;
+      display: inline-block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.7rem, 7vw, 6.2rem);
+      line-height: .95;
+      letter-spacing: -.06em;
+      max-width: 920px;
+      text-wrap: balance;
+    }
+
+    .subtitle {
+      margin: 28px 0 0;
+      max-width: 760px;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      color: rgba(255,255,255,.86);
+      line-height: 1.55;
+    }
+
+    .hero-card {
+      background: rgba(255,253,248,.94);
+      color: var(--deep);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero-card .label {
+      color: var(--rust);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .72rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    main {
+      position: relative;
+      width: min(980px, calc(100% - 36px));
+      margin: -30px auto 72px;
+    }
+
+    article {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      padding: 26px 40px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(216,223,213,.7), rgba(255,253,248,.95));
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .article-body {
+      padding: clamp(34px, 6vw, 76px);
+      font-size: clamp(1.1rem, 1.6vw, 1.28rem);
+    }
+
+    .confession {
+      margin: 0 0 34px;
+      padding: 34px;
+      background: var(--soft);
+      border-left: 6px solid var(--gold);
+      border-radius: 0 22px 22px 0;
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: -.02em;
+    }
+
+    p { margin: 0 0 1.15em; }
+
+    .short-lines p {
+      margin-bottom: .45em;
+      font-size: clamp(1.22rem, 2.2vw, 1.65rem);
+      line-height: 1.32;
+    }
+
+    .quote-panel {
+      margin: 46px 0;
+      padding: clamp(28px, 5vw, 48px);
+      background: var(--deep);
+      color: #fffdf8;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-panel::after {
+      content: "✦";
+      position: absolute;
+      right: 28px;
+      bottom: -18px;
+      font-size: 8rem;
+      color: rgba(243,213,157,.16);
+      line-height: 1;
+    }
+
+    .quote-panel blockquote {
+      margin: 0;
+      font-size: clamp(1.65rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      letter-spacing: -.05em;
+      max-width: 760px;
+    }
+
+    .quote-panel cite {
+      display: block;
+      margin-top: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: normal;
+      color: #f3d59d;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .question-list {
+      margin: 36px 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .question-list li {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(31,37,36,.06);
+      font-weight: 700;
+      color: var(--deep);
+    }
+
+    .section-break {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 52px 0 34px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--rust);
+      font-size: .8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .section-break::before,
+    .section-break::after {
+      content: "";
+      height: 1px;
+      background: var(--line);
+      flex: 1;
+    }
+
+    .callout {
+      margin: 42px 0;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(184,138,68,.14), rgba(216,223,213,.5));
+      border: 1px solid rgba(184,138,68,.28);
+      border-radius: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .callout h2 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      color: var(--deep);
+    }
+
+    .callout p { margin-bottom: 0; }
+
+    .finale {
+      margin-top: 52px;
+      padding: clamp(30px, 5vw, 52px);
+      background: #172522;
+      color: #fffdf8;
+      border-radius: 28px;
+      text-align: center;
+    }
+
+    .finale p {
+      margin: 0 auto 18px;
+      max-width: 760px;
+      font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+      line-height: 1.35;
+    }
+
+    .finale strong {
+      color: #f3d59d;
+    }
+
+    .footer-note {
+      padding: 30px 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .9rem;
+      background: #faf7ef;
+    }
+
+    @media (max-width: 820px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { max-width: 560px; }
+      .article-meta { padding: 22px 24px; }
+      header.hero { padding-top: 48px; }
+    }
+  
+    .als-site-return { position: sticky; top: 0; z-index: 9999; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,63,92,.15); font-family: Arial, Helvetica, sans-serif; }
+    .als-site-return-inner { max-width: 1180px; margin: 0 auto; padding: 12px 22px; display:flex; justify-content:space-between; gap:16px; align-items:center; }
+    .als-site-return a { color:#003f5c; font-weight:800; text-decoration:none; }
+    .als-site-return span { color:#239b45; font-size:12px; text-transform:uppercase; letter-spacing:.12em; font-weight:800; }
+
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">← Jared Scott Leadership</a>
+      <span>Faith Article</span>
+    </div>
+  </div>
+
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">An open letter to church leaders</div>
+          <h1>We Need More Than Another Ministry Opportunity</h1>
+          <p class="subtitle">A plea for churches to stop confusing activity with belonging, volunteers with brothers and sisters, and programming with actual friendship.</p>
+        </div>
+        <aside class="hero-card" aria-label="Editorial summary">
+          <div class="label">The heart of it</div>
+          <p>People do not just need a place to serve. They need a place where they are known, remembered, invited, and loved when there is nothing left for them to produce.</p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <div class="article-meta">
+          <span>Christian Editorial</span>
+          <span>Faith & Community</span>
+          <span>For pastors, leaders, volunteers, and tired servants</span>
+        </div>
+
+        <div class="article-body">
+          <div class="confession">I have a confession. I’m tired.</div>
+
+          <div class="short-lines">
+            <p>Not tired of Jesus.</p>
+            <p>Not tired of serving.</p>
+            <p>Not tired of the Church.</p>
+          </div>
+
+          <p>I’m tired of showing up, saying yes, filling needs, and still wondering whether anyone truly knows me.</p>
+
+          <p>For years I’ve heard the warnings.</p>
+
+          <div class="quote-panel">
+            <blockquote>“Don’t be a consumer. Get involved. Join a team. Serve somewhere.”</blockquote>
+            <cite>The familiar church refrain</cite>
+          </div>
+
+          <p>And to be fair, I agree with those things. Christianity was never meant to be a spectator sport. We are called to serve. We are called to love. We are called to carry one another’s burdens.</p>
+
+          <p>The problem is that somewhere along the way, many churches became very good at creating volunteers and very poor at creating friendships.</p>
+
+          <div class="section-break">The question underneath the exhaustion</div>
+
+          <p>Every Sunday, churches ask an important question:</p>
+
+          <ul class="question-list">
+            <li>Where can you serve?</li>
+          </ul>
+
+          <p>But a question often goes unasked:</p>
+
+          <ul class="question-list">
+            <li>Who knows you beyond what you do for the church?</li>
+            <li>Who checks in when there’s no need to fill?</li>
+            <li>Who invites you into their life simply because they enjoy your company?</li>
+          </ul>
+
+          <p>Not just your name. Not just the ministry team you’re on. Not just whether you showed up when the schedule needed you.</p>
+
+          <p>Who knows you?</p>
+
+          <div class="section-break">Programming is not always friendship</div>
+
+          <p>Many churches point to community groups when this issue is raised.</p>
+
+          <p>And community groups can be wonderful.</p>
+
+          <p>But let’s be honest about something. Attending another organized church activity is not automatically the same thing as friendship.</p>
+
+          <p>You can spend four nights a week around church people and still feel completely alone.</p>
+
+          <p>You can serve in children’s ministry, lead a recovery group, go on mission trips, attend Bible studies, and still wonder whether you truly belong.</p>
+
+          <p>That isn’t a programming problem.</p>
+
+          <p>It’s a relationship problem.</p>
+
+          <div class="quote-panel">
+            <blockquote>We replaced friendship with scheduling. We replaced brotherhood with programming. We replaced relationships with attendance.</blockquote>
+            <cite>And then we wonder why people are exhausted</cite>
+          </div>
+
+          <p>The early church wasn’t merely a collection of ministry teams. It was a family.</p>
+
+          <p>They ate together. Traveled together. Celebrated together. Mourned together. Shared life together.</p>
+
+          <p>I also wonder if we’ve unintentionally created a culture where Christians are afraid to simply enjoy life together.</p>
+
+          <p>Sometimes it feels as though every interaction must have a spiritual objective attached to it.</p>
+
+          <p>Every meal needs a devotional. Every gathering needs a curriculum. Every conversation needs a lesson.</p>
+
+          <p>Meanwhile, many believers are starving for something much simpler.</p>
+
+          <div class="confession">Friendship.</div>
+
+          <p>Not because friendship is more important than discipleship.</p>
+
+          <p>But because friendship is often one of the ways discipleship naturally happens.</p>
+
+          <p>Jesus certainly taught people. But He also walked with them. Ate with them. Traveled with them. Shared ordinary moments with them.</p>
+
+          <div class="section-break">A challenge to leaders</div>
+
+          <p>The Church doesn’t need fewer servants.</p>
+
+          <p>The Church needs more brothers and sisters. More friendships. More genuine relationships that exist even when there isn’t a volunteer shortage to solve.</p>
+
+          <p>Because eventually every faithful servant wonders whether they would still be valued if they had nothing left to contribute.</p>
+
+          <p>Church leaders, that’s not an attack.</p>
+
+          <p>It’s a question worth asking.</p>
+
+          <div class="callout">
+            <h2>Here is the challenge.</h2>
+            <p>This month, identify a few people in your church who aren’t on your leadership team, aren’t filling a critical role, and don’t have anything to offer your ministry goals. Invite them to a meal. Learn their story. Follow up the next week. Encourage your staff and key volunteers to do the same.</p>
+          </div>
+
+          <p>Then ask an honest question of your church culture:</p>
+
+          <ul class="question-list">
+            <li>Are we creating spaces where people are known, or simply places where people are needed?</li>
+          </ul>
+
+          <div class="finale">
+            <p>Because people don’t just want a place to serve.</p>
+            <p><strong>They want a place to belong.</strong></p>
+            <p>And belonging grows when ordinary Christians are intentionally welcomed into real friendships, shared lives, and genuine community.</p>
+          </div>
+        </div>
+
+        <div class="footer-note">
+          Designed as an editorial-style open letter for social sharing, church reflection, and leadership conversation.
+        </div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

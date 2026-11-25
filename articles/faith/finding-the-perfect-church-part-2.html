@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding the Perfect Church, Part 2: What Are You Actually Looking For?</title>
+  <style>
+    :root {
+      --sand: #f3eadc;
+      --paper: #fffdf8;
+      --ink: #2f2a24;
+      --soft-ink: #5f554b;
+      --clay: #a66f4f;
+      --clay-dark: #7c4f37;
+      --sage: #7f8b6f;
+      --rule: #e2d5bf;
+      --wheat: #dfc89f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(166, 111, 79, 0.18), transparent 34rem),
+        radial-gradient(circle at 92% 16%, rgba(127, 139, 111, 0.18), transparent 30rem),
+        linear-gradient(180deg, var(--sand) 0%, #efe3d1 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.76;
+    }
+    .top-band {
+      background: linear-gradient(135deg, #4c5a45 0%, #71624f 56%, #9f7657 100%);
+      color: #fffaf0;
+      padding: 34px 22px 88px;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .top-band::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -38% -8%;
+      height: 190px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50% 50% 0 0;
+    }
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .series-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: #fff7e8;
+      background: rgba(47, 42, 36, 0.24);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .series-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--wheat);
+      border-radius: 50%;
+    }
+    h1 {
+      font-size: clamp(2.75rem, 6vw, 5.7rem);
+      line-height: 0.96;
+      max-width: 960px;
+      margin: 0;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+    .subtitle {
+      max-width: 760px;
+      font-size: clamp(1.2rem, 2.1vw, 1.65rem);
+      color: #f8ead2;
+      margin: 22px 0 0;
+      font-style: italic;
+    }
+    .byline {
+      margin-top: 28px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #f1e3cd;
+      font-size: 0.98rem;
+    }
+    .shell {
+      width: min(980px, calc(100% - 28px));
+      margin: -50px auto 62px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+      position: relative;
+      z-index: 2;
+    }
+    main {
+      background: var(--paper);
+      border: 1px solid rgba(126, 101, 74, 0.18);
+      border-radius: 22px;
+      box-shadow: 0 22px 48px rgba(79, 60, 40, 0.16);
+      padding: clamp(32px, 5vw, 64px);
+    }
+    .dek {
+      font-size: 1.36rem;
+      line-height: 1.58;
+      color: var(--soft-ink);
+      padding: 0 0 28px;
+      margin: 0 0 34px;
+      border-bottom: 1px solid var(--rule);
+      font-style: italic;
+    }
+    article p {
+      font-size: 1.09rem;
+      margin: 0 0 1.42rem;
+    }
+    article p:first-of-type::first-letter {
+      float: left;
+      font-size: 4.9rem;
+      line-height: 0.86;
+      padding: 0.15rem 0.52rem 0 0;
+      color: var(--clay-dark);
+      font-weight: bold;
+    }
+    .article-footer {
+      margin-top: 38px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--soft-ink);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .footer-pill {
+      display: inline-block;
+      background: #f0e3ce;
+      color: var(--clay-dark);
+      border: 1px solid #dcc7a7;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-weight: 700;
+    }
+
+    .series-nav-box {
+      margin: 34px 0 0;
+      padding: 24px;
+      border: 1px solid var(--rule);
+      border-radius: 18px;
+      background: #fbf5e8;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .series-nav-box h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 1.55rem;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+    .series-nav-box p { margin: 0 0 18px; color: var(--soft-ink); font-size: .96rem; }
+    .series-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .series-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .series-links a:hover { border-color: var(--clay); color: var(--clay-dark); }
+    .series-links .current { background: #efe3d1; color: var(--clay-dark); }
+    .part-nav {
+      margin-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .part-nav a {
+      text-decoration: none;
+      color: var(--clay-dark);
+      font-weight: 700;
+      border-bottom: 1px solid currentColor;
+    }
+    @media (max-width: 680px) {
+      .series-links { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .top-band { padding: 30px 18px 74px; }
+      .shell { width: calc(100% - 22px); margin-top: -42px; }
+      main { border-radius: 18px; padding: 28px 22px; }
+      article p { font-size: 1.03rem; }
+      .dek { font-size: 1.16rem; }
+    }
+  </style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<header class="top-band">
+    <div class="hero-inner">
+      <div class="series-tag">Faith • Part 2 of 4</div>
+      <h1>What Are You Actually Looking For?</h1>
+      <p class="subtitle">Finding the Perfect Church, Part 2</p>
+      <p class="byline">By Jared Scott</p>
+    </div>
+  </header>
+
+  <div class="shell">
+    <main>
+      <div class="dek">Once perfection is off the table, the harder question finally shows up.</div>
+      <article>
+<p>The laptop was still open on the kitchen table long after Robin had gone back to packing. That is how most church searches begin now, not with a steeple in the distance or a neighbor&#x27;s recommendation shouted across a yard, but with a search bar, a handful of tabs, and a person sitting in front of a glowing screen trying to determine the spiritual health of a congregation from a homepage photograph. I clicked from one site to another while boxes leaned against the wall around me, and the whole thing felt strangely backwards. I was trying to evaluate something sacred through the same machine I use to compare hotel rooms and read reviews about lawn equipment.</p>
+<p>Every church seemed to introduce itself with the same kind of language. They loved Jesus, loved people, valued community, believed the Bible, wanted families to feel welcome, and had a mission statement that sounded both sincere and familiar. None of that was bad. In fact, most of it was good. The problem was that after a while the words started floating above the page without attaching themselves to anything I could actually picture. I could not tell whether the church was warm or pushy, whether the sermon would be thoughtful or shallow, whether the people would invite us into their lives or simply direct us toward a sign-up form.</p>
+<p>Robin came back through the room carrying something that had apparently been important enough to keep but not important enough for either of us to remember owning. She looked at the laptop and smiled because she knew exactly what I was doing. I had several church websites open, each one promising some version of belonging, and I was studying them with the seriousness of a man comparing medical procedures. I told her I was just looking around, which was technically true in the same way a man standing knee-deep in a creek during a rainstorm might say he was just checking the weather.</p>
+<p>The more I looked, the more I could feel myself slipping into the old habit of turning the search into a checklist. I wanted a church close enough that attending would not feel like a weekly expedition. I wanted biblical teaching that had depth without becoming a seminary lecture for people who forgot to bring notebooks. I wanted worship that did not feel like a performance, but I also did not want to sit through something so lifeless that it made me wonder if everyone had confused reverence with exhaustion. I wanted programs that mattered, not programs that existed because churches feel pressure to have programs. I wanted people who could talk about Jesus over dinner without acting like every casual conversation needed to become a spiritual assessment.</p>
+<p>That was when I began to understand that the real question was not which church looked best online. The real question was what I was actually looking for. That sounds obvious, but it is not as easy as it seems. Most people think they know what they want in a church until they start naming it out loud. Then they discover their list contains a mixture of Scripture, experience, pain, preference, fear, convenience, hope, and the memory of every church that ever disappointed them.</p>
+<p>I know that mixture well. My background makes it difficult for me to walk into any religious environment without paying close attention to the temperature of the room. Growing up as one of Jehovah&#x27;s Witnesses taught me to recognize control, even when it is dressed in nice language. It taught me to listen carefully when people begin adding rules where Scripture has not. It taught me to be cautious around leaders who do not like questions. Those instincts are not all bad. Some of them are protective. The danger is that a protective instinct can become so sensitive that it starts treating every unfamiliar sound like an alarm.</p>
+<p>That is why church shopping can become exhausting for someone with religious history behind them. You are not merely asking whether you like the music or whether the sermon held your attention. You are asking whether this place is safe. You are asking whether these people mean what they say. You are asking whether the invitation to community is genuine or whether it comes with invisible strings attached. You are asking whether the pastor is opening the Bible to teach it or opening the Bible to support what he already wanted to say.</p>
+<p>One Sunday, not long after that kitchen-table search began, Robin and I visited a church that seemed promising enough from the outside. The building was clean, the parking lot was full but not impossible, and the people at the entrance were friendly without making us feel like a rescue team had been deployed on our behalf. That may sound like a small thing, but anyone who has visited churches knows there is a difference between being welcomed and being hunted. A good greeting feels like hospitality. A bad one feels like someone has mistaken you for a sales lead.</p>
+<p>We found seats a few rows back, close enough to pay attention but far enough away that we did not feel as though we had accidentally joined the staff. As people settled in around us, I watched the small movements that tell you more about a church than the website ever will. A man leaned over to help an older woman with her coat. A child dropped something under a chair and three adults instinctively reached down to help. Two people across the aisle greeted each other with the relaxed familiarity of people who had carried one another through more than one season of life.</p>
+<p>The service began without much drama, which I appreciated more than I expected. There was music, but it did not feel like the room had been designed around the music. There were announcements, but they did not take on a life of their own. The pastor eventually opened the Bible, and for a while I stopped evaluating the room and simply listened. That is harder for me than it probably should be. My mind has a way of noticing everything at once. The volume. The tone. The body language. The phrasing. The way people respond. The things said and the things carefully left unsaid.</p>
+<p>On the drive home, Robin asked what I thought. It was the same question she had asked after other visits, but this time I tried not to answer too quickly. The road stretched ahead of us, late-morning light coming through the windshield, and I watched the familiar South Carolina landscape pass by while I sorted through my thoughts. There were things I liked. There were things I was unsure about. There were things I would have done differently if, for some strange reason, anyone had placed me in charge of designing Sunday morning for the entire Christian world.</p>
+<p>The more I sat with it, though, the more I could tell that the visit had exposed something in me. I wanted substance, but I did not want stiffness. I wanted warmth, but I did not want emotional pressure. I wanted programs, but I did not want a church that substituted activity for discipleship. I wanted community, but I did not want a manufactured version of friendship where people only knew each other because they had been assigned to the same group on a spreadsheet. I wanted a church that made room for real life, not one that quietly suggested every spare evening should belong to the church calendar.</p>
+<p>That last part matters more than some people admit. There are churches that seem to believe spiritual maturity is measured by how often your car is in the parking lot. I understand the desire for involvement, and I believe Christians should serve. But I have also learned that busyness can wear a religious costume. A person can be at church constantly and still be avoiding the harder work of becoming like Christ. A family can attend every event on the calendar and still not have peace in their home. Activity is not the same as formation.</p>
+<p>What Robin and I wanted was not a church that would take over our lives. We wanted a church that would help shape them. There is a difference. A healthy church should not need to consume every hour in order to prove it matters. It should strengthen people for the lives God has actually given them. Those lives include work, marriage, children, neighbors, meals, rest, service, grief, laughter, and quiet evenings when nobody is asking you to register for anything.</p>
+<p>That thought stayed with me because it pushed against both extremes I had seen over the years. On one side are churches built around experience, where Sunday morning feels polished enough to impress visitors but not always deep enough to sustain people. On the other side are churches so suspicious of anything modern that they seem to confuse discomfort with holiness. I did not want either extreme. I did not want entertainment wearing a cross, and I did not want tradition preserved in amber merely because nobody had the courage to ask whether it was still helping anyone follow Jesus.</p>
+<p>The strange thing is that both kinds of churches can contain sincere believers. That is what keeps the conversation from becoming simple. It would be easier if every church that annoyed me were spiritually empty and every church that fit my preferences were obviously healthy. But life refuses to arrange itself that neatly. Some churches I would never choose are exactly where someone else met Christ, found sobriety, healed from grief, rebuilt a marriage, or discovered that Scripture was not as distant as they once believed.</p>
+<p>By the time we got home that Sunday, I had stopped trying to decide whether that particular church was the answer. I was thinking instead about the categories I had been using. I had been asking whether a church fit me, and there is nothing wrong with that question if it stays in its proper place. Fit matters. A church forty-five minutes away may be faithful and still not be feasible. A church may be doctrinally sound and still not be where your family can build relationships. But fit cannot become the highest standard, because the Christian life was never meant to be shaped entirely around personal comfort.</p>
+<p>The verse that came to mind later was from James, where believers are told to be doers of the word and not hearers only. That verse has a way of cutting through the fog, whether the fog is emotional, spiritual, or the kind some churches apparently purchase by the gallon. It reminded me that the goal of church is not simply to leave impressed. The goal is not merely to feel inspired, informed, affirmed, or entertained. The goal is to become more faithful. The goal is to hear the Word of God and then live under it.</p>
+<p>That changes the search. If the goal is entertainment, then I should look for the most impressive service. If the goal is comfort, then I should look for the place that asks the least of me. If the goal is intellectual stimulation, then I should look for the preacher who makes me feel smartest while I listen. But if the goal is discipleship, then I need to ask whether this church is helping people become more like Christ when nobody is watching.</p>
+<p>That question is harder to answer from a website. It is harder to answer from one visit. It is harder to answer when you&#x27;re still new and everyone is on their best behavior. But it is the question that matters most. Are people being formed here, or merely gathered? Are they learning Scripture, or merely hearing religious language? Are they serving because they love their neighbors, or because the church needs content for the next highlight video? Are relationships growing naturally, or is community being managed like a corporate initiative?</p>
+<p>Those questions stayed with me longer than the details of the service. I could not remember every song or every announcement, but I remembered the feeling of wanting something real. I wanted a church where people could sit on a back porch after a meal and talk honestly about life without performing. I wanted a church where Jesus could be discussed over steak, coffee, or a football game without everyone suddenly changing into a stained-glass version of themselves. I wanted a church where serving the poor mattered whether or not anyone photographed it.</p>
+<p>The more I thought about it, the more I saw that what I wanted was not complicated, though it might be rare. I wanted a church that took Christ seriously without taking itself too seriously. I wanted a church that opened the Bible and trusted it to do its work. I wanted a church where grace was not merely a word in the songs but a reality in the room. I wanted a place where imperfect people were not pretending to be whole, but were honestly walking toward the One who is.</p>
+<p>That is not the same as looking for perfection. It is something quieter and better. It is the difference between shopping for a flawless institution and looking for a faithful community. One will disappoint you every time because it does not exist. The other may disappoint you too, because people are involved, but it can also become a place where God works in ways you did not expect.</p>
+<p>That evening, after the visit and the drive and the conversation, the house still looked like a move in progress. Boxes were still stacked in the wrong places. The cable I did not need was probably still packed somewhere it did not belong. Nothing about our church search had been solved. But the question had changed. I was no longer asking which church could meet every preference I carried into the room. I was beginning to ask which church could help us follow Jesus with honesty, humility, and enough real community to make the journey less lonely.</p>
+      </article>
+
+      <section class="series-nav-box" aria-label="Finding the Perfect Church series navigation">
+        <h2>Finding the Perfect Church Series</h2>
+        <p>Read the four articles in order.</p>
+        <div class="series-links">
+          <a href="finding-the-perfect-church-part-1.html">Part 1: Finding the Perfect Church<br><span>Spoiler Alert — You Won&#x27;t</span></a> <a class="current" href="finding-the-perfect-church-part-2.html">Part 2: What Are You Actually Looking For?</a> <a href="finding-the-perfect-church-part-3.html">Part 3: Church Hurt Is Real, But It Isn&#x27;t Jesus</a> <a href="finding-the-perfect-church-part-4.html">Part 4: Every Church Is Somebody&#x27;s Perfect Church</a>
+        </div>
+        <div class="part-nav"><a href="finding-the-perfect-church-part-1.html">Previous: Finding the Perfect Church</a><a href="finding-the-perfect-church-part-3.html">Next: Church Hurt Is Real, But It Isn&#x27;t Jesus</a></div>
+      </section>
+      <div class="article-footer">
+        <span class="footer-pill">Finding the Perfect Church</span>
+        <span>Part 3: Church Hurt Is Real, But It Isn't Jesus</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"Amor Fati: Leading When Fate Decides" | Jared Scott</title>
+<meta name="description" content="An old Stoic idea about loving what happens to you, and what it looks like to lead that way.">
+<style>
+  :root{
+    --paper:#F2EDE3;
+    --paper-deep:#E8E0D2;
+    --ink:#2B2620;
+    --ink-soft:#4A4339;
+    --clay:#9C5B33;
+    --clay-deep:#7A4524;
+    --olive:#6B6A4B;
+    --rule:#C9BEA9;
+    --gold:#B0852F;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #F6F1E8 0%, var(--paper) 55%, #ECE4D6 100%);
+    color:var(--ink-soft);
+    font-family:Georgia,"Times New Roman",serif;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:34px 26px 80px;
+  }
+
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:30px;
+  }
+  .masthead .name{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-size:13px;
+    color:var(--ink);
+    margin:0;
+  }
+  .masthead .strap{
+    font-size:10.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:7px;
+    font-family:Georgia,serif;
+  }
+
+  .kicker{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+
+  h1{
+    font-family:"Playfair Display",Georgia,"Times New Roman",serif;
+    font-weight:900;
+    color:var(--ink);
+    font-size:clamp(34px,9vw,52px);
+    line-height:1.04;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 18px;
+  }
+
+  .dek{
+    text-align:center;
+    font-size:clamp(17px,4.4vw,20px);
+    font-style:italic;
+    color:var(--olive);
+    line-height:1.5;
+    max-width:540px;
+    margin:0 auto 26px;
+    font-family:Georgia,serif;
+  }
+
+  .byline{
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:12px 0;
+    margin:0 auto 34px;
+    max-width:360px;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .byline b{color:var(--clay-deep);}
+
+  p{
+    font-size:clamp(18px,4.7vw,19.5px);
+    margin:0 0 23px;
+  }
+
+  .lead::first-letter{
+    float:left;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:74px;
+    line-height:.74;
+    padding:8px 12px 0 0;
+    color:var(--clay);
+  }
+
+  .dinkus{
+    text-align:center;
+    color:var(--clay);
+    letter-spacing:.9em;
+    font-size:18px;
+    margin:34px 0;
+    padding-left:.9em;
+  }
+
+  h2{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:800;
+    color:var(--ink);
+    font-size:clamp(23px,6vw,29px);
+    line-height:1.15;
+    margin:42px 0 16px;
+  }
+
+  h3{
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(19px,5vw,23px);
+    line-height:1.2;
+    margin:34px 0 14px;
+  }
+
+  .pull{
+    border-left:4px solid var(--clay);
+    margin:36px 0;
+    padding:6px 0 6px 22px;
+  }
+  .pull p{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(21px,5.4vw,25px);
+    line-height:1.34;
+    color:var(--ink);
+    margin:0;
+  }
+  .pull .attrib{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:10px;
+  }
+
+  .card{
+    background:linear-gradient(180deg,#FBF7EF 0%,var(--paper-deep) 100%);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    padding:24px 24px 8px;
+    margin:36px 0;
+    box-shadow:0 1px 0 #fff inset, 0 8px 24px -18px rgba(43,38,32,.5);
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .card h3{
+    margin:0 0 12px;
+    font-size:21px;
+  }
+  .card ul, .card ol{
+    margin:0 0 16px;
+    padding-left:20px;
+  }
+  .card li{
+    font-size:17px;
+    margin-bottom:10px;
+    color:var(--ink-soft);
+  }
+
+  .wrap ul, .wrap ol{
+    margin:0 0 24px;
+    padding-left:26px;
+  }
+  .wrap li{
+    margin-bottom:10px;
+  }
+  .wrap li p{
+    margin:0;
+  }
+
+  .scripture{
+    text-align:center;
+    font-style:italic;
+    color:var(--olive);
+    font-size:16px;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:18px 8px;
+    margin:34px 0;
+    line-height:1.6;
+  }
+  .scripture span{
+    display:block;
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-top:8px;
+  }
+
+  img.inline-photo{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+    margin:8px 0 30px;
+  }
+
+  .signoff{
+    margin-top:46px;
+    padding-top:24px;
+    border-top:2px solid var(--ink);
+    text-align:center;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",Georgia,serif;
+    font-style:italic;
+    font-size:24px;
+    color:var(--clay-deep);
+    margin:0 0 4px;
+  }
+  .signoff .role{
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--olive);
+    margin:0;
+  }
+
+  .als-site-return{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(251,247,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .als-site-return-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:12px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+  }
+  .als-site-return a{
+    color:var(--clay-deep);
+    font-weight:800;
+    text-decoration:none;
+  }
+  .als-site-return span{
+    color:var(--olive);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:800;
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .wrap{animation:rise .7s ease both;}
+    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="als-site-return">
+    <div class="als-site-return-inner">
+      <a href="../../home.html">&larr; Jared Scott Leadership</a>
+      <span>Leadership Article</span>
+    </div>
+  </div>
+
+<article class="wrap">
+
+  <div class="masthead">
+    <p class="name">Jared Scott</p>
+    <p class="strap">On Leadership &middot; On Life</p>
+  </div>
+
+  <p class="kicker">On Fate</p>
+  <h1>"Amor Fati: Leading When Fate Decides"</h1>
+  <p class="dek">An old Stoic idea about loving what happens to you, and what it looks like to lead that way.</p>
+
+  <p class="byline">By <b>Jared Scott</b></p>
+
+  <p class="lead">Leadership isn't about having control over every decision, every outcome, or every moment. Sometimes, it's about stepping back, accepting what's out of your hands, and focusing instead on how you respond.</p>
+  <p>Recently, I experienced a situation that tested this principle. A close friend, acting as the bearer of difficult news, told me I could no longer be part of an opportunity I had deeply invested in. It wasn't their decision, and it wasn't something they could change. While I had to bear the loss, I realized something important: as leaders, we can't always shape our circumstances, but we can shape ourselves in response to them.</p>
+  <p>Now, you might be wondering, <em>How in the world can you put Dabo Swinney and Friedrich Nietzsche in the same article?</em> Well, it started as a dare from a close friend (you know who you are), but on a deeper level, it actually makes total sense. These two unlikely influences converge on a truth every leader needs to understand: resilience isn't passive—it's active. It's about embracing what's beyond your control and channeling your energy into what you can.</p>
+  <p>As Dabo Swinney, the two-time National Champion coach, wisely puts it:\ <strong>"We can't always control the input, but we can control the output."</strong></p>
+  <p>And as Nietzsche reminds us with his concept of <em>amor fati</em>—the love of fate:\ <strong>"Not merely bear what is necessary, still less conceal it...but love it."</strong></p>
+  <p>These aren't just lofty ideals; they're practical tools for navigating challenges. Let's explore how we, as leaders, can embrace this mindset in actionable ways.</p>
+  <h2>How Leaders Can Embrace "Amor Fati"</h2>
+  <ol>
+    <li><strong>Face Reality Without Resistance</strong>\ The first step is acceptance. Leaders often waste valuable time fighting what they can't change. By acknowledging reality, you shift focus to what can be done. When faced with difficult decisions, say to yourself, <em>"This is mine to handle—how can I turn it into something positive?"</em></li>
+    <li><strong>Respond, Don't React</strong>\ The measure of a leader isn't how they act when everything goes their way; it's how they act when things fall apart. Control your emotional response. Take a breath, step back, and focus on measured, intentional action. This will set the tone for those you lead.</li>
+    <li><strong>Find the Opportunity in the Obstacle</strong>\ As Nietzsche wrote: <strong>"That which does not kill us makes us stronger."</strong> While it's tempting to see setbacks as only losses, they often present lessons that can guide us toward future success. Ask yourself, <em>What can I learn from this?</em> or <em>How can this make me better?</em></li>
+    <li><strong>Communicate with Honesty and Empathy</strong>\ When delivering difficult news, be clear, compassionate, and truthful. Explain what's out of your hands while focusing on what you're doing to support your team. Empathy builds trust—even in disappointment.</li>
+    <li><strong>Inspire Action Over Pessimism</strong>\ In moments of adversity, leaders must model a mindset of resilience. Show your team that challenges don't define you; your response does. This attitude encourages those around you to take ownership of their circumstances as well.</li>
+    <li><strong>Focus on Growth</strong>\ Leadership begins within. Use moments of loss or difficulty to double down on self-improvement. Whether it's learning a new skill, managing emotions more effectively, or simply growing in patience, every setback is a chance to strengthen your foundation.</li>
+  </ol>
+  <h2>Blending Philosophy with Leadership</h2>
+  <p>Nietzsche's <em>amor fati</em> teaches us to embrace everything life throws our way—not just the good, but also the hard, the unfair, and the uncontrollable. Similarly, Dabo Swinney's wisdom reminds us that while we can't control external factors, we can control how we respond. At first, pairing these two perspectives might feel like blending a football field with a philosophy classroom, but both speak to a universal truth: resilience and adaptability are the cornerstones of effective leadership.</p>
+  <p>Imagine a workplace where leaders consistently embody these values—accepting reality, remaining calm under pressure, and focusing on personal and team growth. The result? Not just stronger leaders, but stronger teams, inspired by resilience and a shared commitment to excellence.</p>
+  <h2>Final Thoughts</h2>
+  <p>Leadership isn't about controlling every detail. It's about embracing challenges as opportunities to lead with clarity, strength, and focus. When the ball's no longer in your court, ask yourself: <em>What can I control? What can I learn?</em></p>
+  <p>So the next time you're faced with an uncontrollable situation, remember this: whether it's Nietzsche's <em>amor fati</em> or Dabo's <em>"control the output"</em> mantra, these principles remind us that setbacks don't define us—our response does. Lead with focus, grace, and the courage to thrive in the face of uncertainty.</p>
+
+  <div class="signoff">
+    <p class="sig">Jared Scott</p>
+    <p class="role">Author &middot; Leadership &amp; Workforce Development</p>
+  </div>
+
+</article>
+</body>
+</html>
