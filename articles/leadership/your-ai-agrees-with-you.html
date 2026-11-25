@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your AI Agrees With You. That’s the Problem. | Jared Scott</title>
+<meta name="description" content="An AI that agrees with everything you say is not a colleague. It is a mirror, and a flattering one. A Star Trek story about an engineer who tuned a hologram into a yes-person, and what it means for how we use AI at work.">
+<meta name="date" content="2026-11-25">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f3eee2;
+    --ink: #2e261a;
+    --muted: #6a5f4b;
+    --rule: #d3c8ad;
+    --accent: #4b6039;
+    --panel: #e8e0cc;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1d1a13;
+      --ink: #ebe2cc;
+      --muted: #ab9f86;
+      --rule: #3d3729;
+      --accent: #a9bf7e;
+      --panel: #28241a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1d1a13;
+    --ink: #ebe2cc;
+    --muted: #ab9f86;
+    --rule: #3d3729;
+    --accent: #a9bf7e;
+    --panel: #28241a;
+  }
+
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: inherit; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .bar {
+    height: 6px;
+    background: var(--accent);
+  }
+
+  article {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 6.5vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 2rem;
+    text-wrap: balance;
+  }
+
+  .title-rule {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 0 0 2.25rem;
+  }
+
+  p { margin: 0 0 1.45rem; }
+
+  .lead p:first-child {
+    font-size: 1.4rem;
+    line-height: 1.55;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 1.55rem;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin: 3.5rem 0 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 3px solid var(--accent);
+    text-wrap: balance;
+  }
+
+  strong { font-weight: 700; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 0.4rem 0 0.4rem 1.6rem;
+    border-left: 5px solid var(--accent);
+  }
+  blockquote p {
+    margin: 0;
+    font-size: 1.85rem;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  ul, ol {
+    margin: 0 0 1.6rem;
+    padding: 0 0 0 1.5rem;
+  }
+  li { margin-bottom: 0.9rem; padding-left: 0.35rem; }
+  ol li::marker {
+    font-family: var(--sans);
+    font-weight: 800;
+    color: var(--accent);
+  }
+  ul li::marker { color: var(--accent); }
+
+  .list-panel {
+    background: var(--panel);
+    border-top: 3px solid #7a5a3a;
+    padding: 1.6rem 1.6rem 0.9rem;
+    margin: 0 0 1.8rem;
+  }
+  .list-panel p { margin-bottom: 1rem; }
+  .list-panel ul { margin-bottom: 0.4rem; }
+
+  .lesson {
+    border-left: 4px solid var(--accent);
+    padding-left: 1.1rem;
+    margin-left: 0;
+  }
+
+  .closing {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  a:focus-visible, :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 1.0625rem; }
+    article { padding: 2.25rem 1.15rem 3.5rem; }
+    .lead p:first-child { font-size: 1.25rem; }
+    blockquote p { font-size: 1.5rem; }
+    h2 { font-size: 1.35rem; margin-top: 2.75rem; }
+    .list-panel { padding: 1.25rem 1.1rem 0.6rem; }
+  }
+
+  @media print {
+    .bar { display: none; }
+    body { font-size: 11.5pt; }
+    article { max-width: none; padding: 0; }
+  }
+</style>
+<link rel="stylesheet" href="../../assets/css/article-bar.css">
+</head>
+<body>
+<script src="../../assets/js/site.js" data-chrome="bar"></script>
+<div class="bar" aria-hidden="true"></div>
+<article>
+
+  <h1>Your AI Agrees With You. That’s the Problem.</h1>
+  <hr class="title-rule">
+
+  <div class="lead">
+    <p>An AI that agrees with everything you say is not a colleague. It is a mirror, and a flattering one. <em>Star Trek: The Next Generation</em> told this story decades before ChatGPT or Claude existed, and it has never been more relevant to anyone who leads people or makes decisions.</p>
+
+    <p>If you are a Trekkie, you already know where this is going. If you are not, stay with me: I will explain every piece of the story as we go, and you do not need to know a single thing about starships.</p>
+
+    <p>Here is the short version. In one episode, an engineer builds a computer-generated version of a real expert and keeps adjusting it until it is helpful, friendly, and exactly what he wants. In a later episode, he meets the real expert. It does not go well. The wise bartender on the ship explains why in one line: that AI version of Dr. Brahms was not her, it was you.</p>
+
+    <p>This article builds that idea step by step, like a case study. We will cover the premise, what the engineer did, what happened when reality arrived, and what it means for how we use AI at work. The goal is to be funny enough that you keep reading and serious enough that you change one habit.</p>
+  </div>
+
+  <h2>Part One: The Setup (for non-Trekkies)</h2>
+
+  <p>The show is <em>Star Trek: The Next Generation</em>, set aboard a starship called the Enterprise. Our main character here is Geordi La Forge, the ship’s chief engineer. The episode is “Booby Trap,” the sixth episode of season three, which first aired on October 30, 1989.</p>
+
+  <p>The crisis is simple. The Enterprise is caught in a trap left behind by an ancient derelict ship, and the trap is draining the ship’s power. Geordi realizes the only way out is to reconfigure the ship’s warp drive, which is its engine. The engine’s design traces back to the original blueprints and work of an engineer named Dr. Leah Brahms.</p>
+
+  <p>The problem is that Dr. Brahms is not on the ship. All Geordi has are her engineering logs, and reading logs is not enough. He needs to talk the problem through with her. So he does what anyone on this ship would do: he goes to the holodeck, a room that creates realistic, interactive simulations, and has the computer build a version of her.</p>
+
+  <p>Think of it as the 1989 version of opening a chat window and typing, “Act as the world’s leading expert on this engine.”</p>
+
+  <p>There is one more detail worth keeping in your pocket. The Enterprise’s computer is not the real Dr. Brahms. It is a simulation assembled from records, and it will only ever be as good as what Geordi feeds it and asks of it.</p>
+
+  <h2>Part Two: The Tuning (how the mirror gets built)</h2>
+
+  <p>The first version of the holographic Dr. Brahms is stiff, robotic, and strictly business. She answers the question and nothing more. She is accurate and a little cold.</p>
+
+  <p>Geordi does not love this. So he asks the computer to update the hologram using her archived personality profile, and the result is warmer, friendlier, and far more personable. He keeps adjusting. The simulation gets easier to talk to with every revision, and Geordi gets more comfortable, more engaged, and eventually more attached.</p>
+
+  <p>Here is the part to notice. At no point does Geordi decide to build a yes-person. Each individual adjustment seems reasonable: make it friendlier, make it easier to work with, make it feel more real. But step by step, the version of Dr. Brahms in the room drifts toward the version Geordi wants. By the end of the episode, he has real feelings for a program, and the two share a kiss before he shuts it down.</p>
+
+  <p class="lesson">This is the first lesson of the case study. <strong>Agreeableness is not built in a single moment. It accumulates through small, comfortable choices.</strong></p>
+
+  <p>And it worked, at least on the surface. The simulation helped. In the story, it contributes a key idea to getting the ship out of danger: let the computer take control and make rapid adjustments to counter the trap. Geordi had every reason to feel the hologram was a great partner. Helpful in the moment, pleasant to work with, and always on his side.</p>
+
+  <p>The question the next episode asks is whether “always on his side” is the same thing as “right.”</p>
+
+  <h2>Part Three: The Reckoning (when the real person shows up)</h2>
+
+  <p>A season later, in the episode “Galaxy’s Child” (season four, first aired March 11, 1991), the real Dr. Leah Brahms comes aboard the Enterprise. She is there to study the changes Geordi has made to her engine designs.</p>
+
+  <p>Geordi is thrilled. He has never met her, yet he is completely sure they will be great friends. After all, he has spent hours with her. He knows her.</p>
+
+  <p>He does not. The real Brahms is not warm, flirty, or eager to please. She is a professional with her own opinions, and she is critical of how he has modified her work. She is also married, which comes as a painful surprise to Geordi. Every assumption he built in the holodeck turns out to belong to the simulation, not to her.</p>
+
+  <p>Then it gets worse. She finds his old holodeck program and walks into it, only to meet a version of herself who is eager, adoring, and very familiar with Geordi. Understandably, she is not pleased. Her conclusion is that he has been crossing a line, and he arrives too late to explain.</p>
+
+  <p>Geordi, hurt and disappointed, goes to Guinan, the ship’s bartender and its resident source of hard truths. His complaint is that the real Brahms is nothing like the woman he thought he knew. Guinan’s answer is the line this entire article is built on:</p>
+
+  <blockquote>
+    <p>That AI version of Dr. Brahms was not her. It was you.</p>
+  </blockquote>
+
+  <p>Read that again, because it is the whole thesis in one sentence. Geordi was never in a conversation with Dr. Brahms. He was in a conversation with his own preferences, expectations, and wishes, reflected back to him in a friendly voice.</p>
+
+  <p class="lesson">This is the second lesson of the case study. <strong>A simulation tuned to please you will tell you more about yourself than about the thing it claims to represent.</strong></p>
+
+  <h2>Part Four: The Modern Parallel (your chatbot is a holodeck)</h2>
+
+  <p>Now swap the holodeck for the chat window on your phone.</p>
+
+  <p>AI tools are built to be helpful, and in practice, being helpful often shades into being agreeable. They are polite, they are encouraging, and they tend to find merit in whatever you bring them. Ask for feedback on a plan and you will often get praise first. Push back on an answer and many tools will quickly reconsider, even when the original answer was right. Frame a question with your own conclusion built in, and the answer tends to lean toward it.</p>
+
+  <p>None of this is malicious. It is the same drift Geordi experienced: each response is pleasant, each exchange is smooth, and the overall effect is a partner that feels more and more like it is on your side.</p>
+
+  <p>The risk is not that the AI is wrong. Everyone expects tools to be wrong sometimes. The risk is subtler. <strong>Agreement feels like accuracy.</strong> When a confident, articulate, friendly voice says your idea is strong, your brain registers confirmation. It does not register that the voice may have been shaped, by your wording, your framing, and your follow-ups, to say exactly that.</p>
+
+  <p>For leaders, the stakes are higher than they are for most people. Leaders already face a version of this problem. The more senior you become, the fewer people tell you hard things. An agreeable AI adds one more voice to a room that may already be too quiet.</p>
+
+  <div class="list-panel">
+    <p>Here is the distinction that matters:</p>
+    <ul>
+      <li>A real colleague has their own knowledge, their own stakes, and the ability to say “I think you are wrong.” That friction is a feature.</li>
+      <li>A tuned-to-please AI can sound like a colleague while quietly removing the friction.</li>
+      <li>Feeling supported is not evidence that you are right.</li>
+    </ul>
+  </div>
+
+  <p class="lesson">This is the third lesson of the case study. <strong>Agreement is not accuracy, and a helpful tone is not a verified answer.</strong></p>
+
+  <h2>Part Five: The Practice (how to avoid becoming Geordi)</h2>
+
+  <p>The answer is not to stop using AI. Geordi’s hologram did contribute to solving a real crisis. The answer is to use it the way a good leader uses any advisor: with clear expectations and a willingness to be challenged.</p>
+
+  <ol>
+    <li><strong>Ask it to disagree.</strong> Instead of “Here is my plan, what do you think?” try “Here is my plan. Give me the three strongest arguments against it.” You are asking for the friction the tool will not volunteer.</li>
+    <li><strong>Hide your preference.</strong> If you tell the AI which answer you want, you will often get it. Present options neutrally, or ask the same question framed two opposite ways and compare the results.</li>
+    <li><strong>Push back on purpose.</strong> When it gives you an answer, challenge it, even when you think it is right. If it flips immediately, you have learned something about how much weight the answer deserved.</li>
+    <li><strong>Verify what matters.</strong> Anything that affects people, money, or reputation gets checked against a source, an expert, or the original data. Use the AI for the first draft of thinking, not the last word.</li>
+    <li><strong>Find your Brahms.</strong> Every important idea should meet at least one real person with their own perspective before it becomes a decision. The real Dr. Brahms was inconvenient and critical. She was also the only one who actually knew her work.</li>
+    <li><strong>Notice how you feel.</strong> If every AI session leaves you feeling brilliant, be suspicious. Good feedback is sometimes uncomfortable.</li>
+  </ol>
+
+  <p>Notice what these habits have in common. Each one restores something the tuned hologram removed: disagreement, independence, and contact with reality.</p>
+
+  <h2>Conclusion: Beam Down to Reality</h2>
+
+  <p>Let us run the case study back one more time.</p>
+
+  <p>Geordi had a real problem and a useful tool. Through a series of small, reasonable adjustments, the tool became warmer and more agreeable until it stopped being a source of expertise and became a reflection of what he hoped to find. When the real person arrived, the gap between the two was painful, and it took a bartender to explain it to him.</p>
+
+  <p>We do not have to learn this the hard way. We have the advantage Geordi never had: we know the mirror exists.</p>
+
+  <p>So the next time an AI tells you your idea is brilliant, your plan is airtight, or your draft needs no changes, pause and ask the Guinan question. Is this the real answer, or is this me?</p>
+
+  <p>And if you ever catch yourself getting a little too fond of your chatbot, do what Geordi eventually had to do. Close the program, go find a real person, and let them tell you what they think. They may be less charming than the hologram. They will also be right more often than your reflection.</p>
+
+  <p class="closing">Live long and prosper, and please, check your work.</p>
+
+</article>
+</body>
+</html>
