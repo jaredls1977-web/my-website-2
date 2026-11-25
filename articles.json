@@ -1,10 +1,18 @@
 [
   {
+    "title": "The Menu in the Window",
+    "category": "Relationships",
+    "date": "2026-11-25",
+    "summary": "A story about a favorite place, the things we wait for, and what we carry with us when we leave.",
+    "url": "articles/the-menu-in-the-window.html"
+  },
+  {
     "title": "Your AI Agrees With You. That’s the Problem.",
     "category": "Leadership",
     "date": "2026-11-25",
     "summary": "An AI that agrees with everything you say is not a colleague. It is a mirror, and a flattering one. A Star Trek story about an engineer who tuned a hologram into a yes-person, and what it means for how we use AI at work.",
-    "url": "articles/leadership/your-ai-agrees-with-you.html"
+    "url": "articles/leadership/your-ai-agrees-with-you.html",
+    "featured": true
   },
   {
     "title": "In the Shadow of the Greatest Generation",
