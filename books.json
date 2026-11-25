@@ -1,0 +1,74 @@
+[
+  {
+    "title": "My New Superpower",
+    "subtitle": "What Happens When a Fast Mind Meets AI",
+    "description": "A personal look at what happens when a fast mind meets AI.",
+    "cover": "assets/books/my-new-superpower.webp",
+    "amazonUrl": "https://a.co/d/0asZMxjn",
+    "status": "Available Now"
+  },
+  {
+    "title": "Burn the Scorecard",
+    "subtitle": "You Will Live a Miserable and Unhappy Life If Your Love for People Is Based on What They Can Do for You",
+    "description": "A direct, Scripture-rooted challenge to stop keeping emotional score in relationships and start loving people without turning affection into a transaction.",
+    "cover": "assets/books/burn-the-scorecard.webp",
+    "amazonUrl": "https://a.co/d/03QjimYR",
+    "status": "Available Now"
+  },
+  {
+    "title": "Raised for Obedience",
+    "subtitle": "A Memoir",
+    "description": "A memoir about growing up in a high-control religious environment and the long process of untangling fear, guilt, identity, obedience, and faith.",
+    "cover": "assets/books/raised-for-obedience.webp",
+    "amazonUrl": "https://a.co/d/0hQFJnnC",
+    "status": "Available Now"
+  },
+  {
+    "title": "Authentic Leadership: What Really Works",
+    "subtitle": "Practical leadership without the noise",
+    "description": "A practical leadership guide for managers and supervisors who want to lead real people in the real world, not perform leadership theater.",
+    "cover": "assets/books/authentic-leadership-what-really-works.webp",
+    "amazonUrl": "https://a.co/d/0a1I0bIf",
+    "status": "Available Now"
+  },
+  {
+    "title": "Edge Over Ego",
+    "subtitle": "Why Being Right Isn’t Enough and What Actually Makes Leaders Effective",
+    "description": "A leadership book about humility, self-awareness, emotional control, and why being right is not the same thing as being effective.",
+    "cover": "assets/books/edge-over-ego.webp",
+    "amazonUrl": "https://a.co/d/0bltqBng",
+    "status": "Available Now"
+  },
+  {
+    "title": "Leadership Workbook Companion",
+    "subtitle": "Companion to Authentic Leadership: What Really Works",
+    "description": "Reflection questions, exercises, and action plans designed to turn leadership ideas into practical habits and better conversations.",
+    "cover": "assets/books/leadership-workbook-companion.webp",
+    "amazonUrl": "https://a.co/d/0akTgNX9",
+    "status": "Available Now"
+  },
+  {
+    "title": "Before You Build",
+    "subtitle": "A Practical Guide to Building a Home Without Losing Your Ever-Loving Mind",
+    "description": "A practical guide to building a home without losing your sanity, your finances, or your relationships in the process.",
+    "cover": "assets/books/before-you-build.webp",
+    "amazonUrl": "https://a.co/d/0f5GdVYM",
+    "status": "Available Now"
+  },
+  {
+    "title": "Before You Build Workbook",
+    "subtitle": "Practical worksheets, checklists, and conversation guides",
+    "description": "Worksheets, checklists, and planning tools to help future homeowners ask better questions and avoid preventable mistakes.",
+    "cover": "assets/books/before-you-build-workbook.webp",
+    "amazonUrl": "https://a.co/d/02dOQozc",
+    "status": "Available Now"
+  },
+  {
+    "title": "Breaking the Bait and Switch",
+    "subtitle": "Why They Change, Why You Stay, and How to Fix It (or Leave Right)",
+    "description": "A plainspoken look at relationship patterns, disappointment, emotional drift, and what to do when the person you chose seems to disappear.",
+    "cover": "assets/books/breaking-the-bait-and-switch.webp",
+    "amazonUrl": "https://a.co/d/0gXKn6bb",
+    "status": "Available Now"
+  }
+]

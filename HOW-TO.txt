@@ -1,0 +1,48 @@
+HOW TO ADD A NEW ARTICLE
+========================
+
+1. Get the article written inside the template.
+   Open the file  _templates/new-article.html  and give it to your AI with this message:
+
+     "Write my article inside this template. Keep everything the same except:
+      the title, the description line, the date line, the dek, and the words
+      in the article. Do not change any links or the lines marked 'do not change'."
+
+2. Save the finished file with a short name, all lowercase, dashes instead of
+   spaces, ending in .html. Example:  why-meetings-fail.html
+
+3. On GitHub, open the folder for the topic:
+      articles  >  leadership   (or faith, or recovery)
+   Click  Add file  >  Upload files, drag your file in, click  Commit changes.
+
+4. Wait about one minute. The article is on the site and in the lists.
+   (To watch it happen, click the "Actions" tab. A green check means it is live.)
+
+If the article should go in a brand-new topic, make a new folder inside
+"articles" with the topic name (example: "podcast"). A new tab appears by itself.
+
+Pictures for an article go in  assets/article-images  and are used like this:
+   <img src="../../assets/article-images/my-picture.jpg" alt="Describe the picture">
+
+
+HIDING AN ARTICLE
+-----------------
+Add this line inside the <head> of the article and it stays off the lists:
+   <meta name="site-list" content="hidden">
+
+
+CHANGING AN ARTICLE'S DATE OR SUMMARY
+-------------------------------------
+Open articles.json on GitHub, click the pencil, change the words, commit.
+
+
+CHANGING THE MENU (top bar and footer)
+--------------------------------------
+Open  assets/js/site.js  and edit the list called NAV near the top.
+One change updates every page.
+
+
+ADDING A BOOK
+-------------
+Upload the cover to assets/books, then add a block to books.json
+(copy an existing one and change the words).

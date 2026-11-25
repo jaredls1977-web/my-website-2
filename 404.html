@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Jared Scott</title><meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/css/site.css"></head>
+<body>
+<script src="/assets/js/site.js"></script>
+<main id="main"><section class="page-head"><div class="wrap"><h1 id="nf-title">Looking for that page&hellip;</h1>
+<p class="lead" id="nf-text">One moment.</p></div></section>
+<section class="section"><div class="wrap notfound"><p>You can start from the <a class="link" href="/home.html">home page</a> or browse <a class="link" href="/articles/">all articles</a>.</p></div></section></main>
+<script>
+(function(){
+  var p=decodeURIComponent(location.pathname), file=p.split('/').pop();
+  var alias={'/articles/books/':'/books/','/articles/books/index.html':'/books/','steaks-no-good-article.html':'articles/leadership/the-steaks-no-good-and-people-are-done-pretending-it-is.html'};
+  function fail(){document.getElementById('nf-title').textContent='That page could not be found.';document.getElementById('nf-text').textContent='It may have moved. Try the links below.';}
+  if(alias[p]){location.replace(alias[p]);return;}
+  if(alias[file]){location.replace('/'+alias[file]);return;}
+  fetch('/articles.json').then(function(r){return r.json();}).then(function(list){
+    var m=list.filter(function(a){return a.url.split('/').pop()===file;})[0];
+    if(m) location.replace('/'+m.url); else fail();
+  }).catch(fail);
+})();
+</script></body></html>
